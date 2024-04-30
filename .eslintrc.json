@@ -8,6 +8,9 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
+  "plugins": [
+    "import"
+  ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
@@ -30,6 +33,43 @@
           "xxx"
         ],
         "location": "start"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          [
+            "builtin",
+            "external"
+          ],
+          [
+            "internal",
+            "index",
+            "sibling",
+            "parent"
+          ],
+          [
+            "object",
+            "type"
+          ]
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          },
+          {
+            "pattern": "./allSelectors",
+            "group": "index",
+            "position": "before"
+          }
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
     ]
   }
