@@ -1,7 +1,6 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
@@ -14,7 +13,6 @@
   },
   "env": {
     "browser": true,
-    "node": true,
     "es2021": true
   },
   "settings": {
@@ -23,10 +21,17 @@
     }
   },
   "rules": {
+    "no-var": "error",
+    "prefer-const": "warn",
+    "react/react-in-jsx-scope": "off",
     "no-warning-comments": [
       "warn",
       {
-        "terms": ["todo", "fixme", "xxx"],
+        "terms": [
+          "todo",
+          "fixme",
+          "xxx"
+        ],
         "location": "start"
       }
     ]
