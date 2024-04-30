@@ -1,6 +1,6 @@
-"use client"
+"use client";
 const ErrorPage = () => {
-  return <div>Ooops something went wrong</div>
-}
+  return <div>Ooops something went wrong</div>;
+};
 
-export default ErrorPage
+export default ErrorPage;
