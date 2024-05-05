@@ -1,5 +1,14 @@
-const NotFound = () => {
-  return <div>Not found sorry</div>
-}
+import Link from "next/link";
 
-export default NotFound
+import RoutesPaths from "@/types/enums/routes";
+
+const NotFound = () => {
+  return (
+    <div>
+      Not found sorry
+      <Link href={RoutesPaths.home}>HOME PAGE</Link>
+    </div>
+  );
+};
+
+export default NotFound;
