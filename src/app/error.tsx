@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
-import RoutesPaths from "@/types/enums/routes";
 import { useEffect } from "react";
+
+import RoutesPaths from "@/types/enums/routes";
 
 interface ErrorPageProps {
   error: Error & { digest?: string };

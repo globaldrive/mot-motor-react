@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import RoutesPaths from "@/types/enums/routes";
 
 const NotFound = () => {
