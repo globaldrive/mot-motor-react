@@ -1,9 +1,14 @@
 @import '@/_assets/styles/variables';
 
-.root {
+.svg {
   position: relative;
-}
-
-.firstLine {
-  background-color: $primaryText;
+  transition: transform $transitionSet;
+  &.flip {
+    transform: rotate(-180deg);
+  }
+  &.main {
+    width: 11px;
+    height: 7px;
+    opacity: .3;
+  }
 }

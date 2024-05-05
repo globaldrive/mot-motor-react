@@ -1,3 +1,4 @@
-interface ArrowProps {
-  color?: "main" | "secondary";
+interface ArrowIconProps {
+  main?: boolean;
+  flip?: boolean;
 }
