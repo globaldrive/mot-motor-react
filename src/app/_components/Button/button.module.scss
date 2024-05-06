@@ -1,0 +1,11 @@
+@import "@/_assets/styles/variables";
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .secondary {
+    padding: 1.5rem 1.8rem;
+    border: 1.5px solid $mainColor;
+  }
+}

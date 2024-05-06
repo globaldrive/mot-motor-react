@@ -5,7 +5,7 @@ import styles from "./arrow.module.scss";
 const ArrowIcon = ({ flip, main }: ArrowIconProps) => {
   const svgClassname = classNames(styles.svg, {
     [styles.flip]: flip,
-    [styles.main]: main
+    [styles.main]: main,
   });
 
   return (
