@@ -14,18 +14,18 @@ const UserInteraction = () => {
     <div className={styles.root}>
       <Image src={LogoPng} alt="Лого компании" width={177} height={34} />
       <Search />
-      <div>
+      <div className={styles.communicationWrapper}>
         <div>
-          <div>
+          <div className={styles.phoneWrapper}>
             <Communication
               phoneNumber={communicationDetails.mainNumber}
               showPhoneNumber
             />
             <ArrowIcon main />
           </div>
-          <div>
-            <div>
-              <div></div>
+          <div className={styles.weAreOnline}>
+            <div className={styles.outsideRing}>
+              <div className={styles.insideRing}></div>
             </div>
             <div>Мы сейчас на связи</div>
           </div>
@@ -37,7 +37,7 @@ const UserInteraction = () => {
           />
         </div>
       </div>
-      <Button>Бесплатный звонок</Button>
+      <Button secondary>Бесплатный звонок</Button>
       <Basket />
     </div>
   );

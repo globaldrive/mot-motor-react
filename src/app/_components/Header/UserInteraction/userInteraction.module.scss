@@ -1,3 +1,41 @@
+@import "@/_assets/styles/variables";
+
 .root {
   display: flex;
+  justify-content: space-between;
+}
+
+.communicationWrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.phoneWrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.weAreOnline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.outsideRing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: .8rem;
+  height: .8rem;
+  background-color: $secondaryGreen;
+  border-radius: 50%;
+}
+
+.insideRing {
+  width: .4rem;
+  height: .4rem;
+  background-color: $green;
+  border-radius: 50%;
 }

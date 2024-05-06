@@ -1,0 +1,22 @@
+@import '@/_assets/styles/variables';
+
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.qnt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 1.8rem;
+  height: 1.8rem;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  background-color: $attention;
+  color: $light;
+}
