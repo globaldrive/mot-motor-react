@@ -6,7 +6,8 @@ import CommunicationProps from "@/_components/Communication/Communication.interf
 const Communication = ({
   phoneNumber,
   showPhoneNumber,
-  showWhatsAppIcon
+  showWhatsAppIcon,
+  children,
 }: CommunicationProps) => {
   return (
     <div>
@@ -20,6 +21,7 @@ const Communication = ({
             height={36}
           />
         )}
+        {children}
       </a>
     </div>
   );
