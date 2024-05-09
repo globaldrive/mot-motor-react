@@ -7,7 +7,7 @@ import UserInteraction from "@/_components/Header/UserInteraction";
 
 const Header = () => {
   return (
-    <header>
+    <header className={styles.header}>
       <div className={styles.topLine}>
         <div className={classNames(styles.topLineContent, "container")}>
           <CityPicker />
