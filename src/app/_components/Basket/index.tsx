@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useSelector } from "react-redux";
 
 import styles from "./basket.module.scss";
 import basketIcon from "@/_assets/images/general/basket.svg";
 import { RootState } from "@/_store/store";
+import RoutesPaths from "@/types/enums/routes";
 
 const Basket = () => {
   const purchasesQnt = useSelector(
@@ -14,11 +16,13 @@ const Basket = () => {
     (state: RootState) => state.userDetails.basketSumTotal,
   );
   return (
-    <div className={styles.root}>
-      <div className={styles.qnt}>{purchasesQnt}</div>
-      <Image src={basketIcon} alt="Иконка корзины" width={27} height={27} />
-      <div>{totalSumInBasket} ₽</div>
-    </div>
+    <Link href={RoutesPaths.basket} className={styles.root}>
+      <div className={styles.basketImageWrapper}>
+        <Image src={basketIcon} alt="Иконка корзины" width={32} height={32} />
+        <div className={styles.qnt}>{purchasesQnt}</div>
+      </div>
+      <div className={styles.totalAmount}>{totalSumInBasket} ₽</div>
+    </Link>
   );
 };
 

@@ -3,18 +3,38 @@
 .root {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  user-select: none;
 }
 
 .communicationWrapper {
   display: flex;
   gap: 20px;
   align-items: center;
+  @media(max-width: $mediaTablet) {
+    gap: 10px;
+  }
 }
 
 .phoneWrapper {
   display: flex;
   gap: 6px;
+  margin-bottom: 6px;
   align-items: center;
+}
+
+.phoneNumber {
+  margin-right: .6rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  text-decoration: none;
+  color: $primaryText;
 }
 
 .weAreOnline {
@@ -38,4 +58,20 @@
   height: .4rem;
   background-color: $green;
   border-radius: 50%;
+}
+
+.weOnlineText {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.callBackBtn {
+  min-height: 46px;
+  min-width: 176px;
+  @media(max-width: $mediaTablet) {
+    display: none;
+  }
 }

@@ -3,9 +3,9 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import UserDetails from "@/_store/slices/UserDetails/UserDetails.interface";
 
 const initialState: UserDetails = {
-  city: "Moscow",
+  city: "Москва",
   basketPurchasesQnt: 0,
-  basketSumTotal: 5500,
+  basketSumTotal: "5 500",
 };
 
 const userDetailsSlice = createSlice({

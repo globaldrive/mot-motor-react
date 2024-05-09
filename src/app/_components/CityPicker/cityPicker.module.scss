@@ -1,11 +1,18 @@
 .root {
   display: flex;
   padding: 0;
-  gap: .5rem;
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.text {
+  margin-left: 9px;
+  margin-right: 6px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.2rem;
 }

@@ -1,15 +1,26 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 
-const Search = () => {
+import styles from "./search.module.scss";
+import SearchSvg from "@/_assets/images/general/search.svg";
+import SearchProps from "@/_components/Search/Search.interface";
+
+const Search = ({ onClickSearchBtn }: SearchProps) => {
   const [searchValue, setSearchValue] = useState("");
   return (
-    <input
-      type="search"
-      placeholder="Я ищу..."
-      value={searchValue}
-      onChange={(e) => setSearchValue(e.target.value)}
-    />
+    <div className={styles.root}>
+      <input
+        className={styles.search}
+        type="search"
+        placeholder="Я ищу..."
+        value={searchValue}
+        onChange={e => setSearchValue(e.target.value)}
+      />
+      <button className={styles.searchBtn} onClick={onClickSearchBtn}>
+        <Image src={SearchSvg} alt={"иконка поиска"} width={18} height={18} />
+      </button>
+    </div>
   );
 };
 

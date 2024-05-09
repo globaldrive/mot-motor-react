@@ -1,7 +1,20 @@
+@import '@/_assets/styles/variables';
+
 .topLine {
+  background-color: $lightGray;
+}
+
+.topLineContent {
   padding: .7rem .4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.4rem;
   display: flex;
   gap: 2rem;
   align-items: center;
+}
+
+.topLineText {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2rem;
+  opacity: .3;
 }

@@ -2,9 +2,17 @@
 
 .root {
   display: flex;
-  position: relative;
   flex-direction: column;
-  gap: 7px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  user-select: none;
+}
+
+.basketImageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: end;
 }
 
 .qnt {
@@ -14,9 +22,19 @@
   position: absolute;
   width: 1.8rem;
   height: 1.8rem;
-  right: 0;
-  top: 0;
+  right: -9px;
+  top: -9px;
   border-radius: 50%;
   background-color: $attention;
   color: $light;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+}
+
+.totalAmount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  white-space: nowrap;
 }

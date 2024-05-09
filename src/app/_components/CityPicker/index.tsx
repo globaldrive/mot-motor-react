@@ -19,7 +19,7 @@ const CityPicker = () => {
   return (
     <button className={styles.root} onClick={handleBtnClick}>
       <Image src={locationSvg} alt="знак локации" width={16} height={20} />
-      <div>{userCity}</div>
+      <div className={styles.text}>{userCity}</div>
       <ArrowIcon main flip={isClicked} />
     </button>
   );

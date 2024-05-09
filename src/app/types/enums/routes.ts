@@ -1,5 +1,6 @@
 enum RoutesPaths {
-  home = "/"
+  home = "/",
+  basket = "/basket",
 }
 
 export default RoutesPaths;
