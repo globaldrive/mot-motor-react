@@ -27,7 +27,7 @@ const UserInteraction = () => {
             height={34}
           />
         </Link>
-        <CityPicker />
+        <CityPicker className={styles.cityPickerMobile} />
       </div>
 
       <Search searchClassname={styles.search} />

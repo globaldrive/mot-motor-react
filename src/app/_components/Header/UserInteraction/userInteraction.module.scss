@@ -16,6 +16,7 @@
   flex-direction: column;
   @media(max-width: $mediaMobile) {
     margin-right: auto;
+    gap: 8px;
   }
 }
 
@@ -29,6 +30,13 @@
   @media(max-width: $mediaMobile) {
     width: 137px;
     height: 26px;
+  }
+}
+
+.cityPickerMobile {
+  display: none;
+  @media(max-width: $mediaMobile) {
+    display: flex;
   }
 }
 
