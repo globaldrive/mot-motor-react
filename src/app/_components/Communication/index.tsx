@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import styles from "./communication.module.scss";
+import phoneCallIcon from "@/_assets/images/general/phone.svg";
 import WhatsAppIcon from "@/_assets/images/general/whatsApp.svg";
 import CommunicationProps from "@/_components/Communication/Communication.interface";
 
@@ -34,6 +35,14 @@ const Communication = ({
             alt="Иконка вотс апп"
             width={36}
             height={36}
+          />
+        )}
+        {showIcon && communicationType?.phoneCall && (
+          <Image
+            src={phoneCallIcon}
+            alt="иконка телефона"
+            width={30}
+            height={30}
           />
         )}
         {children}

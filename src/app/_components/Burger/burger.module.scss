@@ -1,0 +1,29 @@
+@import '@/_assets/styles/variables';
+
+.burger {
+  display: none;
+  @media(max-width: $mediaMobile) {
+    display: block;
+    min-width: 30px;
+  }
+  &:before,
+  &:after,
+  & div {
+    background: $primaryText;
+    content: "";
+    display: block;
+    height: 6px;
+    border-radius: 3px;
+    margin: 7px 0;
+    transition: 0.5s;
+  }
+  &.isOpen:before {
+    transform: translateY(12px) rotate(135deg);
+  }
+  &.isOpen:after {
+    transform: translateY(-12px) rotate(-135deg);
+  }
+  &.isOpen div {
+    transform: scale(0);
+  }
+}

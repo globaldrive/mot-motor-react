@@ -2,6 +2,9 @@
 
 .topLine {
   background-color: $lightGray;
+  @media(max-width: $mediaMobile) {
+    display: none;
+  }
 }
 
 .topLineContent {

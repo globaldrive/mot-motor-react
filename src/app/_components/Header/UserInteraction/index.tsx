@@ -4,7 +4,9 @@ import Link from "next/link";
 
 import LogoPng from "@/_assets/images/general/logo.png";
 import Basket from "@/_components/Basket";
+import Burger from "@/_components/Burger";
 import Button from "@/_components/Button";
+import CityPicker from "@/_components/CityPicker";
 import Communication from "@/_components/Communication";
 import styles from "@/_components/Header/UserInteraction/userInteraction.module.scss";
 import ArrowIcon from "@/_components/Icons/Arrow";
@@ -15,12 +17,23 @@ import RoutesPaths from "@/types/enums/routes";
 const UserInteraction = () => {
   return (
     <div className={classNames(styles.root, "container")}>
-      <Link href={RoutesPaths.home} className={styles.logoWrapper}>
-        <Image src={LogoPng} alt="Лого компании" width={177} height={34} />
-      </Link>
-      <Search />
+      <div className={styles.logoMobileWrapper}>
+        <Link href={RoutesPaths.home} className={styles.logoLink}>
+          <Image
+            className={styles.logoImg}
+            src={LogoPng}
+            alt="Лого компании"
+            width={177}
+            height={34}
+          />
+        </Link>
+        <CityPicker />
+      </div>
+
+      <Search searchClassname={styles.search} />
+
       <div className={styles.communicationWrapper}>
-        <div>
+        <div className={styles.availableDetails}>
           <div className={styles.phoneWrapper}>
             <Communication
               phoneNumber={communicationDetails.mainNumber}
@@ -37,7 +50,14 @@ const UserInteraction = () => {
             <div className={styles.weOnlineText}>Мы сейчас на связи</div>
           </div>
         </div>
-        <div>
+        <div className={styles.fastActionBtns}>
+          <div className={styles.fastCallBtn}>
+            <Communication
+              phoneNumber={communicationDetails.mainNumber}
+              communicationType={{ phoneCall: true }}
+              showIcon
+            />
+          </div>
           <Communication
             phoneNumber={communicationDetails.whatsApp.number}
             communicationType={{ whatsApp: true }}
@@ -51,6 +71,7 @@ const UserInteraction = () => {
         <Button secondary>Бесплатный звонок</Button>
       </div>
       <Basket />
+      <Burger />
     </div>
   );
 };

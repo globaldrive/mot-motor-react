@@ -1,4 +1,5 @@
 "use client";
+import classNames from "classnames";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -6,10 +7,13 @@ import styles from "./search.module.scss";
 import SearchSvg from "@/_assets/images/general/search.svg";
 import SearchProps from "@/_components/Search/Search.interface";
 
-const Search = ({ onClickSearchBtn }: SearchProps) => {
+const Search = ({ onClickSearchBtn, searchClassname }: SearchProps) => {
   const [searchValue, setSearchValue] = useState("");
+  console.log(searchClassname);
   return (
-    <div className={styles.root}>
+    <div
+      className={classNames(styles.root, searchClassname && searchClassname)}
+    >
       <input
         className={styles.search}
         type="search"
