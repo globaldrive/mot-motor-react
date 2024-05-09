@@ -9,9 +9,11 @@ const Button = ({
   onMouseEnter,
   onMouseLeave,
   secondary,
+  catalog,
 }: ButtonProps) => {
   const buttonClassname = classNames(styles.root, {
     [styles.secondary]: secondary,
+    [styles.catalog]: catalog,
   });
   return (
     <button

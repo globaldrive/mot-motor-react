@@ -44,6 +44,7 @@
 }
 
 .search {
+  max-width: 426px;
   @media(max-width: $mediaMobile) {
     display: none;
   }

@@ -1,23 +1,31 @@
 "use client";
 import classNames from "classnames";
-import { useState } from "react";
 
 import styles from "./burger.module.scss";
+import BurgerProps from "@/_components/Burger/Burger.interface";
 
-const Burger = ({ onBurgerClick }: BurgerProps) => {
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+const Burger = ({
+  isBurgerOpen,
+  onBurgerClick,
+  mobile,
+  catalog,
+}: BurgerProps) => {
+  const burgerClassname = classNames(
+    styles.burger,
+    isBurgerOpen && styles.isOpen,
+    {
+      [styles.mobile]: mobile,
+      [styles.catalog]: catalog,
+    },
+  );
 
   const handleBurgerClick = () => {
-    setIsBurgerOpen(!isBurgerOpen);
     if (onBurgerClick) {
       onBurgerClick();
     }
   };
   return (
-    <div
-      className={classNames(styles.burger, isBurgerOpen && styles.isOpen)}
-      onClick={handleBurgerClick}
-    >
+    <div className={burgerClassname} onClick={handleBurgerClick}>
       <div></div>
     </div>
   );

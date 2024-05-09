@@ -1,6 +1,8 @@
+"use client";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import LogoPng from "@/_assets/images/general/logo.png";
 import Basket from "@/_components/Basket";
@@ -15,6 +17,10 @@ import communicationDetails from "@/_data/communication/communication.json";
 import RoutesPaths from "@/types/enums/routes";
 
 const UserInteraction = () => {
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+  const handleBurgerClick = () => {
+    setIsBurgerOpen(!isBurgerOpen);
+  };
   return (
     <div className={classNames(styles.root, "container")}>
       <div className={styles.logoMobileWrapper}>
@@ -71,7 +77,11 @@ const UserInteraction = () => {
         <Button secondary>Бесплатный звонок</Button>
       </div>
       <Basket />
-      <Burger />
+      <Burger
+        mobile
+        isBurgerOpen={isBurgerOpen}
+        onBurgerClick={handleBurgerClick}
+      />
     </div>
   );
 };

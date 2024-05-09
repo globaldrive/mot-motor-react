@@ -1,3 +1,8 @@
 interface BurgerProps {
-  onBurgerClick?: () => {};
+  isBurgerOpen?: boolean;
+  onBurgerClick?: () => void;
+  mobile?: boolean;
+  catalog?: boolean;
 }
+
+export default BurgerProps;

@@ -41,6 +41,9 @@ a {
   max-width: 1180px;
   width: 100%;
   margin: 0 auto;
+  @media(max-width: 1225px) {
+    padding: 0 15px;
+  }
   @media(max-width: $mediaMobile) {
     padding: 0 10px;
   }

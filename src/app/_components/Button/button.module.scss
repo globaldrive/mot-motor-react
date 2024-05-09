@@ -12,11 +12,30 @@
   &.secondary {
     padding: 1.4rem 1.8rem;
     border: 1.5px solid $mainColor;
-    border-radius: .7rem;
+    border-radius: $borderRadiusSmall;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.7rem;
     color: $mainColor;
     white-space: nowrap;
+  }
+  &.catalog {
+    padding: 10px 19px 10px 11px;
+    justify-content: start;
+    min-height: 46px;
+    color: $light;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    line-height: 2rem;
+    font-size: 1.6rem;
+    @media(max-width: $mediaTablet) {
+      font-size: 1.2rem;
+    }
+    @media(max-width: $mediaMobile) {
+      padding: 0;
+      justify-content: center;
+    }
   }
 }
