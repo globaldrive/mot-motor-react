@@ -5,7 +5,10 @@
   justify-content: space-between;
   align-items: center;
   gap: 15px;
+  margin-bottom: 20px;
   @media(max-width: $mediaMobile) {
+    gap: 8px;
+    margin-bottom: 12px;
     padding-top: 16px;
     justify-content: initial;
   }

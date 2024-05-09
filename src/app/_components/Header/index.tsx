@@ -2,6 +2,7 @@ import classNames from "classnames";
 
 import styles from "./header.module.scss";
 import CityPicker from "@/_components/CityPicker";
+import Navigation from "@/_components/Header/Navigation";
 import UserInteraction from "@/_components/Header/UserInteraction";
 
 const Header = () => {
@@ -18,6 +19,7 @@ const Header = () => {
         </div>
       </div>
       <UserInteraction />
+      <Navigation />
     </header>
   );
 };

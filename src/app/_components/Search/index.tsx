@@ -9,7 +9,6 @@ import SearchProps from "@/_components/Search/Search.interface";
 
 const Search = ({ onClickSearchBtn, searchClassname }: SearchProps) => {
   const [searchValue, setSearchValue] = useState("");
-  console.log(searchClassname);
   return (
     <div
       className={classNames(styles.root, searchClassname && searchClassname)}

@@ -2,10 +2,11 @@ import classNames from "classnames";
 
 import styles from "./arrow.module.scss";
 
-const ArrowIcon = ({ flip, main }: ArrowIconProps) => {
+const ArrowIcon = ({ flip, main, secondary }: ArrowIconProps) => {
   const svgClassname = classNames(styles.svg, {
     [styles.flip]: flip,
     [styles.main]: main,
+    [styles.secondary]: secondary,
   });
 
   return (
