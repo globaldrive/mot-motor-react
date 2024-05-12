@@ -1,0 +1,9 @@
+@import '@/_assets/styles/variables';
+
+.overlay {
+  position: absolute;
+  background-color: $primaryText;
+  opacity: .3;
+  width: 100vw;
+  height: 100vh;
+}

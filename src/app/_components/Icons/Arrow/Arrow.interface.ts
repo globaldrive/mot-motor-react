@@ -3,4 +3,5 @@ interface ArrowIconProps {
   secondary?: boolean;
   flip?: boolean;
   customClassname?: string;
+  right?: boolean;
 }

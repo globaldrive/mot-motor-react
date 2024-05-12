@@ -1,9 +1,5 @@
 @import '@/_assets/styles/variables';
 
-.header {
-  margin-bottom: 27px;
-}
-
 .topLine {
   background-color: $lightGray;
   @media(max-width: $mediaMobile) {

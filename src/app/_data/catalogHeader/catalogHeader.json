@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Спец предложение",
+    "route": "/spec-predlojenie",
+    "svg": "/fire.svg",
+    "content": []
+  },
+  {
+    "id": 2,
+    "title": "Лодочные моторы",
+    "route": "lodochnie-motori",
+    "svg": "/supBoy.svg",
+    "content": [
+      {
+        "id": 20,
+        "title": "Маломощные лодочные моторы",
+        "route": "/malamoshnie-lodochnie-motori"
+      },
+      {
+        "id": 21,
+        "title": "Лодочный моторы Alfa",
+        "route": "/lodochnie-motori-alfa"
+      }
+    ]
+  }
+]

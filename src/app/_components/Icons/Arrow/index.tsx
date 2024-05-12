@@ -4,6 +4,7 @@ import styles from "./arrow.module.scss";
 
 const ArrowIcon = ({
   flip,
+  right,
   main,
   secondary,
   customClassname,
@@ -12,6 +13,7 @@ const ArrowIcon = ({
     [styles.flip]: flip,
     [styles.main]: main,
     [styles.secondary]: secondary,
+    [styles.right]: right,
   });
 
   return (
