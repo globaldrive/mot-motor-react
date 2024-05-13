@@ -1,4 +1,4 @@
-interface CatalogMenuProps {
+interface CategoryOffersMenuProps {
   showArrow?: boolean;
   showSvg?: boolean;
 }

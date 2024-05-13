@@ -20,7 +20,7 @@ const ListWithLinks = ({
             itemText={item.title}
             svgSrc={item.svg}
             customClassnames={itemClassnames}
-            showSvg
+            showSvg={showSvg}
           >
             {showArrow && item.content && item.content?.length > 0 && (
               <ArrowIcon
