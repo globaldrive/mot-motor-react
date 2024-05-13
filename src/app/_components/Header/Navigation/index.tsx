@@ -1,12 +1,12 @@
 "use client";
 import classNames from "classnames";
-import Link from "next/link";
 import { useState } from "react";
 
 import styles from "./navigation.module.scss";
 import Burger from "@/_components/Burger";
 import Button from "@/_components/Button";
 import ArrowIcon from "@/_components/Icons/Arrow";
+import ListWithLinks from "@/_components/ListWithLinks";
 import Search from "@/_components/Search";
 import navigationData from "@/_data/navigation/navigation.json";
 
@@ -34,18 +34,16 @@ const Navigation = () => {
           </Button>
         </div>
         <nav className={styles.navigation}>
-          <ul className={styles.navList}>
-            {navigationData.map(item => {
-              return (
-                <li className={styles.listItem} key={item.id}>
-                  <Link className={styles.itemLink} href={item.route}>
-                    <span>{item.title}</span>
-                    {item.content.length > 0 && <ArrowIcon secondary />}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <ListWithLinks
+            menuData={navigationData}
+            listClassname={styles.navList}
+            itemClassnames={{
+              rootClassname: styles.listItem,
+              linkClassname: styles.itemLink,
+            }}
+            showArrow
+            arrowProps={{ secondary: true }}
+          />
         </nav>
         <Search searchClassname={styles.search} />
       </div>

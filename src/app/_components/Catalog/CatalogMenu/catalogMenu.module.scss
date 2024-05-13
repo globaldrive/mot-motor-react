@@ -1,0 +1,35 @@
+@import "@/_assets/styles/variables";
+
+.catalogMenu {
+  position: relative;
+}
+
+.catalogMenuWrapper {
+  position: absolute;
+  min-width: 312px;
+  padding: 24px;
+  left: 0;
+  z-index: 1;
+  background-color: $light;
+  border-bottom-right-radius: $borderRadiusSmall;
+  border-bottom-left-radius: $borderRadiusSmall;
+}
+
+.catalogList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.itemLink {
+  display: flex;
+  align-items: center;
+}
+
+.itemSvg {
+  margin-right: 17px;
+}
+
+.itemText {
+  margin-right: auto;
+}

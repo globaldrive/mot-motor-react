@@ -5,3 +5,5 @@ interface ArrowIconProps {
   customClassname?: string;
   right?: boolean;
 }
+
+export default ArrowIconProps;

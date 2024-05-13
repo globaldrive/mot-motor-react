@@ -1,6 +1,7 @@
 import classNames from "classnames";
 
 import styles from "./arrow.module.scss";
+import ArrowIconProps from "@/_components/Icons/Arrow/Arrow.interface";
 
 const ArrowIcon = ({
   flip,
