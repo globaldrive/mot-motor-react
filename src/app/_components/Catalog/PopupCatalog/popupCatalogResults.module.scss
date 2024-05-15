@@ -1,0 +1,14 @@
+@import "@/_assets/styles/variables";
+
+.root {
+  background-color: $lightGray;
+  padding: 50px 65px 50px 45px;
+}
+
+.list {
+  display: none;
+}
+
+.activeList {
+  display: block;
+}

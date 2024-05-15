@@ -3,32 +3,37 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "@/_components/Button/button.module.scss";
-import { ListItemLinkProps } from "@/_components/ListWithLinks/ListItemLink/ListItemLink.interface";
+import { ListItemLinkProps } from "@/_components/Lists/ListWithLinks/ListItemLink.interface";
 
-const ListWithLinks = ({
+const ListItemLink = ({
   href,
   itemText,
   svgSrc,
   showSvg,
   children,
-  key,
   customClassnames,
+  activeItemInx,
+  setActiveInx,
+  itemInx,
 }: ListItemLinkProps) => {
+  const handleItemMouseEnter = () => {
+    if (setActiveInx) {
+      setActiveInx(itemInx);
+    }
+  };
+  const isActive = itemInx === activeItemInx;
+
   const rootClassname = classNames(
     styles.item,
-    customClassnames?.rootClassname,
+    customClassnames?.root,
+    isActive && customClassnames?.activeItem,
   );
-  const linkClassname = classNames(
-    styles.link,
-    customClassnames?.linkClassname,
-  );
-  const textClassname = classNames(
-    styles.text,
-    customClassnames?.textClassname,
-  );
-  const imgClassname = classNames(styles.img, customClassnames?.imgClassname);
+  const linkClassname = classNames(styles.link, customClassnames?.link);
+  const textClassname = classNames(styles.text, customClassnames?.text);
+  const imgClassname = classNames(styles.img, customClassnames?.img);
+
   return (
-    <li className={rootClassname} key={key}>
+    <li className={rootClassname} onMouseEnter={handleItemMouseEnter}>
       <Link className={linkClassname} href={href}>
         {svgSrc && showSvg && (
           <Image
@@ -46,4 +51,4 @@ const ListWithLinks = ({
   );
 };
 
-export default ListWithLinks;
+export default ListItemLink;

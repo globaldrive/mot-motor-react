@@ -1,14 +1,11 @@
 @import "../../../_assets/styles/variables/index";
 
 .categoryWrapper {
-  position: absolute;
   min-width: 312px;
   padding: 24px;
-  left: 0;
-  z-index: 1;
   background-color: $light;
-  border-bottom-right-radius: $borderRadiusSmall;
   border-bottom-left-radius: $borderRadiusSmall;
+  border-bottom-right-radius: $borderRadiusSmall;
 }
 
 .categoryList {
@@ -22,10 +19,22 @@
   align-items: center;
 }
 
+.activeMenuItem {
+  .itemLink {
+    & .arrowCategoryMenu,
+    & .itemText,
+    & .itemSvg {
+      color: $mainColor;
+      opacity: 1;
+    }
+  }
+}
+
 .itemSvg {
   margin-right: 17px;
 }
 
 .itemText {
   margin-right: auto;
+  transition: color $transitionSet;
 }

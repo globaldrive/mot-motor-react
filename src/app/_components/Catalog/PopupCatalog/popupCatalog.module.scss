@@ -1,0 +1,19 @@
+.popupMenu {
+  position: relative;
+  &.hideCatalogMenu {
+    display: none;
+  }
+  &.showCatalogMenu {
+    display: block;
+  }
+}
+
+.catalogWrapper {
+  &.main {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+  }
+}

@@ -12,4 +12,10 @@ interface catalogMenuItem {
   content?: catalogItemContent[];
 }
 
-export type { catalogMenuItem };
+interface popupCatalogResults {
+  id?: number;
+  title?: string;
+  route?: string;
+}
+
+export type { catalogMenuItem, popupCatalogResults };

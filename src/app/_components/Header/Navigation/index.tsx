@@ -1,19 +1,19 @@
-"use client";
 import classNames from "classnames";
-import { useState } from "react";
 
 import styles from "./navigation.module.scss";
+import ListWithLinks from "../../Lists/ListWithLinks";
 import Burger from "@/_components/Burger";
 import Button from "@/_components/Button";
+import NavigationProps from "@/_components/Header/Navigation/Navigation.interface";
 import ArrowIcon from "@/_components/Icons/Arrow";
-import ListWithLinks from "@/_components/ListWithLinks";
 import Search from "@/_components/Search";
 import navigationData from "@/_data/navigation/navigation.json";
 
-const Navigation = () => {
-  const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+const Navigation = ({ isCatalogOpen, setIsCatalogOpen }: NavigationProps) => {
   const handleCatalogClick = () => {
-    setIsCatalogOpen(!isCatalogOpen);
+    if (setIsCatalogOpen) {
+      setIsCatalogOpen(!isCatalogOpen);
+    }
   };
   return (
     <div className={styles.root}>
@@ -38,8 +38,8 @@ const Navigation = () => {
             menuData={navigationData}
             listClassname={styles.navList}
             itemClassnames={{
-              rootClassname: styles.listItem,
-              linkClassname: styles.itemLink,
+              root: styles.listItem,
+              link: styles.itemLink,
             }}
             showArrow
             arrowProps={{ secondary: true }}

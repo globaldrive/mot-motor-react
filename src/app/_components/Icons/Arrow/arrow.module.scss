@@ -2,7 +2,7 @@
 
 .svg {
   position: relative;
-  transition: transform $transitionSet;
+  transition: transform $transitionSet, color $transitionSet, opacity $transitionSet;
   &.flip {
     transform: rotate(-180deg);
   }

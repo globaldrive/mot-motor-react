@@ -4,7 +4,8 @@
     "title": "Спец предложение",
     "route": "/spec-predlojenie",
     "svg": "/fire.svg",
-    "content": []
+    "content": [
+    ]
   },
   {
     "id": 2,
@@ -13,14 +14,32 @@
     "svg": "/supBoy.svg",
     "content": [
       {
-        "id": 20,
+        "id": 10,
         "title": "Маломощные лодочные моторы",
         "route": "/malamoshnie-lodochnie-motori"
       },
       {
-        "id": 21,
+        "id": 11,
         "title": "Лодочный моторы Alfa",
         "route": "/lodochnie-motori-alfa"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Лодки ПВХ",
+    "route": "lodka-pvh",
+    "svg": "/supBoy.svg",
+    "content": [
+      {
+        "id": 30,
+        "title": "Супер Лодка ПВХ",
+        "route": "/super-lodka-pvh"
+      },
+      {
+        "id": 31,
+        "title": "Супер лодка ПВХ Admiral",
+        "route": "/super-lodka-pvh-admiral"
       }
     ]
   }

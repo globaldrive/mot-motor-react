@@ -1,19 +1,23 @@
-import { Key } from "react";
+import { Dispatch } from "react";
 
 interface listItemClassname {
-  rootClassname?: string;
-  linkClassname?: string;
-  textClassname?: string;
-  imgClassname?: string;
+  root?: string;
+  link?: string;
+  text?: string;
+  img?: string;
+  activeItem?: string;
 }
 
 interface ListItemLinkProps extends React.LiHTMLAttributes<HTMLLIElement> {
+  isActive?: boolean;
+  activeItemInx?: number;
+  setActiveInx?: Dispatch<number | undefined>;
   href: string;
   itemText?: string;
   svgSrc?: string;
   showSvg?: boolean;
-  key: Key | null | undefined;
   customClassnames?: listItemClassname;
+  itemInx?: number;
 }
 
 export type { listItemClassname, ListItemLinkProps };
