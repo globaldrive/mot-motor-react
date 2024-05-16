@@ -40,6 +40,7 @@ const PopupCatalog = ({
         <PopupCatalogResults
           resultsData={catalogData}
           activeResultInx={menuItemActive}
+          setActiveResultInx={setMenuItemActive}
         />
       </div>
     </div>

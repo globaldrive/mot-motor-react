@@ -1,4 +1,4 @@
-@import "../../../_assets/styles/variables/index";
+@import "@/_assets/styles/variables";
 
 .categoryWrapper {
   min-width: 312px;
@@ -9,12 +9,17 @@
   &.withContent {
     border-bottom-right-radius: 0;
   }
+  @media(max-width: $mediaMobile) {
+    width: 100%;
+  }
 }
 
 .categoryList {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-weight: 500;
+  line-height: 1.9rem;
 }
 
 .itemLink {
@@ -43,5 +48,5 @@
 }
 
 .simpleBar {
-  max-height: $popupCatalogMenuDesktop;
+  max-height: $simpleBarCatalogPopupHeight;
 }

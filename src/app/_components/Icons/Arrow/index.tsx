@@ -6,6 +6,7 @@ import ArrowIconProps from "@/_components/Icons/Arrow/Arrow.interface";
 const ArrowIcon = ({
   flip,
   right,
+  left,
   main,
   secondary,
   customClassname,
@@ -15,6 +16,7 @@ const ArrowIcon = ({
     [styles.main]: main,
     [styles.secondary]: secondary,
     [styles.right]: right,
+    [styles.left]: left,
   });
 
   return (

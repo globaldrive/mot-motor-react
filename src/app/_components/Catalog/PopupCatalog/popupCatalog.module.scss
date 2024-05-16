@@ -1,3 +1,5 @@
+@import "@/_assets/styles/variables";
+
 .popupMenu {
   position: relative;
   &.hideCatalogMenu {
@@ -5,6 +7,9 @@
   }
   &.showCatalogMenu {
     display: block;
+  }
+  @media(max-width: $mediaMobile) {
+    border-top: 2px solid $primaryText;
   }
 }
 
