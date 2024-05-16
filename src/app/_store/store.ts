@@ -6,8 +6,8 @@ import UserDetailsReducer from "./slices/UserDetails";
 
 export const store = configureStore({
   reducer: {
-    userDetails: UserDetailsReducer
-  }
+    userDetails: UserDetailsReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

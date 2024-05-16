@@ -1,4 +1,3 @@
-
 "use client";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -6,7 +5,9 @@ import { useEffect } from "react";
 import RoutesPaths from "@/types/enums/routes";
 
 interface ErrorPageProps {
-  error: Error & { digest?: string };
+  error: Error & {
+    digest?: string;
+  };
 }
 
 const ErrorPage = ({ error }: ErrorPageProps) => {
