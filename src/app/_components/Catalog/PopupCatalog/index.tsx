@@ -27,7 +27,6 @@ const PopupCatalog = ({
   const onMouseLeavePopupMenu = () => {
     setMenuItemActive(undefined);
   };
-  const isHoveredMenuItem = menuItemActive !== undefined;
   return (
     <div className={popupMenuClassname} onMouseLeave={onMouseLeavePopupMenu}>
       <div className={menuWrapperClassname}>
@@ -38,12 +37,10 @@ const PopupCatalog = ({
           activeMenuIdx={menuItemActive}
           setActiveMenuInx={setMenuItemActive}
         />
-        {isHoveredMenuItem && (
-          <PopupCatalogResults
-            resultsData={catalogData}
-            activeResultInx={menuItemActive}
-          />
-        )}
+        <PopupCatalogResults
+          resultsData={catalogData}
+          activeResultInx={menuItemActive}
+        />
       </div>
     </div>
   );

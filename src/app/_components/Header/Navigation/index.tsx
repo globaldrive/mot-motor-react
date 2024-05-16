@@ -30,7 +30,11 @@ const Navigation = ({ isCatalogOpen, setIsCatalogOpen }: NavigationProps) => {
               <Burger catalog isBurgerOpen={isCatalogOpen} />
             </div>
             <span className={styles.catalogBtnText}>Каталог</span>
-            <ArrowIcon secondary customClassname={styles.catalogBtnArrow} />
+            <ArrowIcon
+              secondary
+              customClassname={styles.catalogBtnArrow}
+              flip={isCatalogOpen}
+            />
           </Button>
         </div>
         <nav className={styles.navigation}>

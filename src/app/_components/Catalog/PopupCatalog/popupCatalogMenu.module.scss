@@ -6,6 +6,9 @@
   background-color: $light;
   border-bottom-left-radius: $borderRadiusSmall;
   border-bottom-right-radius: $borderRadiusSmall;
+  &.withContent {
+    border-bottom-right-radius: 0;
+  }
 }
 
 .categoryList {
@@ -37,4 +40,8 @@
 .itemText {
   margin-right: auto;
   transition: color $transitionSet;
+}
+
+.simpleBar {
+  max-height: $popupCatalogMenuDesktop;
 }
