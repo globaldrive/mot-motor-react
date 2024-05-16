@@ -1,0 +1,29 @@
+@import '@/_assets/styles/variables';
+
+.svg {
+  position: relative;
+  transition: transform $transitionSet, color $transitionSet, opacity $transitionSet;
+  &.main {
+    width: 1.1rem;
+    height: .7rem;
+    opacity: .3;
+  }
+  &.secondary {
+    color: $light;
+    width: 1.1rem;
+    height: .7rem;
+    @media(max-width: $mediaTablet) {
+      width: .8rem;
+      height: .5rem;
+    }
+  }
+  &.right {
+    transform: rotate(-90deg);
+  }
+  &.left {
+    transform: rotate(90deg);
+  }
+  &.flip {
+    transform: rotate(-180deg);
+  }
+}

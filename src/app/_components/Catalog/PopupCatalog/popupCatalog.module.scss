@@ -1,0 +1,24 @@
+@import "@/_assets/styles/variables";
+
+.popupMenu {
+  position: relative;
+  &.hideCatalogMenu {
+    display: none;
+  }
+  &.showCatalogMenu {
+    display: block;
+  }
+  @media(max-width: $mediaMobile) {
+    border-top: 2px solid $primaryText;
+  }
+}
+
+.catalogWrapper {
+  &.main {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,23 @@
+@import '@/_assets/styles/variables';
+
+.root {
+  background-color: $lightGray;
+  @media(max-width: $mediaMobile) {
+    display: none;
+  }
+}
+
+.content {
+  padding: .7rem .4rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.storeAboutText {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2rem;
+  opacity: .3;
+}

@@ -1,7 +1,27 @@
+"use client";
+import { useState } from "react";
+
+import PopupCatalog from "@/_components/Catalog/PopupCatalog";
+import GreetingsInfo from "@/_components/Header/GreetingsInfo";
+import Navigation from "@/_components/Header/Navigation";
+import UserInteraction from "@/_components/Header/UserInteraction";
+import popupCatalogData from "@/_data/catalogHeader/catalogHeader.json";
+
 const Header = () => {
+  const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   return (
     <header>
-      <div className={"container"}>Header</div>
+      <GreetingsInfo />
+      <UserInteraction />
+      <Navigation
+        isCatalogOpen={isCatalogOpen}
+        setIsCatalogOpen={setIsCatalogOpen}
+      />
+      <PopupCatalog
+        showCatalogMenu={isCatalogOpen}
+        catalogData={popupCatalogData}
+        main
+      />
     </header>
   );
 };

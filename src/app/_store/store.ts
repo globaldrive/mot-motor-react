@@ -2,8 +2,12 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 
+import UserDetailsReducer from "./slices/UserDetails";
+
 export const store = configureStore({
-  reducer: {}
+  reducer: {
+    userDetails: UserDetailsReducer
+  }
 });
 
 export type RootState = ReturnType<typeof store.getState>;

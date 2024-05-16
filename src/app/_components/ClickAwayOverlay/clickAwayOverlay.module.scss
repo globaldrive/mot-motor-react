@@ -1,0 +1,10 @@
+@import '@/_assets/styles/variables';
+
+.overlay {
+  position: absolute;
+  background-color: $primaryText;
+  opacity: .3;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
