@@ -15,6 +15,7 @@ const ListItemLink = ({
   activeItemInx,
   setActiveInx,
   itemInx,
+  onItemClick,
 }: ListItemLinkProps) => {
   const handleItemMouseEnter = () => {
     if (setActiveInx) {
@@ -32,9 +33,21 @@ const ListItemLink = ({
   const textClassname = classNames(styles.text, customClassnames?.text);
   const imgClassname = classNames(styles.img, customClassnames?.img);
 
+  const handleItemClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    if (onItemClick) {
+      onItemClick(e);
+    }
+  };
+
   return (
     <li className={rootClassname} onMouseEnter={handleItemMouseEnter}>
-      <Link className={linkClassname} href={href}>
+      <Link
+        className={linkClassname}
+        href={href}
+        onClick={e => handleItemClick(e)}
+      >
         {svgSrc && showSvg && (
           <Image
             className={imgClassname}

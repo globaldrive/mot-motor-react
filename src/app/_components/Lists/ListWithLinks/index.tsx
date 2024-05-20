@@ -11,6 +11,7 @@ const ListWithLinks = ({
   arrowProps,
   activeListItemInx,
   setIsActiveListItemInx,
+  onItemClick,
 }: ListWithLinksProps) => {
   return (
     <ul className={listClassname}>
@@ -27,6 +28,7 @@ const ListWithLinks = ({
               itemInx={index}
               activeItemInx={activeListItemInx}
               setActiveInx={setIsActiveListItemInx}
+              onItemClick={onItemClick}
             >
               {showArrow && item.content && item.content?.length > 0 && (
                 <ArrowIcon

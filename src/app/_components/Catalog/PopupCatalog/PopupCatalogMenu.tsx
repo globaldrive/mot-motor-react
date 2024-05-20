@@ -23,6 +23,14 @@ const PopupCatalogMenu = ({
     styles.categoryWrapper,
     isSomethingInResults && styles.withContent,
   );
+  const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints;
+  const onMenuItemClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    if (isTouchDevice) {
+      e.preventDefault();
+    }
+  };
   return (
     <div className={wrapperClassname}>
       <SimpleBar className={styles.simpleBar}>
@@ -44,6 +52,7 @@ const PopupCatalogMenu = ({
             right: true,
             customClassname: styles.arrowCategoryMenu,
           }}
+          onItemClick={onMenuItemClick}
         />
       </SimpleBar>
     </div>

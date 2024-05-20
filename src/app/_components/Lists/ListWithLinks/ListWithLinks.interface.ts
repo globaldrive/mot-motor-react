@@ -13,6 +13,7 @@ interface ListWithLinksProps extends React.HTMLAttributes<HTMLUListElement> {
   arrowProps?: ArrowIconProps;
   activeListItemInx?: number;
   setIsActiveListItemInx?: Dispatch<number | undefined>;
+  onItemClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
 
 export default ListWithLinksProps;

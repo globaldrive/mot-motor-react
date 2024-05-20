@@ -18,6 +18,7 @@ interface ListItemLinkProps extends React.LiHTMLAttributes<HTMLLIElement> {
   showSvg?: boolean;
   customClassnames?: listItemClassname;
   itemInx?: number;
+  onItemClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
 
 export type { listItemClassname, ListItemLinkProps };
