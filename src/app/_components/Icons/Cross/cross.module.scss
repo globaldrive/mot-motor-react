@@ -1,0 +1,27 @@
+
+.cross {
+  path {
+    //@extend .transition;
+  }
+  cursor: pointer;
+  &:hover {
+    //stroke: var(--accent-hover-color);
+    path {
+      //stroke: var(--accent-hover-color);
+    }
+  }
+}
+
+.crossPosition {
+  position: absolute;
+  top: 52px;
+  right: 40px;
+  @media(max-width: 800px) {
+    top: 30px;
+    right: 20px;
+  }
+  @media(max-width: 500px) {
+    top: 14px;
+    right: 10px;
+  }
+}

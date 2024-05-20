@@ -1,0 +1,46 @@
+@import "@/_assets/styles/variables";
+
+.root {
+  &.callback {
+    background-color: $light;
+    border-radius: $borderRadiusMedium;
+    padding: 50px 55px;
+  }
+}
+
+.modal {
+  &.callback {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.titleWrapper {
+  &.callback {
+    display: flex;
+    margin-bottom: 25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.title {
+  margin: 0;
+  &.callback {
+    margin-bottom: 10px;
+  }
+}
+
+.subtitle {
+  margin: 0;
+  &.callback {
+  }
+}
+
+.form {
+  &.callback {
+    display: flex;
+    flex-direction: column;
+  }
+}

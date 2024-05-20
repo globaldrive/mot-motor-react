@@ -23,7 +23,10 @@ const PopupCatalogMenu = ({
     styles.categoryWrapper,
     isSomethingInResults && styles.withContent,
   );
-  const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints;
+  const isTouchDevice =
+    typeof window !== "undefined" &&
+    ("ontouchstart" in window || navigator.maxTouchPoints);
+
   const onMenuItemClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => {

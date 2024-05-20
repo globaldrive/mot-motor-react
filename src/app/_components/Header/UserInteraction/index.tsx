@@ -3,6 +3,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import LogoPng from "@/_assets/images/general/logo.png";
 import Basket from "@/_components/Basket";
@@ -12,15 +13,29 @@ import CityPicker from "@/_components/CityPicker";
 import Communication from "@/_components/Communication";
 import styles from "@/_components/Header/UserInteraction/userInteraction.module.scss";
 import ArrowIcon from "@/_components/Icons/Arrow";
+import ModalOverlay from "@/_components/ModalOverlay";
+import ModalPortal from "@/_components/ModalPortal";
+import ModalWindows from "@/_components/ModalWindows";
 import Search from "@/_components/Search";
 import communicationDetails from "@/_data/communication/communication.json";
+import { toggleModalOverlay } from "@/_store/slices/ModalOverlay";
+import { RootState } from "@/_store/store";
 import RoutesPaths from "@/types/enums/routes";
 
 const UserInteraction = () => {
+  const dispatch = useDispatch();
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const handleBurgerClick = () => {
     setIsBurgerOpen(!isBurgerOpen);
   };
+  const handleCallBackBtnClick = () => {
+    dispatch(toggleModalOverlay());
+  };
+
+  const { isModalOverlayOpen } = useSelector(
+    (state: RootState) => state.modalOverlay,
+  );
+
   return (
     <div className={classNames(styles.root, "container")}>
       <div className={styles.logoMobileWrapper}>
@@ -73,9 +88,16 @@ const UserInteraction = () => {
           />
         </div>
       </div>
-      <div className={styles.callBackBtn}>
+      <div className={styles.callBackBtn} onClick={handleCallBackBtnClick}>
         <Button secondary>Бесплатный звонок</Button>
       </div>
+      {isModalOverlayOpen && (
+        <ModalPortal>
+          <ModalOverlay>
+            <ModalWindows callback />
+          </ModalOverlay>
+        </ModalPortal>
+      )}
       <Basket />
       <Burger
         mobile
