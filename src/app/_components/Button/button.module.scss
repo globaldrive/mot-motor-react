@@ -9,6 +9,23 @@
   background-color: transparent;
   cursor: pointer;
   user-select: none;
+  &.main {
+    padding: 20px 10px;
+    background-color: $mainColor;
+    border: none;
+    border-radius: $borderRadiusSmall;
+    color: $light;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.9rem;
+    transition: background-color $transitionSet;
+    &:hover {
+      background-color: $mainColorHover;
+    }
+    &:active {
+      background-color: $mainColorActive;
+    }
+  }
   &.secondary {
     padding: 1.4rem 1.8rem;
     border: 1.5px solid $mainColor;

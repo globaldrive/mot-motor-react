@@ -1,27 +1,27 @@
+@import "@/_assets/styles/variables";
 
 .cross {
-  path {
-    //@extend .transition;
-  }
   cursor: pointer;
+  transition: transform $transitionSet;
   &:hover {
-    //stroke: var(--accent-hover-color);
-    path {
-      //stroke: var(--accent-hover-color);
+    transform: rotate(45deg);
+  }
+  &.main {
+    @media(max-width: $mediaMobile) {
+      width: 14px;
+      height: 14px;
     }
   }
 }
 
 .crossPosition {
-  position: absolute;
-  top: 52px;
-  right: 40px;
-  @media(max-width: 800px) {
-    top: 30px;
+  &.main {
+    position: absolute;
+    top: 20px;
     right: 20px;
-  }
-  @media(max-width: 500px) {
-    top: 14px;
-    right: 10px;
+    @media(max-width: $mediaMobile) {
+      top: 10px;
+      right: 10px;
+    }
   }
 }

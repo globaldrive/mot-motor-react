@@ -8,10 +8,12 @@ const Button = ({
   onClick,
   onMouseEnter,
   onMouseLeave,
+  main,
   secondary,
   catalog,
 }: ButtonProps) => {
   const buttonClassname = classNames(styles.root, {
+    [styles.main]: main,
     [styles.secondary]: secondary,
     [styles.catalog]: catalog,
   });

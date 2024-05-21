@@ -34,7 +34,7 @@ const ModalOverlay = ({ children }: ModalOverlayProps) => {
       {isModalOverlayOpen && (
         <div className={styles.overlay} onClick={handleOverlayClick}>
           <div className={classNames(styles.popup)}>
-            {children} <CrossSvg onClick={handleCrossClick} />
+            {children} <CrossSvg main onClick={handleCrossClick} />
           </div>
         </div>
       )}

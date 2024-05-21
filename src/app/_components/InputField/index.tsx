@@ -1,3 +1,6 @@
+import classNames from "classnames";
+
+import styles from "./inputField.module.scss";
 import InputFieldProps from "@/_components/InputField/InputField.interface";
 
 const InputField = ({
@@ -9,12 +12,20 @@ const InputField = ({
   consentText,
   onCheckboxChange,
   title,
+  main,
 }: InputFieldProps) => {
+  const inputClassname = classNames(styles.input, {
+    [styles.main]: main,
+  });
+  const titleClassname = classNames(styles.title, {
+    [styles.main]: main,
+  });
   return (
     <div>
-      {title && <div>{title}</div>}
+      {title && <div className={titleClassname}>{title}</div>}
       {type !== "checkbox" && (
         <input
+          className={inputClassname}
           type={type}
           placeholder={placeholder}
           value={value}
@@ -22,7 +33,7 @@ const InputField = ({
         />
       )}
       {type === "checkbox" && (
-        <label>
+        <label className={styles.checkboxLabel}>
           <input
             type="checkbox"
             checked={checked}

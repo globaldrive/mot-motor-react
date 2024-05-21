@@ -13,8 +13,6 @@ import CityPicker from "@/_components/CityPicker";
 import Communication from "@/_components/Communication";
 import styles from "@/_components/Header/UserInteraction/userInteraction.module.scss";
 import ArrowIcon from "@/_components/Icons/Arrow";
-import ModalOverlay from "@/_components/ModalOverlay";
-import ModalPortal from "@/_components/ModalPortal";
 import ModalWindows from "@/_components/ModalWindows";
 import Search from "@/_components/Search";
 import communicationDetails from "@/_data/communication/communication.json";
@@ -91,13 +89,7 @@ const UserInteraction = () => {
       <div className={styles.callBackBtn} onClick={handleCallBackBtnClick}>
         <Button secondary>Бесплатный звонок</Button>
       </div>
-      {isModalOverlayOpen && (
-        <ModalPortal>
-          <ModalOverlay>
-            <ModalWindows callback />
-          </ModalOverlay>
-        </ModalPortal>
-      )}
+      {isModalOverlayOpen && <ModalWindows callback />}
       <Basket />
       <Burger
         mobile

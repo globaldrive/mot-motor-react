@@ -1,15 +1,15 @@
 import classNames from "classnames";
 
 import styles from "./cross.module.scss";
+import CrossSvgProps from "@/_components/Icons/Cross/CrossSvgProps.interface";
 
-interface CrossSvgProps {
-  onClick: () => void;
-}
-
-const CrossSvg = ({ onClick }: CrossSvgProps) => {
+const CrossSvg = ({ onClick, main }: CrossSvgProps) => {
+  const crossClassname = classNames(styles.cross, styles.crossPosition, {
+    [styles.main]: main,
+  });
   return (
     <svg
-      className={classNames(styles.cross, styles.crossPosition)}
+      className={crossClassname}
       onClick={onClick}
       width="28"
       height="28"
