@@ -11,11 +11,13 @@ const Button = ({
   main,
   secondary,
   catalog,
+  catalogBurgerMenu,
 }: ButtonProps) => {
   const buttonClassname = classNames(styles.root, {
     [styles.main]: main,
     [styles.secondary]: secondary,
     [styles.catalog]: catalog,
+    [styles.catalogBurgerMenu]: catalogBurgerMenu,
   });
   return (
     <button

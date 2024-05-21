@@ -16,6 +16,7 @@ import ArrowIcon from "@/_components/Icons/Arrow";
 import ModalWindows from "@/_components/ModalWindows";
 import Search from "@/_components/Search";
 import communicationDetails from "@/_data/communication/communication.json";
+import { toggleBurgerMenu } from "@/_store/slices/BurgerMenu";
 import { toggleModalOverlay } from "@/_store/slices/ModalOverlay";
 import { RootState } from "@/_store/store";
 import RoutesPaths from "@/types/enums/routes";
@@ -25,6 +26,7 @@ const UserInteraction = () => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const handleBurgerClick = () => {
     setIsBurgerOpen(!isBurgerOpen);
+    dispatch(toggleBurgerMenu());
   };
   const handleCallBackBtnClick = () => {
     dispatch(toggleModalOverlay());

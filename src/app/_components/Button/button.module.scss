@@ -55,4 +55,11 @@
       justify-content: center;
     }
   }
+  &.catalogBurgerMenu {
+    padding: 15px 20px;
+    background-color: $mainColor;
+    color: $light;
+    border: none;
+    justify-content: start;
+  }
 }

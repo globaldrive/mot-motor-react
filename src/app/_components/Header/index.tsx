@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 
+import BurgerMenu from "@/_components/BurgerMenu";
 import PopupCatalog from "@/_components/Catalog/PopupCatalog";
 import GreetingsInfo from "@/_components/Header/GreetingsInfo";
 import Navigation from "@/_components/Header/Navigation";
@@ -22,6 +23,7 @@ const Header = () => {
         catalogData={popupCatalogData}
         main
       />
+      <BurgerMenu />
     </header>
   );
 };
