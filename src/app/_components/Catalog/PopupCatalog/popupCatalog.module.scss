@@ -2,6 +2,7 @@
 
 .popupMenu {
   position: relative;
+  z-index: 2;
   &.hideCatalogMenu {
     display: none;
   }
@@ -9,7 +10,7 @@
     display: block;
   }
   @media(max-width: $mediaMobile) {
-    border-top: 2px solid $primaryText;
+    border-top: 2px solid $inputAreaColor;
   }
 }
 

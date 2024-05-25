@@ -3,6 +3,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import BurgerMenuReducer from "./slices/BurgerMenu";
+import CatalogPopupReducer from "./slices/Catalogs";
 import ModalOverlayReducer from "./slices/ModalOverlay";
 import UserDetailsReducer from "./slices/UserDetails";
 
@@ -11,6 +12,7 @@ export const store = configureStore({
     userDetails: UserDetailsReducer,
     modalOverlay: ModalOverlayReducer,
     burgerMenu: BurgerMenuReducer,
+    catalogPopup: CatalogPopupReducer,
   },
 });
 

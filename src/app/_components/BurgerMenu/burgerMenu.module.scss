@@ -1,14 +1,15 @@
 @import "@/_assets/styles/variables";
 
 .root {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  transition: transform $transitionSet;
-  //transform: translateX(-1000px);
-  &.showBurgerMenu {
-    transform: translateX(0);
+  display: none;
+  @media(max-width: $mediaMobile) {
+    &.showBurgerMenu {
+      display: block;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+    }
   }
 }
 
@@ -36,4 +37,84 @@
   font-weight: 700;
   line-height: 1.9rem;
   font-size: 1.6rem;
+}
+
+.simpleBar {
+  max-height: 400px;
+}
+
+.navWrapper {
+  padding: 35px 0;
+  margin-bottom: 35px;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemLink {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  user-select: none;
+}
+
+.availabilityWrapper {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.communicationWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phoneWrapper {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+  align-items: center;
+}
+
+.phoneNumber {
+  margin-right: .6rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  text-decoration: none;
+  color: $primaryText;
+}
+
+.weAreOnline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.outsideRing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: .8rem;
+  height: .8rem;
+  background-color: $secondaryGreen;
+  border-radius: 50%;
+}
+
+.insideRing {
+  width: .4rem;
+  height: .4rem;
+  background-color: $green;
+  border-radius: 50%;
+}
+
+.weOnlineText {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  user-select: none;
+  white-space: nowrap;
 }

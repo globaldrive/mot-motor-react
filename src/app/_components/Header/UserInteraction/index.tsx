@@ -2,7 +2,6 @@
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import LogoPng from "@/_assets/images/general/logo.png";
@@ -23,9 +22,10 @@ import RoutesPaths from "@/types/enums/routes";
 
 const UserInteraction = () => {
   const dispatch = useDispatch();
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+  const isBurgerOpen = useSelector(
+    (state: RootState) => state.burgerMenu.isBurgerMenuOpen,
+  );
   const handleBurgerClick = () => {
-    setIsBurgerOpen(!isBurgerOpen);
     dispatch(toggleBurgerMenu());
   };
   const handleCallBackBtnClick = () => {

@@ -1,17 +1,18 @@
 "use client";
 import classNames from "classnames";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import styles from "./popupCatalog.module.scss";
 import PopupCatalogProps from "@/_components/Catalog/PopupCatalog/PopupCatalog.interface";
 import PopupCatalogMenu from "@/_components/Catalog/PopupCatalog/PopupCatalogMenu";
 import PopupCatalogResults from "@/_components/Catalog/PopupCatalog/PopupCatalogResults";
+import { RootState } from "@/_store/store";
 
-const PopupCatalog = ({
-  catalogData,
-  main,
-  showCatalogMenu,
-}: PopupCatalogProps) => {
+const PopupCatalog = ({ catalogData, main }: PopupCatalogProps) => {
+  const showCatalogMenu = useSelector(
+    (state: RootState) => state.catalogPopup.isCatalogPopupOpen,
+  );
   const [menuItemActive, setMenuItemActive] = useState<number | undefined>(
     undefined,
   );
