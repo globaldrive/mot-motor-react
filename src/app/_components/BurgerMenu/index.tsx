@@ -9,6 +9,7 @@ import Burger from "@/_components/Burger";
 import Button from "@/_components/Button";
 import Communication from "@/_components/Communication";
 import ArrowIcon from "@/_components/Icons/Arrow";
+import ListItemLink from "@/_components/Lists/ListWithLinks/ListItemLink";
 import communicationDetails from "@/_data/communication/communication.json";
 import navigationData from "@/_data/navigation/navigation.json";
 import useScrollControl from "@/_hooks/useScrollControl";
@@ -18,6 +19,7 @@ import { toggleModalOverlay } from "@/_store/slices/ModalOverlay";
 import { RootState } from "@/_store/store";
 
 const BurgerMenu = () => {
+  const [showResults, setShowResults] = useState(false);
   const dispatch = useDispatch();
   const [activeTab, setActiveTab] = useState<number | null>(null);
   const showBurgerMenu = useSelector(
@@ -32,6 +34,10 @@ const BurgerMenu = () => {
   const handleCallBackBtnClick = () => {
     dispatch(toggleBurgerMenu());
     dispatch(toggleModalOverlay());
+  };
+
+  const handleBackResultBtn = () => {
+    setShowResults(false);
   };
 
   return (
@@ -65,6 +71,7 @@ const BurgerMenu = () => {
                 ) => {
                   if (item.content && item.content.length > 0) {
                     e.preventDefault();
+                    setShowResults(true);
                     setActiveTab(activeTab);
                   } else {
                   }
@@ -81,26 +88,6 @@ const BurgerMenu = () => {
                         <ArrowIcon main right />
                       )}
                     </Link>
-                    {/*{item.content && item.content.length > 0 && (*/}
-                    {/*  <div className={classNames(styles.itemResult)}>*/}
-                    {/*    <ul className={styles.resultsList}>*/}
-                    {/*      {item.content.map(result => {*/}
-                    {/*        return (*/}
-                    {/*          <ListItemLink*/}
-                    {/*            key={result.id}*/}
-                    {/*            href={result.route}*/}
-                    {/*            itemText={result.title}*/}
-                    {/*            customClassnames={{*/}
-                    {/*              root: styles.resultItem,*/}
-                    {/*              link: styles.resultLink,*/}
-                    {/*              text: styles.resultText,*/}
-                    {/*            }}*/}
-                    {/*          />*/}
-                    {/*        );*/}
-                    {/*      })}*/}
-                    {/*    </ul>*/}
-                    {/*  </div>*/}
-                    {/*)}*/}
                   </li>
                 );
               })}
@@ -138,6 +125,44 @@ const BurgerMenu = () => {
             <Button secondary>Бесплатный звонок</Button>
           </div>
         </div>
+        {showResults && (
+          <div className={styles.navResults}>
+            {navigationData.map(item => {
+              const isActiveItem = item.id === activeTab;
+              return (
+                <>
+                  {isActiveItem && (
+                    <div className={classNames(styles.itemResult)}>
+                      <div
+                        className={styles.resultBackBtn}
+                        onClick={handleBackResultBtn}
+                      >
+                        <ArrowIcon left main />
+                        <h3 className={styles.backBtnTitle}>{item.title}</h3>
+                      </div>
+                      <ul className={styles.resultsList}>
+                        {item.content.map(result => {
+                          return (
+                            <ListItemLink
+                              key={result.id}
+                              href={result.route}
+                              itemText={result.title}
+                              customClassnames={{
+                                root: styles.resultItem,
+                                link: styles.resultLink,
+                                text: styles.resultText,
+                              }}
+                            />
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                </>
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
