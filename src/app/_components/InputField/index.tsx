@@ -21,7 +21,7 @@ const InputField = ({
     [styles.main]: main,
   });
   return (
-    <div>
+    <>
       {title && <div className={titleClassname}>{title}</div>}
       {type !== "checkbox" && (
         <input
@@ -42,7 +42,7 @@ const InputField = ({
           {consentText}
         </label>
       )}
-    </div>
+    </>
   );
 };
 

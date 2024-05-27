@@ -9,6 +9,7 @@ import Basket from "@/_components/Basket";
 import Burger from "@/_components/Burger";
 import Button from "@/_components/Button";
 import CityPicker from "@/_components/CityPicker";
+import CitySearch from "@/_components/CityPicker/CitySearch";
 import Communication from "@/_components/Communication";
 import styles from "@/_components/Header/UserInteraction/userInteraction.module.scss";
 import ArrowIcon from "@/_components/Icons/Arrow";
@@ -16,7 +17,10 @@ import ModalWindows from "@/_components/ModalWindows";
 import Search from "@/_components/Search";
 import communicationDetails from "@/_data/communication/communication.json";
 import { toggleBurgerMenu } from "@/_store/slices/BurgerMenu";
-import { toggleModalOverlay } from "@/_store/slices/ModalOverlay";
+import {
+  toggleCallbackWindow,
+  toggleModalOverlay,
+} from "@/_store/slices/ModalWindows";
 import { RootState } from "@/_store/store";
 import RoutesPaths from "@/types/enums/routes";
 
@@ -25,15 +29,20 @@ const UserInteraction = () => {
   const isBurgerOpen = useSelector(
     (state: RootState) => state.burgerMenu.isBurgerMenuOpen,
   );
+  const showCityModal = useSelector(
+    (state: RootState) => state.modalWindows.showCitySearch,
+  );
+
   const handleBurgerClick = () => {
     dispatch(toggleBurgerMenu());
   };
   const handleCallBackBtnClick = () => {
     dispatch(toggleModalOverlay());
+    dispatch(toggleCallbackWindow());
   };
 
-  const { isModalOverlayOpen } = useSelector(
-    (state: RootState) => state.modalOverlay,
+  const { showCallback } = useSelector(
+    (state: RootState) => state.modalWindows,
   );
 
   return (
@@ -91,7 +100,8 @@ const UserInteraction = () => {
       <div className={styles.callBackBtn} onClick={handleCallBackBtnClick}>
         <Button secondary>Бесплатный звонок</Button>
       </div>
-      {isModalOverlayOpen && <ModalWindows callback />}
+      {showCallback && <ModalWindows callback />}
+      {showCityModal && <CitySearch />}
       <Basket />
       <Burger
         mobile

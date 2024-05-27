@@ -4,13 +4,13 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import BurgerMenuReducer from "./slices/BurgerMenu";
 import CatalogPopupReducer from "./slices/Catalogs";
-import ModalOverlayReducer from "./slices/ModalOverlay";
+import ModalWindowsReducer from "./slices/ModalWindows";
 import UserDetailsReducer from "./slices/UserDetails";
 
 export const store = configureStore({
   reducer: {
     userDetails: UserDetailsReducer,
-    modalOverlay: ModalOverlayReducer,
+    modalWindows: ModalWindowsReducer,
     burgerMenu: BurgerMenuReducer,
     catalogPopup: CatalogPopupReducer,
   },

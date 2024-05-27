@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import styles from "./modalWindows.module.scss";
+import { toggleModalOverlay } from "../../_store/slices/ModalWindows";
 import Button from "@/_components/Button";
 import InputField from "@/_components/InputField";
 import ModalOverlay from "@/_components/ModalOverlay";
 import ModalPortal from "@/_components/ModalPortal";
 import ModalWindowsProps from "@/_components/ModalWindows/ModalWindows.interface";
-import { toggleModalOverlay } from "@/_store/slices/ModalOverlay";
 
 const ModalWindows = ({ callback }: ModalWindowsProps) => {
   const dynamicClassname = { [styles.callback]: callback };

@@ -1,22 +1,26 @@
 "use client";
 import classNames from "classnames";
 import Image from "next/image";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./cityPicker.module.scss";
 import locationSvg from "@/_assets/images/general/location.svg";
 import CityPickerProps from "@/_components/CityPicker/CityPicker.interface";
 import ArrowIcon from "@/_components/Icons/Arrow";
+import {
+  toggleCityWindow,
+  toggleModalOverlay,
+} from "@/_store/slices/ModalWindows";
 import { RootState } from "@/_store/store";
 
 const CityPicker = ({ className }: CityPickerProps) => {
+  const dispatch = useDispatch();
   const userCity = useSelector((state: RootState) => state.userDetails.city);
-  const [isClicked, setIsClicked] = useState(false);
   const rootClassname = classNames(styles.root, className && className);
 
   const handleBtnClick = () => {
-    setIsClicked(!isClicked);
+    dispatch(toggleModalOverlay());
+    dispatch(toggleCityWindow());
   };
 
   return (
@@ -29,7 +33,7 @@ const CityPicker = ({ className }: CityPickerProps) => {
         height={20}
       />
       <div className={styles.text}>{userCity}</div>
-      <ArrowIcon main flip={isClicked} />
+      <ArrowIcon main />
     </button>
   );
 };

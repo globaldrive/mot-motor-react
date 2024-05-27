@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SimpleBar from "simplebar-react";
 
 import styles from "./burgerMenu.module.scss";
+import { toggleModalOverlay } from "../../_store/slices/ModalWindows";
 import Burger from "@/_components/Burger";
 import Button from "@/_components/Button";
 import Communication from "@/_components/Communication";
@@ -15,7 +16,6 @@ import navigationData from "@/_data/navigation/navigation.json";
 import useScrollControl from "@/_hooks/useScrollControl";
 import { toggleBurgerMenu } from "@/_store/slices/BurgerMenu";
 import { toggleCatalogPopup } from "@/_store/slices/Catalogs";
-import { toggleModalOverlay } from "@/_store/slices/ModalOverlay";
 import { RootState } from "@/_store/store";
 
 const BurgerMenu = () => {
