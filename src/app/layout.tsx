@@ -25,6 +25,7 @@ export default function RootLayout({
         <body className={fontsNextClassname}>
           <Header />
           {children}
+          <div id="modal-root"></div>
         </body>
       </Providers>
     </html>

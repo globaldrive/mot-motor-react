@@ -2,25 +2,49 @@
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import LogoPng from "@/_assets/images/general/logo.png";
 import Basket from "@/_components/Basket";
 import Burger from "@/_components/Burger";
 import Button from "@/_components/Button";
 import CityPicker from "@/_components/CityPicker";
+import CitySearch from "@/_components/CityPicker/CitySearch";
 import Communication from "@/_components/Communication";
 import styles from "@/_components/Header/UserInteraction/userInteraction.module.scss";
 import ArrowIcon from "@/_components/Icons/Arrow";
+import ModalWindows from "@/_components/ModalWindows";
 import Search from "@/_components/Search";
 import communicationDetails from "@/_data/communication/communication.json";
+import { toggleBurgerMenu } from "@/_store/slices/BurgerMenu";
+import {
+  toggleCallbackWindow,
+  toggleModalOverlay,
+} from "@/_store/slices/ModalWindows";
+import { RootState } from "@/_store/store";
 import RoutesPaths from "@/types/enums/routes";
 
 const UserInteraction = () => {
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+  const dispatch = useDispatch();
+  const isBurgerOpen = useSelector(
+    (state: RootState) => state.burgerMenu.isBurgerMenuOpen,
+  );
+  const showCityModal = useSelector(
+    (state: RootState) => state.modalWindows.showCitySearch,
+  );
+
   const handleBurgerClick = () => {
-    setIsBurgerOpen(!isBurgerOpen);
+    dispatch(toggleBurgerMenu());
   };
+  const handleCallBackBtnClick = () => {
+    dispatch(toggleModalOverlay());
+    dispatch(toggleCallbackWindow());
+  };
+
+  const { showCallback } = useSelector(
+    (state: RootState) => state.modalWindows,
+  );
+
   return (
     <div className={classNames(styles.root, "container")}>
       <div className={styles.logoMobileWrapper}>
@@ -73,9 +97,11 @@ const UserInteraction = () => {
           />
         </div>
       </div>
-      <div className={styles.callBackBtn}>
+      <div className={styles.callBackBtn} onClick={handleCallBackBtnClick}>
         <Button secondary>Бесплатный звонок</Button>
       </div>
+      {showCallback && <ModalWindows callback />}
+      {showCityModal && <CitySearch />}
       <Basket />
       <Burger
         mobile

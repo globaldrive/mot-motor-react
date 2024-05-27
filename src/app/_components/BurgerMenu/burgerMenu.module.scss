@@ -1,0 +1,159 @@
+@import "@/_assets/styles/variables";
+
+.root {
+  display: none;
+  @media(max-width: $mediaMobile) {
+    &.showBurgerMenu {
+      display: block;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+    }
+  }
+}
+
+.burgerMenu {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+  width: 82%;
+  background-color: $light;
+}
+
+.burgerWrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background-color: $light;
+  border-radius: 50%;
+}
+
+.catalogText {
+  margin-right: auto;
+  font-weight: 700;
+  line-height: 1.9rem;
+  font-size: 1.6rem;
+}
+
+.simpleBar {
+  max-height: 400px;
+}
+
+.navWrapper {
+  padding: 35px 0;
+  margin-bottom: 35px;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemLink {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  user-select: none;
+}
+
+.availabilityWrapper {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.communicationWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phoneWrapper {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+  align-items: center;
+}
+
+.phoneNumber {
+  margin-right: .6rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  text-decoration: none;
+  color: $primaryText;
+}
+
+.weAreOnline {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.outsideRing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: .8rem;
+  height: .8rem;
+  background-color: $secondaryGreen;
+  border-radius: 50%;
+}
+
+.insideRing {
+  width: .4rem;
+  height: .4rem;
+  background-color: $green;
+  border-radius: 50%;
+}
+
+.weOnlineText {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.navResults {
+  position: absolute;
+  padding: 0 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $light;
+  z-index: 1;
+}
+
+.resultBackBtn {
+  display: flex;
+  margin-bottom: 8px;
+  padding-top: 30px;
+  padding-bottom: 7px;
+  align-items: center;
+  gap: 16px;
+}
+
+.backBtnTitle {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.resultLink {
+  display: flex;
+  padding: 10px 0;
+}

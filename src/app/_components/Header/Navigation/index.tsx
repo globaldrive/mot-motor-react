@@ -1,17 +1,23 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./navigation.module.scss";
 import Burger from "@/_components/Burger";
 import Button from "@/_components/Button";
-import NavigationProps from "@/_components/Header/Navigation/Navigation.interface";
 import ArrowIcon from "@/_components/Icons/Arrow";
 import ListItemLink from "@/_components/Lists/ListWithLinks/ListItemLink";
 import Search from "@/_components/Search";
 import navigationData from "@/_data/navigation/navigation.json";
+import { toggleCatalogPopup } from "@/_store/slices/Catalogs";
+import { RootState } from "@/_store/store";
 
-const Navigation = ({ isCatalogOpen, setIsCatalogOpen }: NavigationProps) => {
+const Navigation = () => {
+  const isCatalogOpen = useSelector(
+    (state: RootState) => state.catalogPopup.isCatalogPopupOpen,
+  );
+  const dispatch = useDispatch();
   const [activeItem, setActiveItem] = useState<number | null>(null);
 
   const handleMouseEnter = (itemId: number) => {
@@ -23,9 +29,7 @@ const Navigation = ({ isCatalogOpen, setIsCatalogOpen }: NavigationProps) => {
   };
 
   const handleCatalogBtnClick = () => {
-    if (setIsCatalogOpen) {
-      setIsCatalogOpen(!isCatalogOpen);
-    }
+    dispatch(toggleCatalogPopup());
   };
   return (
     <div className={styles.root}>

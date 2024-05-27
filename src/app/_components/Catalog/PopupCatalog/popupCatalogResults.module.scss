@@ -30,8 +30,12 @@
     margin-bottom: 30px;
   }
   .resultTitle {
-    margin: 0;
-    margin-right: auto;
+    margin: 0 auto 0 0;
+    @media(max-width: $mediaMobile) {
+      font-size: 2rem;
+      line-height: 2.4rem;
+      font-weight: 700;
+    }
   }
   .arrowBack {
     margin-right: 15px;

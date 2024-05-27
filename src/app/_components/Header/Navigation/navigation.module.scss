@@ -123,6 +123,8 @@
     color: $primaryText;
     border-bottom-right-radius: $borderRadiusSmall;
     border-bottom-left-radius: $borderRadiusSmall;
+    border: 2px solid $mainColor;
+    border-top: none;
     z-index: 1;
   }
 }

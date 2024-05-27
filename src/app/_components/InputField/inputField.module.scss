@@ -1,0 +1,33 @@
+@import "@/_assets/styles/variables";
+
+.title {
+  user-select: none;
+  &.main {
+    margin-bottom: 12px;
+    line-height: 1.9rem;
+    @media(max-width: $mediaMobile) {
+      margin-bottom: 7px;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+  }
+}
+
+.input {
+  &.main {
+    display: flex;
+    padding: 18px 30px;
+    width: 100%;
+    background-color: $inputAreaColor;
+    border: none;
+    border-radius: $borderRadiusSmall;
+    outline: none;
+  }
+}
+
+.checkboxLabel {
+  display: flex;
+  max-width: 400px;
+  align-items: baseline;
+  gap: 14px;
+}
