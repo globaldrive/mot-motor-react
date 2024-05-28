@@ -1,0 +1,195 @@
+@import "@/_assets/styles/variables";
+
+.footer {
+  background-color: $lightGray;
+}
+
+.mainContent {
+  padding: 45px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.detailsInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.detailsTitle {
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+}
+
+.detailsSubtitle {
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+}
+
+.schedule {
+  margin-bottom: auto;
+}
+
+.navTitle {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  color: $mainColor;
+  user-select: none;
+}
+
+.navFooterList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.navLink {
+  display: flex;
+  transition: color $transitionSet;
+  user-select: none;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  white-space: nowrap;
+  &:hover {
+    color: $mainColorHover;
+  }
+}
+
+.additionalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.callbackSection {
+  display: flex;
+  gap: 20px;
+}
+
+.callbackWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.callbackTitle {
+  margin-bottom: 3px;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
+
+.callbackBtn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: $mainColor;
+  font-weight: 700;
+  line-height: 1.9rem;
+}
+
+.storePhoneTitle {
+  margin-bottom: 3px;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+}
+
+.storePhone {
+  font-weight: 700;
+  line-height: 1.9rem;
+  color: $mainColor;
+}
+
+.subscribeTitle {
+  font-weight: 700;
+  margin-bottom: 13px;
+  line-height: 1.9rem;
+}
+
+.subscribeForm {
+  display: flex;
+  position: relative;
+}
+
+.subscribeInput {
+  display: flex;
+  padding: 15.5px 0 15.5px 55px;
+  width: 100%;
+  border: 1px solid #DEDEDE;
+  border-radius: $borderRadiusSmall;
+  &:focus {
+    outline-color: $mainColor;
+  }
+}
+
+.subscriptionEmail {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.subscribeSentBtn {
+  position: absolute;
+  width: 66px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  right: 0;
+  background-color: $mainColor;
+  border-radius: $borderRadiusSmall;
+  cursor: pointer;
+}
+
+.seoBlockWrapper {
+  margin-bottom: 35px;
+}
+
+.seoInfoBtnsWrapper {
+  display: flex;
+  gap: 13px;
+}
+
+.seoInfoBtn {
+  display: flex;
+  padding: 10px 31px 10px 13px;
+  width: 100%;
+  align-items: center;
+  border: 1px solid #E9E9E9;
+  outline: none;
+  background-color: $light;
+  color: $mainColor;
+  line-height: 1.9rem;
+  font-weight: 700;
+}
+
+.seoBtnPic {
+  margin-right: 16px;
+}
+
+.seoBtnTitle {
+  display: inline-block;
+  margin-right: auto;
+}
+
+.bottomLine {
+  background-color: #F1F1F1;
+}
+
+.bottomLineContent {
+  padding: 30px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.7rem;
+}
