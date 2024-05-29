@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 
 import "@/_assets/styles/global.scss";
+import Footer from "@/_components/Footer";
 import Header from "@/_components/Header";
 import { Providers } from "@/_store/provider";
 
@@ -24,7 +25,8 @@ export default function RootLayout({
       <Providers>
         <body className={fontsNextClassname}>
           <Header />
-          {children}
+          <main style={{ backgroundColor: "gray" }}>{children}</main>
+          <Footer />
           <div id="modal-root"></div>
         </body>
       </Providers>
