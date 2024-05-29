@@ -4,7 +4,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import styles from "./modalWindows.module.scss";
-import { toggleModalOverlay } from "../../_store/slices/ModalWindows";
+import {
+  toggleCallbackWindow,
+  toggleModalOverlay,
+} from "../../_store/slices/ModalWindows";
 import Button from "@/_components/Button";
 import InputField from "@/_components/InputField";
 import ModalOverlay from "@/_components/ModalOverlay";
@@ -22,6 +25,7 @@ const ModalWindows = ({ callback }: ModalWindowsProps) => {
     e.preventDefault();
     console.log("Отправка формы:", { name, phone, consent });
     dispatch(toggleModalOverlay());
+    dispatch(toggleCallbackWindow());
   };
 
   return (
