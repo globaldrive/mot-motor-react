@@ -1,0 +1,100 @@
+@import "@/_assets/styles/variables";
+
+.mainBannerSection {
+  margin-bottom: 35px;
+  padding-top: 27px;
+  @media(max-width: $mediaMobile) {
+    margin: unset;
+    margin-bottom: 35px;
+    padding: 0;
+    padding-top: 15px;
+  }
+}
+
+.bannersWrapper {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  @media(max-width: $mediaTablet) {
+    flex-direction: column;
+    gap: 35px;
+    align-items: unset;
+  }
+  @media(max-width: $mediaMobile) {
+    gap: 15px;
+  }
+}
+
+.mainBannerWrapper {
+  max-width: 56%;
+  border-radius: $borderRadiusMedium;
+  @media(max-width: 1225px) {
+    align-self: center;
+    border-radius: $borderRadiusSmall;
+  }
+  @media(max-width: $mediaTablet) {
+    max-width: 100%;
+  }
+}
+
+.mainSliderLink {
+  display: flex;
+}
+
+.mainBannerImg {
+  width: 100%;
+  @media(max-width: 1250px) {
+    width: 100%;
+  }
+  @media(max-width: $mediaMobile) {
+    height: 230px;
+  }
+}
+
+.promoBannersWrapper {
+  max-width: 44%;
+  @media(max-width: $mediaTablet) {
+    max-width: 100%;
+  }
+}
+
+.promoBannersList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 14px;
+  box-shadow: 8px 8px 40px #333C4926;
+  @media(max-width: $mediaTablet) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  @media(max-width: $mediaMobile) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.promoLink {
+  display: flex;
+  border: 2px solid $light;
+  box-shadow: 8px 8px 40px rgba(51, 60, 73, 0.1490196078);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%);
+  border-radius: $borderRadiusMedium;
+  @media(max-width: $mediaTablet) {
+    border-radius: $borderRadiusSmall;
+  }
+}
+
+.promoBannerImg {
+  @media(max-width: 1180px) {
+    width: 195px;
+  }
+  @media(max-width: $mediaTablet) {
+    height: 180px;
+  }
+  @media(max-width: $mediaMobile) {
+    height: 145px;
+  }
+  //@media (max-width: 500px) {
+  //  max-width: 168px;
+  //}
+}

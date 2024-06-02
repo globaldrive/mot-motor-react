@@ -25,7 +25,7 @@ export default function RootLayout({
       <Providers>
         <body className={fontsNextClassname}>
           <Header />
-          <main style={{ backgroundColor: "gray" }}>{children}</main>
+          <main>{children}</main>
           <Footer />
           <div id="modal-root"></div>
         </body>
