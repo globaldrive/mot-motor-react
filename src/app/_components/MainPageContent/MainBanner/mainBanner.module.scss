@@ -58,8 +58,12 @@
 
 .promoBannersWrapper {
   max-width: 44%;
+  border-radius: $borderRadiusMedium;
   @media(max-width: $mediaTablet) {
     max-width: 100%;
+  }
+  @media(max-width: $mediaMobile) {
+    border-radius: $borderRadiusSmall;
   }
 }
 
@@ -68,6 +72,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 7px;
   box-shadow: 8px 8px 40px #333C4926;
+  border-radius: $borderRadiusMedium;
   @media(max-width: $mediaTablet) {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
@@ -76,6 +81,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5px;
+    border-radius: $borderRadiusSmall;
+  }
+}
+
+.promoListItem {
+  border-radius: $borderRadiusMedium;
+  @media(max-width: $mediaMobile) {
+    border-radius: $borderRadiusSmall;
   }
 }
 
@@ -85,7 +98,7 @@
   box-shadow: 8px 8px 40px rgba(51, 60, 73, 0.1490196078);
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%);
   border-radius: $borderRadiusMedium;
-  @media(max-width: $mediaTablet) {
+  @media(max-width: $mediaMobile) {
     border-radius: $borderRadiusSmall;
   }
 }
@@ -94,9 +107,7 @@
   width: 100%;
   flex-grow: 1;
   min-width: 100px;
-  //@media(max-width: 1180px) {
-  //  width: 195px;
-  //}
+  border-radius: $borderRadiusMedium;
   @media(max-width: $mediaTablet) {
     height: 180px;
   }
@@ -106,5 +117,6 @@
   @media(max-width: $mediaMobile) {
     width: 100%;
     height: 145px;
+    border-radius: $borderRadiusSmall;
   }
 }

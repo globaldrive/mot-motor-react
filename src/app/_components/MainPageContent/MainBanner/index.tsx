@@ -41,6 +41,7 @@ const MainBanner = () => {
               delay: mainSliderAutoplayDelay,
               disableOnInteraction: false,
             }}
+            loop={true}
           >
             {slides}
           </Swiper>
@@ -49,7 +50,7 @@ const MainBanner = () => {
           <ul className={styles.promoBannersList}>
             {mainBannerData[1].content.map(banner => {
               return (
-                <li key={banner.id}>
+                <li key={banner.id} className={styles.promoListItem}>
                   <Link href={banner.route} className={styles.promoLink}>
                     <Image
                       className={styles.promoBannerImg}
