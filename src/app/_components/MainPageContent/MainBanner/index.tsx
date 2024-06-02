@@ -1,4 +1,5 @@
 "use client";
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -8,9 +9,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import styles from "./mainBanner.module.scss";
 import "./customerSwiper.scss";
+import mainBannerJpg from "@/_assets/images/jpgs/mainBanner.jpg";
+import promoBannerJpg from "@/_assets/images/jpgs/tradeIn.jpg";
 import mainBannerData from "@/_data/mainBanner/mainBanner.json";
-
-import classNames from "classnames";
 
 const MainBanner = () => {
   const mainSliderAutoplayDelay = 3000;
@@ -20,7 +21,7 @@ const MainBanner = () => {
         <Link href={banner.route} className={styles.mainSliderLink}>
           <Image
             className={styles.mainBannerImg}
-            src={banner.src}
+            src={mainBannerJpg}
             alt="Главный банер"
             width={670}
             height={415}
@@ -52,7 +53,7 @@ const MainBanner = () => {
                   <Link href={banner.route} className={styles.promoLink}>
                     <Image
                       className={styles.promoBannerImg}
-                      src={banner.src}
+                      src={promoBannerJpg}
                       alt="Промо банер"
                       width={238}
                       height={200}
