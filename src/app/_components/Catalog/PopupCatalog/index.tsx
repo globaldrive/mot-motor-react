@@ -22,9 +22,13 @@ const PopupCatalog = ({ catalogData, main }: PopupCatalogProps) => {
     "container",
   );
 
-  const menuWrapperClassname = classNames(styles.catalogWrapper, {
-    [styles.main]: main,
-  });
+  const menuWrapperClassname = classNames(
+    styles.catalogWrapper,
+    menuItemActive !== undefined && styles.active,
+    {
+      [styles.main]: main,
+    },
+  );
   const onMouseLeavePopupMenu = () => {
     setMenuItemActive(undefined);
   };
