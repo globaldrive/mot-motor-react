@@ -2,6 +2,7 @@ import classNames from "classnames";
 
 import styles from "./inputField.module.scss";
 import InputFieldProps from "@/_components/InputField/InputField.interface";
+import PhoneInput from "@/_components/InputField/PhoneInput";
 
 const InputField = ({
   type,
@@ -20,14 +21,22 @@ const InputField = ({
   const titleClassname = classNames(styles.title, {
     [styles.main]: main,
   });
+
   return (
     <>
       {title && <div className={titleClassname}>{title}</div>}
-      {type !== "checkbox" && (
+      {type !== "checkbox" && type !== "tel" && (
         <input
           className={inputClassname}
           type={type}
           placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
+      )}
+      {type === "tel" && (
+        <PhoneInput
+          inputClassname={inputClassname}
           value={value}
           onChange={onChange}
         />
