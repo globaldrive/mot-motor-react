@@ -11,7 +11,7 @@ import styles from "./mainBanner.module.scss";
 import "./customerSwiper.scss";
 import mainBannerJpg from "@/_assets/images/jpgs/mainBanner.jpg";
 import promoBannerJpg from "@/_assets/images/jpgs/tradeIn.jpg";
-import mainBannerData from "@/_data/mainBanner/mainBanner.json";
+import mainBannerData from "@/_data/mainPage/mainBanner.json";
 
 const MainBanner = () => {
   const mainSliderAutoplayDelay = 3000;
