@@ -32,6 +32,7 @@
   align-items: center;
   gap: 10px;
   width: fit-content;
+  user-select: none;
 }
 
 .round {
@@ -74,6 +75,7 @@
   align-items: center;
   flex-wrap: nowrap;
   border-left: 1px solid #ddd;
+  user-select: none;
 }
 
 .lineText {
