@@ -1,15 +1,31 @@
 @import "@/_assets/styles/variables";
 
+$productCardSidePadding: 18px;
+
 .root {
   &.main {
     position: relative;
-    padding: 15px 18px 25px;
-    max-width: 282px;
+    width: 282px;
+    height: 100%;
+    padding: 15px $productCardSidePadding 25px;
     border-radius: $borderRadiusMedium;
 
     &.hovered {
       background-color: $light;
       box-shadow: 8px 8px 40px 0 #333C4933;
+
+      & .productCardContent {
+        position: absolute;
+        width: 100%;
+        background-color: $light;
+        outline: $productCardSidePadding solid $light;
+        border-radius: $borderRadiusSmall;
+        box-shadow: 8px 8px 40px 0 #333C4933;
+      }
+    }
+
+    & .contentRelative {
+      position: relative;
     }
 
     & .swiper {

@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import styles from "./productCard.module.scss";
 import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
+import mockSvg from "@/_assets/images/svgs/1.svg";
 import Button from "@/_components/Button";
 
 const ProductCard = ({
@@ -52,38 +53,45 @@ const ProductCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className={styles.productCardContent}>
-        <Swiper
-          className={styles.swiper}
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          loop={true}
-        >
-          {slides}
-        </Swiper>
-        <h4 className={styles.title}>{title}</h4>
-        <div className={styles.priceWrapper}>
-          <div className={styles.oldPrice}>{oldPrice} руб.</div>
-          <div className={styles.currentPrice}>{currentPrice} руб.</div>
-          <div className={styles.savingWrapper}>
-            <Image src="" alt="Иконка процента" width={16} height={16} />
-            <div>Экономия {savingAmount} руб.</div>
-          </div>
-        </div>
-        <div className={styles.buttonsWrapper}>
-          {cardHovered && <Button secondary>Купить в 1 клик</Button>}
-          <Button main>Купить</Button>
-        </div>
-        {cardHovered && (
-          <div className={styles.partlyPaymentWrapper}>
-            <span className={styles.partlyPaymentText}>
-              Или оплачивай частями
-            </span>
-            <div className={styles.partlyPaymentAmount}>
-              от {partlyPaymentAmount} / мес.
+      <div className={styles.contentRelative}>
+        <div className={styles.productCardContent}>
+          <Swiper
+            className={styles.swiper}
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            loop={true}
+          >
+            {slides}
+          </Swiper>
+          <h4 className={styles.title}>{title}</h4>
+          <div className={styles.priceWrapper}>
+            <div className={styles.oldPrice}>{oldPrice} руб.</div>
+            <div className={styles.currentPrice}>{currentPrice} руб.</div>
+            <div className={styles.savingWrapper}>
+              <Image
+                src={mockSvg}
+                alt="Иконка процента"
+                width={16}
+                height={16}
+              />
+              <div>Экономия {savingAmount} руб.</div>
             </div>
           </div>
-        )}
+          <div className={styles.buttonsWrapper}>
+            {cardHovered && <Button secondary>Купить в 1 клик</Button>}
+            <Button main>Купить</Button>
+          </div>
+          {cardHovered && (
+            <div className={styles.partlyPaymentWrapper}>
+              <span className={styles.partlyPaymentText}>
+                Или оплачивай частями
+              </span>
+              <div className={styles.partlyPaymentAmount}>
+                от {partlyPaymentAmount} / мес.
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

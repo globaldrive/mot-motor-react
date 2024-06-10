@@ -1,7 +1,31 @@
+.tagsFilterSection {
+  padding: 35px 0 25px;
+}
+
 .tagsWrapper {
   margin-bottom: 60px;
 }
 
 .productCardsList {
   display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.tagsFilterResult {
+  position: relative;
+}
+
+.sliderNavigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navigationLeft {
+  left: -100px;
+}
+
+.navigationRight {
+  right: -100px;
 }
