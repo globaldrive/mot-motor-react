@@ -5,10 +5,17 @@
 
   &.main {
     overflow: scroll;
+    @media(max-width: $mediaMobile) {
+      margin-left: 13px;
+    }
     & .tabsHeaders {
       display: flex;
       border-bottom: 1px solid #ccc;
       gap: 52px;
+      white-space: nowrap;
+      @media(max-width: $mediaMobile) {
+        gap: 22px;
+      }
     }
 
     & .tabHeader {
@@ -25,6 +32,11 @@
       line-height: 2.6rem;
       &.active {
         border-bottom: 2px solid $mainColor;
+      }
+      @media(max-width: $mediaMobile) {
+        padding-bottom: 18px;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
       }
     }
   }

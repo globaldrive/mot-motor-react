@@ -1,11 +1,11 @@
 "use client";
-import classNames from "classnames";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Swiper as SwiperType } from "swiper";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css/navigation";
 import styles from "./tagsFilter.module.scss";
+import ChangeSlideButton from "@/_components/MainPageContent/TagsFilter/ChangeSlideButton";
 import ProductCard from "@/_components/ProductCard";
 import Tabs from "@/_components/Tabs";
 import productCardsData from "@/_data/mockProductCardsData/productCardData.json";
@@ -17,19 +17,8 @@ const mockTabsContent = [
 ];
 const TagsFilter = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const swiperRef = useRef<SwiperType | null>(null);
-  const swiper = useSwiper();
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
   const handleTabClick = () => {};
-  const handleLeftSwiperNavigation = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slidePrev();
-    }
-  };
-  const handleRightSwiperNavigation = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slideNext();
-    }
-  };
 
   return (
     <section className={styles.tagsFilterSection}>
@@ -45,28 +34,29 @@ const TagsFilter = () => {
           />
         </div>
         <div className={styles.tagsFilterResult}>
-          <button
-            className={classNames(
-              styles.sliderNavigation,
-              styles.navigationLeft,
-            )}
-            onClick={handleLeftSwiperNavigation}
-          >
-            Slide to the left
-          </button>
+          <ChangeSlideButton swiper={swiperInstance} left main />
           <ul className={styles.productCardsList}>
             <Swiper
               className={styles.swiper}
               loop={true}
-              slidesPerView={4}
-              slidesPerGroup={4}
-              spaceBetween={14}
-              ref={swiperRef}
+              onSwiper={swiper => setSwiperInstance(swiper)}
+              breakpoints={{
+                850: {
+                  spaceBetween: 25,
+                  slidesPerView: 3,
+                  slidesPerGroup: 3,
+                },
+                1280: {
+                  spaceBetween: 14,
+                  slidesPerView: 4,
+                  slidesPerGroup: 4,
+                },
+              }}
             >
               {productCardsData.map(card => {
                 return (
                   <SwiperSlide key={card.id}>
-                    <li>
+                    <li className={styles.listItem}>
                       <ProductCard
                         id={card.id}
                         title={card.title}
@@ -81,15 +71,25 @@ const TagsFilter = () => {
               })}
             </Swiper>
           </ul>
-          <button
-            className={classNames(
-              styles.sliderNavigation,
-              styles.navigationRight,
-            )}
-            onClick={handleRightSwiperNavigation}
-          >
-            Slide to the right
-          </button>
+          <ChangeSlideButton swiper={swiperInstance} right main />
+        </div>
+        <div className={styles.tagsFilterResultMobile}>
+          <ul className={styles.productCardsListMobile}>
+            {productCardsData.map(card => {
+              return (
+                <li className={styles.listItemMobile} key={card.id}>
+                  <ProductCard
+                    id={card.id}
+                    title={card.title}
+                    images={card.images}
+                    currentPrice={card.currentPrice}
+                    oldPrice={card.oldPrice}
+                    main
+                  />
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </section>
