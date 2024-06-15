@@ -14,7 +14,7 @@
   display: flex;
   gap: 15px;
   justify-content: space-between;
-  @media(max-width: $mediaTablet) {
+  @media(max-width: 1180px) {
     flex-direction: column;
     gap: 35px;
     align-items: unset;
@@ -25,14 +25,14 @@
 }
 
 .mainBannerWrapper {
-  max-width: 56%;
+  width: 670px;
   border-radius: $borderRadiusMedium;
   @media(max-width: 1225px) {
     align-self: center;
     border-radius: $borderRadiusSmall;
   }
-  @media(max-width: $mediaTablet) {
-    max-width: 100%;
+  @media(max-width: $mediaMobile) {
+    width: 375px;
   }
 }
 
@@ -57,12 +57,13 @@
 }
 
 .promoBannersWrapper {
-  max-width: 44%;
   border-radius: $borderRadiusMedium;
   @media(max-width: $mediaTablet) {
     max-width: 100%;
   }
-  @media(max-width: $mediaMobile) {
+  @media(max-width: 9300px) {
+    display: flex;
+    justify-content: center;
     border-radius: $borderRadiusSmall;
   }
 }
@@ -73,20 +74,24 @@
   grid-gap: 7px;
   box-shadow: 8px 8px 40px #333C4926;
   border-radius: $borderRadiusMedium;
-  @media(max-width: $mediaTablet) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+  @media(max-width: 1180px) {
+    display: flex;
+    box-shadow: none;
+    justify-content: center;
+    gap: 12px;
+  }
+  @media(max-width: 930px) {
+    max-width: 500px;
+    flex-wrap: wrap;
   }
   @media(max-width: $mediaMobile) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 5px;
-    border-radius: $borderRadiusSmall;
+    gap: 7px;
   }
 }
 
 .promoListItem {
   border-radius: $borderRadiusMedium;
+  width: fit-content;
   @media(max-width: $mediaMobile) {
     border-radius: $borderRadiusSmall;
   }
@@ -108,14 +113,12 @@
   flex-grow: 1;
   min-width: 100px;
   border-radius: $borderRadiusMedium;
-  @media(max-width: $mediaTablet) {
+  @media(max-width: 1180px) {
+    width: 215px;
     height: 180px;
   }
-  @media(max-width: 860px) {
-    width: 165px;
-  }
   @media(max-width: $mediaMobile) {
-    width: 100%;
+    width: 170px;
     height: 145px;
     border-radius: $borderRadiusSmall;
   }
