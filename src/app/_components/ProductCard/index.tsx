@@ -27,6 +27,7 @@ const ProductCard = ({
     return (
       <SwiperSlide key={String(id) + String(index)}>
         <Image
+          className={styles.cardImg}
           src={hangkaiPng}
           alt="Изображение товара"
           width={211}
