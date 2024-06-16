@@ -1,0 +1,45 @@
+@import "@/_assets/styles/variables";
+
+.tabsContainer {
+  width: 100%;
+
+  &.main {
+    overflow: scroll;
+    @media(max-width: $mediaMobile) {
+      margin-left: 13px;
+    }
+    & .tabsHeaders {
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      gap: 52px;
+      white-space: nowrap;
+      @media(max-width: $mediaMobile) {
+        gap: 22px;
+      }
+    }
+
+    & .tabHeader {
+      display: flex;
+      padding-bottom: 23px;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 2.6rem;
+      &.active {
+        border-bottom: 2px solid $mainColor;
+      }
+      @media(max-width: $mediaMobile) {
+        padding-bottom: 18px;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+      }
+    }
+  }
+
+
+}

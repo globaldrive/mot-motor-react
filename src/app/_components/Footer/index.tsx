@@ -2,7 +2,7 @@
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import SimpleBar from "simplebar-react";
 
@@ -25,6 +25,9 @@ import {
 const Footer = () => {
   const dispatch = useDispatch();
   const [activeButton, setActiveButton] = useState<number | null>(null);
+  const [messageHided, setIsHideMessage] = useState(true);
+  const messageHidingDuration = 3000;
+  const isProcessing = useRef(false);
 
   const handleButtonClick = (btnNumber: number) => {
     if (activeButton === btnNumber) {
@@ -33,10 +36,34 @@ const Footer = () => {
     }
     setActiveButton(btnNumber);
   };
-  const handleSubmitForm = (
+  const handleSubmitForm = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     e.preventDefault();
+
+    if (isProcessing.current) return;
+    isProcessing.current = true;
+
+    try {
+      //Todo: Add real fetch response, open comments
+      const response = true;
+
+      // if (!response.ok) {
+      //   throw new Error("Subscription response was not ok");
+      // }
+      // const result = await response.json();
+      console.log("Success", response);
+      setIsHideMessage(false);
+
+      setTimeout(() => {
+        setIsHideMessage(true);
+        isProcessing.current = false;
+      }, messageHidingDuration);
+    } catch (error) {
+      console.log(error, "Error during Subscription request");
+      setIsHideMessage(true);
+      isProcessing.current = false;
+    }
   };
 
   const handleCallbackBtn = () => {
@@ -141,6 +168,7 @@ const Footer = () => {
                   <Image src={SentSvg} alt="Sent" width={18} height={16} />
                 </button>
               </form>
+              {!messageHided && <div>Спасибо за подписку!</div>}
             </div>
           </div>
         </div>

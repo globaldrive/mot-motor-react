@@ -1,0 +1,125 @@
+@import "@/_assets/styles/variables";
+
+.mainBannerSection {
+  margin-bottom: 35px;
+  padding-top: 27px;
+  @media(max-width: $mediaMobile) {
+    margin: unset;
+    margin-bottom: 10px;
+    padding-top: 15px;
+  }
+}
+
+.bannersWrapper {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  @media(max-width: 1180px) {
+    flex-direction: column;
+    gap: 35px;
+    align-items: unset;
+  }
+  @media(max-width: $mediaMobile) {
+    gap: 15px;
+  }
+}
+
+.mainBannerWrapper {
+  width: 670px;
+  border-radius: $borderRadiusMedium;
+  @media(max-width: 1225px) {
+    align-self: center;
+    border-radius: $borderRadiusSmall;
+  }
+  @media(max-width: $mediaMobile) {
+    width: 375px;
+  }
+}
+
+.mainSliderLink {
+  display: flex;
+  border-radius: $borderRadiusMedium;
+  @media(max-width: $mediaMobile) {
+    border-radius: $borderRadiusSmall;
+  }
+}
+
+.mainBannerImg {
+  width: 100%;
+  border-radius: $borderRadiusMedium;
+  @media(max-width: 1250px) {
+    width: 100%;
+  }
+  @media(max-width: $mediaMobile) {
+    height: 230px;
+    border-radius: $borderRadiusSmall;
+  }
+}
+
+.promoBannersWrapper {
+  border-radius: $borderRadiusMedium;
+  @media(max-width: $mediaTablet) {
+    max-width: 100%;
+  }
+  @media(max-width: 9300px) {
+    display: flex;
+    justify-content: center;
+    border-radius: $borderRadiusSmall;
+  }
+}
+
+.promoBannersList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 7px;
+  box-shadow: 8px 8px 40px #333C4926;
+  border-radius: $borderRadiusMedium;
+  @media(max-width: 1180px) {
+    display: flex;
+    box-shadow: none;
+    justify-content: center;
+    gap: 12px;
+  }
+  @media(max-width: 930px) {
+    max-width: 500px;
+    flex-wrap: wrap;
+  }
+  @media(max-width: $mediaMobile) {
+    gap: 7px;
+  }
+}
+
+.promoListItem {
+  border-radius: $borderRadiusMedium;
+  width: fit-content;
+  @media(max-width: $mediaMobile) {
+    border-radius: $borderRadiusSmall;
+  }
+}
+
+.promoLink {
+  display: flex;
+  border: 2px solid $light;
+  box-shadow: 8px 8px 40px rgba(51, 60, 73, 0.1490196078);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%);
+  border-radius: $borderRadiusMedium;
+  @media(max-width: $mediaMobile) {
+    border-radius: $borderRadiusSmall;
+  }
+}
+
+.promoBannerImg {
+  width: 100%;
+  flex-grow: 1;
+  min-width: 100px;
+  border-radius: $borderRadiusMedium;
+  @media(max-width: 1180px) {
+    width: 215px;
+    height: 180px;
+  }
+  @media(max-width: $mediaMobile) {
+    width: 170px;
+    height: 145px;
+    border-radius: $borderRadiusSmall;
+  }
+}

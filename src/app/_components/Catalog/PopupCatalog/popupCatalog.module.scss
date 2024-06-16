@@ -2,7 +2,7 @@
 
 .popupMenu {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   &.hideCatalogMenu {
     display: none;
   }
@@ -17,9 +17,12 @@
 .catalogWrapper {
   &.main {
     display: flex;
-    width: 100%;
+    width: fit-content;
     position: absolute;
     left: 0;
     z-index: 1;
+    &.active {
+      width: 100%;
+    }
   }
 }

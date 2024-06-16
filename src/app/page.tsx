@@ -1,3 +1,5 @@
+import MainPageContent from "@/_components/MainPageContent";
+
 export default function Home() {
-  return <div className="container">Main content</div>;
+  return <MainPageContent />;
 }

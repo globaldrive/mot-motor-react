@@ -66,7 +66,6 @@ const ModalWindows = ({ callback }: ModalWindowsProps) => {
                     <InputField
                       title="Телефон"
                       type="tel"
-                      placeholder="Введите ваш телефон"
                       value={phone}
                       onChange={e => setPhone(e.target.value)}
                       main

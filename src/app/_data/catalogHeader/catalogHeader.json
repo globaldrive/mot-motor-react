@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Спец предложение",
     "route": "/spec-predlojenie",
-    "svg": "/fire.svg",
+    "svg": "fire.svg",
     "content": [
     ]
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "title": "Лодочные моторы",
     "route": "lodochnie-motori",
-    "svg": "/supBoy.svg",
+    "svg": "supBoy.svg",
     "content": [
       {
         "id": 10,
@@ -237,7 +237,7 @@
     "id": 4,
     "title": "Спец предложение",
     "route": "/spec-predlojenie",
-    "svg": "/fire.svg",
+    "svg": "fire.svg",
     "content": [
     ]
   },
@@ -245,7 +245,7 @@
     "id": 5,
     "title": "Спец предложение",
     "route": "/spec-predlojenie",
-    "svg": "/fire.svg",
+    "svg": "fire.svg",
     "content": [
     ]
   },
@@ -253,7 +253,7 @@
     "id": 6,
     "title": "Спец предложение",
     "route": "/spec-predlojenie",
-    "svg": "/fire.svg",
+    "svg": "fire.svg",
     "content": [
     ]
   },
