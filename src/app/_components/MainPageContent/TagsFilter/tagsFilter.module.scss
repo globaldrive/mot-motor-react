@@ -31,6 +31,11 @@ $mediaMobileFilterResults: 850px;
   width: fit-content;
 }
 
+.listItemMobile:nth-child(1n) {
+  border-right: 1px solid #EBECED;
+  border-bottom: 1px solid #EBECED;
+}
+
 .tagsFilterResult {
   position: relative;
   @media(max-width: 1280px) {

@@ -7,20 +7,39 @@
     height: 100%;
     padding: 15px 18px 25px;
     border-radius: $borderRadiusMedium;
+    @media (max-width: $mediaMobile) {
+      padding: 12px 10px;
+      width: 187px;
+    }
 
     &:hover {
       background-color: $light;
       box-shadow: 8px 8px 40px 0 #333C4933;
+      @media (max-width: $mediaMobile) {
+        box-shadow: none;
+      }
     }
 
     & .swiper {
       margin-bottom: 12px;
     }
 
+    & .cardImg {
+      @media(max-width: $mediaMobile) {
+        width: 147px;
+        height: 147px;
+      }
+    }
+
     & .title {
       margin-bottom: 19px;
       font-size: 1.4rem;
       line-height: 1.7rem;
+      @media (max-width: $mediaMobile) {
+        margin-bottom: 13px;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+      }
     }
 
     & .priceWrapper {
@@ -28,6 +47,9 @@
       margin-bottom: 26px;
       flex-direction: column;
       gap: 4px;
+      @media(max-width: $mediaMobile) {
+        margin-bottom: 15px;
+      }
     }
     .oldPrice {
       text-decoration: line-through;
@@ -47,12 +69,18 @@
       font-weight: 500;
       font-size: 1.4rem;
       line-height: 1.7rem;
+      @media(max-width: $mediaMobile) {
+        font-size: 1.2rem;
+      }
     }
     & .buttonsWrapper {
       display: flex;
       margin-bottom: 20px;
       flex-direction: column;
       gap: 8px;
+      @media (max-width: $mediaMobile) {
+        margin-bottom: 10px;
+      }
     }
 
     & .partlyPaymentWrapper {
@@ -72,12 +100,18 @@
       font-size: 1.4rem;
       line-height: 1.7rem;
       font-weight: 500;
+      @media (max-width: $mediaMobile) {
+        font-size: 1.2rem;
+      }
     }
 
     & .partlyPaymentAmount {
       color: $mainColor;
       font-weight: 700;
       line-height: 1.9rem;
+      @media (max-width: $mediaMobile) {
+        font-size: 1.4rem;
+      }
     }
   }
 }
