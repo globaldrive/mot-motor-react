@@ -11,9 +11,9 @@ import Tabs from "@/_components/Tabs";
 import productCardsData from "@/_data/mockProductCardsData/productCardData.json";
 
 const mockTabsContent = [
-  { title: "Выбор покупателей", svgIcon: "1" },
-  { title: "Скидки", svgIcon: "2" },
-  { title: "Успей купить", svgIcon: "3" },
+  { title: "Выбор покупателей", svgIcon: "/like.svg" },
+  { title: "Скидки", svgIcon: "/discount.svg" },
+  { title: "Успей купить", svgIcon: "/fire.svg" },
 ];
 const TagsFilter = () => {
   const [activeTab, setActiveTab] = useState(0);

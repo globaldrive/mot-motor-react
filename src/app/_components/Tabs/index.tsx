@@ -2,7 +2,6 @@ import classNames from "classnames";
 import Image from "next/image";
 
 import styles from "./tabs.module.scss";
-import mockLocationIcon from "@/_assets/images/general/location.svg";
 import TabsProps from "@/_components/Tabs/Tabs.interface";
 
 const Tabs = ({
@@ -35,7 +34,7 @@ const Tabs = ({
           >
             {showIcon && tab.svgIcon && (
               <Image
-                src={mockLocationIcon}
+                src={tab.svgIcon}
                 alt="Иконка тега"
                 width={26}
                 height={26}

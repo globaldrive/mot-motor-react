@@ -4,6 +4,7 @@ import styles from "./communication.module.scss";
 import phoneCallIcon from "@/_assets/images/general/phone.svg";
 import WhatsAppIcon from "@/_assets/images/general/whatsApp.svg";
 import CommunicationProps from "@/_components/Communication/Communication.interface";
+import formatPhoneNumber from "@/_utils/formatPhoneNumber";
 
 const Communication = ({
   phoneNumber,
@@ -27,7 +28,7 @@ const Communication = ({
         href={href + phoneNumber}
         target={(openInNewTab && "_blank") || ""}
       >
-        {showPhoneNumber && phoneNumber}
+        {showPhoneNumber && formatPhoneNumber(phoneNumber)}
         {showIcon && communicationType?.whatsApp && (
           <Image
             className={styles.svgIcon}

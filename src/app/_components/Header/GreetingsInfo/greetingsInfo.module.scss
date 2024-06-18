@@ -1,6 +1,7 @@
 @import '@/_assets/styles/variables';
 
 .root {
+  padding: 7px 0;
   background-color: $lightGray;
   @media(max-width: $mediaMobile) {
     display: none;
@@ -8,7 +9,6 @@
 }
 
 .content {
-  margin-bottom: 2.4rem;
   display: flex;
   gap: 2rem;
   align-items: center;

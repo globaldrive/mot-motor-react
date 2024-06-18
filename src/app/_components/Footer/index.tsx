@@ -21,6 +21,7 @@ import {
   toggleCallbackWindow,
   toggleModalOverlay,
 } from "@/_store/slices/ModalWindows";
+import FormatPhoneNumber from "@/_utils/formatPhoneNumber";
 
 const Footer = () => {
   const dispatch = useDispatch();
@@ -138,7 +139,7 @@ const Footer = () => {
                     className={styles.storePhone}
                     href={`tel:${citiesData[0].phoneNumber}`}
                   >
-                    {citiesData[0].phoneNumber}
+                    {FormatPhoneNumber(citiesData[0].phoneNumber)}
                   </a>
                 </div>
               </div>

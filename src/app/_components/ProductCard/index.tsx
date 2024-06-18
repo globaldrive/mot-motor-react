@@ -4,7 +4,6 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import styles from "./productCard.module.scss";
-import DiscountSvg from "@/_assets/images/general/Discount.svg";
 import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
 import Button from "@/_components/Button";
 
@@ -54,7 +53,7 @@ const ProductCard = ({
           <div className={styles.currentPrice}>{currentPrice} руб.</div>
           <div className={styles.savingWrapper}>
             <Image
-              src={DiscountSvg}
+              src="/discount.svg"
               alt="Иконка процента"
               width={16}
               height={16}

@@ -32,6 +32,11 @@
     }
 
     & .title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
       margin-bottom: 19px;
       font-size: 1.4rem;
       line-height: 1.7rem;

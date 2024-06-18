@@ -6,7 +6,7 @@ import RoutesPaths from "@/types/enums/routes";
 
 const AdditionalInformation = () => {
   return (
-    <section>
+    <section className={styles.additionalInfoSection}>
       <div className={classNames(styles.textContainer, "container")}>
         <div className={styles.contentWrapper}>
           <div>

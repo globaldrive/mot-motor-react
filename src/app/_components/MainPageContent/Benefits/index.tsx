@@ -26,7 +26,7 @@ const Benefits = () => {
               <li key={benefit.id} className={styles.item}>
                 <div className={styles.round}>
                   <Image
-                    src={benefitSvg}
+                    src={`/benefitsSvg/${benefit.id}.svg`}
                     alt="Иконка преимущества"
                     width={40}
                     height={40}
