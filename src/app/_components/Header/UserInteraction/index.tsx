@@ -1,5 +1,4 @@
 "use client";
-import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
@@ -46,68 +45,70 @@ const UserInteraction = () => {
   );
 
   return (
-    <div className={classNames(styles.root, "container")}>
-      <div className={styles.logoMobileWrapper}>
-        <Link href={RoutesPaths.home} className={styles.logoLink}>
-          <Image
-            className={styles.logoImg}
-            src={LogoPng}
-            alt="Лого компании"
-            width={177}
-            height={34}
-          />
-        </Link>
-        <CityPicker className={styles.cityPickerMobile} />
-      </div>
-
-      <Search searchClassname={styles.search} />
-
-      <div className={styles.communicationWrapper}>
-        <div className={styles.availableDetails}>
-          <div className={styles.phoneWrapper}>
-            <Communication
-              phoneNumber={communicationDetails.mainNumber}
-              communicationType={{ phoneCall: true }}
-              showPhoneNumber
-              phoneClassname={styles.phoneNumber}
+    <div className={"container"}>
+      <div className={styles.root}>
+        <div className={styles.logoMobileWrapper}>
+          <Link href={RoutesPaths.home} className={styles.logoLink}>
+            <Image
+              className={styles.logoImg}
+              src={LogoPng}
+              alt="Лого компании"
+              width={177}
+              height={34}
             />
-            <ArrowIcon main />
-          </div>
-          <div className={styles.weAreOnline}>
-            <div className={styles.outsideRing}>
-              <div className={styles.insideRing}></div>
+          </Link>
+          <CityPicker className={styles.cityPickerMobile} />
+        </div>
+
+        <Search searchClassname={styles.search} />
+
+        <div className={styles.communicationWrapper}>
+          <div className={styles.availableDetails}>
+            <div className={styles.phoneWrapper}>
+              <Communication
+                phoneNumber={communicationDetails.mainNumber}
+                communicationType={{ phoneCall: true }}
+                showPhoneNumber
+                phoneClassname={styles.phoneNumber}
+              />
+              <ArrowIcon main />
             </div>
-            <div className={styles.weOnlineText}>Мы сейчас на связи</div>
+            <div className={styles.weAreOnline}>
+              <div className={styles.outsideRing}>
+                <div className={styles.insideRing}></div>
+              </div>
+              <div className={styles.weOnlineText}>Мы сейчас на связи</div>
+            </div>
           </div>
-        </div>
-        <div className={styles.fastActionBtns}>
-          <div className={styles.fastCallBtn}>
+          <div className={styles.fastActionBtns}>
+            <div className={styles.fastCallBtn}>
+              <Communication
+                phoneNumber={communicationDetails.mainNumber}
+                communicationType={{ phoneCall: true }}
+                showIcon
+              />
+            </div>
             <Communication
-              phoneNumber={communicationDetails.mainNumber}
-              communicationType={{ phoneCall: true }}
+              phoneNumber={communicationDetails.whatsApp.number}
+              communicationType={{ whatsApp: true }}
               showIcon
+              whatsAppPreviewText={communicationDetails.whatsApp.text}
+              openInNewTab
             />
           </div>
-          <Communication
-            phoneNumber={communicationDetails.whatsApp.number}
-            communicationType={{ whatsApp: true }}
-            showIcon
-            whatsAppPreviewText={communicationDetails.whatsApp.text}
-            openInNewTab
-          />
         </div>
+        <div className={styles.callBackBtn} onClick={handleCallBackBtnClick}>
+          <Button secondary>Бесплатный звонок</Button>
+        </div>
+        {showCallback && <ModalWindows callback />}
+        {showCityModal && <CitySearch />}
+        <Basket />
+        <Burger
+          mobile
+          isBurgerOpen={isBurgerOpen}
+          onBurgerClick={handleBurgerClick}
+        />
       </div>
-      <div className={styles.callBackBtn} onClick={handleCallBackBtnClick}>
-        <Button secondary>Бесплатный звонок</Button>
-      </div>
-      {showCallback && <ModalWindows callback />}
-      {showCityModal && <CitySearch />}
-      <Basket />
-      <Burger
-        mobile
-        isBurgerOpen={isBurgerOpen}
-        onBurgerClick={handleBurgerClick}
-      />
     </div>
   );
 };

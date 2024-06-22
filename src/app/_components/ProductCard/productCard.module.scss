@@ -5,18 +5,18 @@
   &.main {
     width: 282px;
     height: 100%;
-    padding: 15px 18px 25px;
+    padding: 14px 17px 24px;
     border-radius: $borderRadiusMedium;
+    border: 1px solid $light;
     @media (max-width: $mediaMobile) {
       padding: 12px 10px;
       width: 187px;
     }
 
     &:hover {
-      background-color: $light;
-      box-shadow: 8px 8px 40px 0 #333C4933;
-      @media (max-width: $mediaMobile) {
-        box-shadow: none;
+      border: 1px solid #ccc;
+      @media(max-width: $mediaTablet) {
+        border: 1px solid $light;
       }
     }
 

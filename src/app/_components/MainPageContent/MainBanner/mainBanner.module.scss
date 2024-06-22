@@ -1,7 +1,6 @@
 @import "@/_assets/styles/variables";
 
 .mainBannerSection {
-  margin-bottom: 35px;
   padding-top: 27px;
   @media(max-width: $mediaMobile) {
     margin: unset;

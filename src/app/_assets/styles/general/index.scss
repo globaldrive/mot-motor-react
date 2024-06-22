@@ -24,8 +24,17 @@ header {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
   flex-grow: 1;
   position: relative;
+  @media(max-width: $mediaTablet) {
+    gap: 45px;
+  }
+  @media(max-width: $mediaMobile) {
+    gap: 25px;
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -45,16 +54,4 @@ button {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.container {
-  max-width: 1180px;
-  width: 100%;
-  margin: 0 auto;
-  @media(max-width: 1225px) {
-    padding: 0 15px;
-  }
-  @media(max-width: $mediaMobile) {
-    padding: 0 10px;
-  }
 }

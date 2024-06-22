@@ -21,7 +21,7 @@ const TagsFilter = () => {
   const handleTabClick = () => {};
 
   return (
-    <section className={styles.tagsFilterSection}>
+    <section>
       <div className="container">
         <div className={styles.tagsWrapper}>
           <Tabs

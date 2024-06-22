@@ -17,7 +17,7 @@ const Benefits = () => {
     ));
   };
   return (
-    <section className={styles.section}>
+    <section>
       <div className="container">
         <h2 className={styles.title}>ПОЧЕМУ С НАМИ ВЫГОДНО</h2>
         <ul className={styles.list}>
