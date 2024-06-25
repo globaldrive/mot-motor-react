@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import SearchSvg from "@/_assets/images/general/search.svg";
 import SearchProps from "@/_components/Search/Search.interface";
+import { Input } from "@/_components/ui/input";
 
 const Search = ({ onClickSearchBtn, searchClassname }: SearchProps) => {
   const [searchValue, setSearchValue] = useState("");
@@ -15,8 +16,8 @@ const Search = ({ onClickSearchBtn, searchClassname }: SearchProps) => {
         searchClassname && searchClassname,
       )}
     >
-      <input
-        className="w-full h-full text-base p-3.5 pl-11 bg-mm-cement rounded-lg border-0 focus:outline-mm-main"
+      <Input
+        className="h-full text-base p-3.5 pl-11 bg-mm-cement rounded-lg border-0"
         type="search"
         placeholder="Я ищу..."
         value={searchValue}
