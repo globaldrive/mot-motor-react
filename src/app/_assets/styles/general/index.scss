@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 16px;
 }
 
 body {
@@ -17,24 +17,6 @@ body {
   min-height: 100vh;
   position: relative;
   color: $primaryText;
-}
-
-header {
-  position: relative;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  flex-grow: 1;
-  position: relative;
-  @media(max-width: $mediaTablet) {
-    gap: 45px;
-  }
-  @media(max-width: $mediaMobile) {
-    gap: 25px;
-  }
 }
 
 h1, h2, h3, h4, h5 {

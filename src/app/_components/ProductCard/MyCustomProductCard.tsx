@@ -1,15 +1,11 @@
 import classNames from "classnames";
 import Image from "next/image";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import styles from "./productCard.module.scss";
-import { Button } from "@/_components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/_components/ui/card";
+import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
+import Button from "@/_components/Button";
 
 const ProductCard = ({
   id,
@@ -26,14 +22,32 @@ const ProductCard = ({
   const savingAmount = Math.ceil(oldPrice - currentPrice);
   const partlyPaymentAmount = Math.ceil(currentPrice / bankCreditMonths);
 
+  const slides = images.map((img, index) => {
+    return (
+      <SwiperSlide key={String(id) + String(index)}>
+        <Image
+          className={styles.cardImg}
+          src={hangkaiPng}
+          alt="Изображение товара"
+          width={211}
+          height={211}
+        />
+      </SwiperSlide>
+    );
+  });
+
   return (
-    <Card className="flex flex-col justify-between">
-      <CardHeader>
-        <div>
-          <CardTitle>{title}</CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent>
+    <div className={productCardClassname}>
+      <div>
+        <Swiper
+          className={styles.swiper}
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+          loop={true}
+        >
+          {slides}
+        </Swiper>
+        <h4 className={styles.title}>{title}</h4>
         <div className={styles.priceWrapper}>
           <div className={styles.oldPrice}>{oldPrice} руб.</div>
           <div className={styles.currentPrice}>{currentPrice} руб.</div>
@@ -47,11 +61,9 @@ const ProductCard = ({
             <div>Экономия {savingAmount} руб.</div>
           </div>
         </div>
-      </CardContent>
-      <CardFooter className="flex flex-col">
-        <div className="flex flex-col">
-          <Button>Купить в 1 клик</Button>
-          <Button>Купить</Button>
+        <div className={styles.buttonsWrapper}>
+          <Button secondary>Купить в 1 клик</Button>
+          <Button main>Купить</Button>
         </div>
         <div className={styles.partlyPaymentWrapper}>
           <span className={styles.partlyPaymentText}>
@@ -61,8 +73,8 @@ const ProductCard = ({
             от {partlyPaymentAmount} / мес.
           </div>
         </div>
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 };
 

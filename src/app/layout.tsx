@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 
 import "@/_assets/styles/global.scss";
-import Footer from "@/_components/Footer";
 import Header from "@/_components/Header";
 import { Providers } from "@/_store/provider";
 
@@ -25,8 +24,10 @@ export default function RootLayout({
       <Providers>
         <body className={fontsNextClassname}>
           <Header />
-          <main>{children}</main>
-          <Footer />
+          <main className="flex flex-col gap-6 grow relative md:gap-11 lg:gap-14">
+            {children}
+          </main>
+          {/*<Footer />*/}
           <div id="modal-root"></div>
         </body>
       </Providers>
