@@ -23,9 +23,9 @@ module.exports = {
         DEFAULT: "100%",
         sm: "100%",
         md: "100%",
-        lg: "905px",
-        xl: "905px",
-        "2xl": "1180px",
+        lg: "100%",
+        xl: "100%",
+        "2xl": "1200px",
       },
     },
     extend: {

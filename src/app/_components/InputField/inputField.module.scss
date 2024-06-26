@@ -3,12 +3,13 @@
 .title {
   user-select: none;
   &.main {
+    font-size: 16px;
     margin-bottom: 12px;
-    line-height: 1.9rem;
+    line-height: 19px;
     @media(max-width: $mediaMobile) {
       margin-bottom: 7px;
-      font-size: 1.4rem;
-      line-height: 1.7rem;
+      font-size: 14px;
+      line-height: 17px;
     }
   }
 }
@@ -19,6 +20,8 @@
     padding: 18px 30px;
     width: 100%;
     background-color: $inputAreaColor;
+    font-weight: 500;
+    font-size: 12px;
     border: none;
     border-radius: $borderRadiusSmall;
     outline: none;

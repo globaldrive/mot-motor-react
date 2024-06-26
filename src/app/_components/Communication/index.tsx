@@ -21,7 +21,8 @@ const Communication = ({
   const phoneNumberVariants = cva("", {
     variants: {
       variant: {
-        default: "font-bold no-underline text-mm-primaryText text-base",
+        default:
+          "font-bold no-underline text-mm-primaryText text-base whitespace-nowrap",
       },
     },
   });
@@ -31,7 +32,7 @@ const Communication = ({
   }
 
   return (
-    <div>
+    <>
       <a
         className={cn(phoneNumberVariants({ variant, className }))}
         href={href + phoneNumber}
@@ -57,7 +58,7 @@ const Communication = ({
         )}
         {children}
       </a>
-    </div>
+    </>
   );
 };
 

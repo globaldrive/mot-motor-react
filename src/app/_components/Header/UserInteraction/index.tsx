@@ -1,16 +1,14 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 
-import LogoPng from "@/_assets/images/general/logo.png";
 import Basket from "@/_components/Basket";
 import Burger from "@/_components/Burger";
-import CityPicker from "@/_components/CityPicker";
 import CitySearch from "@/_components/CityPicker/CitySearch";
 import Communication from "@/_components/Communication";
 import styles from "@/_components/Header/UserInteraction/userInteraction.module.scss";
 import ArrowIcon from "@/_components/Icons/Arrow";
+import Logo from "@/_components/Logo";
 import ModalWindows from "@/_components/ModalWindows";
 import Search from "@/_components/Search";
 import { Button } from "@/_components/ui/button";
@@ -52,22 +50,16 @@ const UserInteraction = () => {
             href={RoutesPaths.home}
             className="flex items-center select-none"
           >
-            <Image
-              className="md:w-44 md:h-8"
-              src={LogoPng}
-              alt="Лого компании"
-              width={137}
-              height={26}
-            />
+            <Logo />
           </Link>
-          <CityPicker />
+          {/*<CityPicker />*/}
         </div>
 
         <Search searchClassname={styles.search} />
 
         <div className="flex items-center gap-2.5 md:gap-5">
           <div className="hidden md:block">
-            <div className="flex gap-1.5 items-center mb-1.5">
+            <div className="flex gap-1.5 items-center">
               <Communication
                 phoneNumber={communicationDetails.mainNumber}
                 communicationType={{ phoneCall: true }}
@@ -103,7 +95,7 @@ const UserInteraction = () => {
           </div>
         </div>
         <div className="hidden md:flex" onClick={handleCallBackBtnClick}>
-          <Button>Бесплатный звонок</Button>
+          <Button variant="secondary">Бесплатный звонок</Button>
         </div>
         {showCallback && <ModalWindows callback />}
         {showCityModal && <CitySearch />}

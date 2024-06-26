@@ -9,7 +9,7 @@
 
 .search {
   max-width: 426px;
-  @media(max-width: $mediaMobile) {
+  @media(max-width: 767px) {
     display: none;
   }
 }

@@ -11,8 +11,8 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-mm-main text-white hover:bg-mm-main-hover font-bold active:bg-mm-main-active",
-        destructive:
-          "bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90", //Example
+        secondary:
+          "bg-transparent font-bold text-mm-main border border-mm-main hover:bg-mm-main-hover hover:border-mm-main-hover hover:text-white active:bg-mm-main-active active:border-mm-main-active",
       },
       size: {
         default: "h-[46px]",
