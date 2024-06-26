@@ -1,9 +1,7 @@
 "use client";
 
-import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 
-import styles from "./modalOverlay.module.scss";
 import CrossSvg from "@/_components/Icons/Cross";
 import ModalOverlayProps from "@/_components/ModalOverlay/ModalOverylay.interface";
 import useScrollControl from "@/_hooks/useScrollControl";
@@ -57,8 +55,11 @@ const ModalOverlay = ({ children }: ModalOverlayProps) => {
   return (
     <>
       {isModalOverlayOpen && (
-        <div className={styles.overlay} onClick={handleOverlayClick}>
-          <div className={classNames(styles.popup)}>
+        <div
+          className="absolute h-full bg-mm-overlay inset-0 z-[999]"
+          onClick={handleOverlayClick}
+        >
+          <div className="fixed min-w-[350px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl z-[999]">
             {children} <CrossSvg main onClick={handleCrossClick} />
           </div>
         </div>

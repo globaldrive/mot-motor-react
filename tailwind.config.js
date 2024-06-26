@@ -39,6 +39,7 @@ module.exports = {
         "mm-grass": "#4FC98E4D",
         "mm-leaf": "#4FC98E",
         "mm-attention": "#FF2D2D",
+        "mm-overlay": "rgba(51, 60, 73, 0.3)",
       },
       keyframes: {
         "accordion-down": {
