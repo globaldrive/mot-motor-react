@@ -1,25 +1,5 @@
 @import '@/_assets/styles/variables';
 
-.root {
-  padding: 6px 0;
-  background-color: $mainColor;
-  color: $light;
-  @media(max-width: $mediaMobile) {
-    background-color: transparent;
-  }
-}
-
-.wrapper {
-  display: flex;
-  gap: 50px;
-  @media(max-width: $mediaTablet) {
-    gap: 20px;
-  }
-  @media(max-width: $mediaMobile) {
-    gap: 8px;
-  }
-}
-
 .catalogBtnWrapper {
   min-width: 228px;
   min-height: 46px;
@@ -38,66 +18,10 @@
   }
 }
 
-.catalogBtnText {
-  margin-right: auto;
-  @media(max-width: $mediaMobile) {
-    display: none;
-  }
-}
-
 .catalogBtnArrow {
   @media(max-width: $mediaMobile) {
     display: none;
   }
-}
-
-.burgerWrapper {
-  display: flex;
-  align-items: center;
-  margin-right: 17px;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  background-color: $light;
-  border-radius: 50%;
-  @media(max-width: $mediaMobile) {
-    margin-right: 0;
-  }
-}
-
-.navigation {
-  width: 100%;
-  @media(max-width: $mediaMobile) {
-    display: none;
-  }
-}
-
-.navList {
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 700;
-  line-height: 1.9rem;
-}
-
-.listItem {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  @media(max-width: $mediaTablet) {
-    font-size: 1.2rem;
-  }
-}
-
-.itemLink {
-  display: flex;
-  height: 100%;
-  gap: 6px;
-  align-items: center;
-  user-select: none;
-  white-space: nowrap;
 }
 
 .search {
@@ -127,16 +51,6 @@
     border-top: none;
     z-index: 4;
   }
-}
-
-.resultsBorder {
-  height: 6px;
-  background-color: $mainColor;
-}
-
-.resultsList {
-  display: flex;
-  flex-direction: column;
 }
 
 .resultItem {

@@ -13,6 +13,8 @@ const buttonVariants = cva(
           "bg-mm-main text-white hover:bg-mm-main-hover font-bold active:bg-mm-main-active",
         secondary:
           "bg-transparent font-bold text-mm-main border border-mm-main hover:bg-mm-main-hover hover:border-mm-main-hover hover:text-white active:bg-mm-main-active active:border-mm-main-active",
+        catalog:
+          "justify-center w-full md:justify-start p-0 md:py-5 md:pl-2.5 md:pr-5 text-white border-none outline-none font-bold text-xs lg:text-base",
       },
       size: {
         default: "h-[46px]",

@@ -43,7 +43,7 @@ const UserInteraction = () => {
   );
 
   return (
-    <div className="container">
+    <div className="container mb-5">
       <div className="flex items-center mb-3 pt-3 gap-2 md:justify-between md:pt-5 md:gap-4 md:mb-0">
         <div className="flex flex-col gap-2 md:gap-0 mr-auto md:mr-0">
           <Link
