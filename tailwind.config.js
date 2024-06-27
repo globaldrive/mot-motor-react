@@ -33,6 +33,8 @@ module.exports = {
         "mm-main": "#0787EA",
         "mm-main-hover": "#2DA3FF",
         "mm-main-active": "#0D78CB",
+        "mm-secondary": "#24A0FF",
+        "mm-secondary-active": "#47D3FF",
         "mm-primaryText": "#333C49",
         "mm-milk": "#F9F9F9",
         "mm-cement": "#F5F5F5",

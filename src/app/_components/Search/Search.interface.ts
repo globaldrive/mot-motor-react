@@ -1,6 +1,5 @@
-interface SearchProps {
+interface SearchProps extends React.HTMLAttributes<HTMLDivElement> {
   onClickSearchBtn?: () => void;
-  searchClassname?: string;
 }
 
 export default SearchProps;

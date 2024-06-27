@@ -10,7 +10,10 @@ import {
 } from "@/_store/slices/ModalWindows";
 import { RootState } from "@/_store/store";
 
-const CityPicker = () => {
+interface CityPickerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+const CityPicker = ({ className }: CityPickerProps) => {
   const dispatch = useDispatch();
   const userCity = useSelector((state: RootState) => state.userDetails.city);
 
@@ -21,7 +24,7 @@ const CityPicker = () => {
 
   return (
     <button
-      className="flex w-32 justify-between items-center bg-transparent border-0 outline-0 cursor-pointer"
+      className={`flex w-32 justify-between items-center bg-transparent border-0 outline-0 cursor-pointer ${className}`}
       onClick={handleBtnClick}
     >
       <Image

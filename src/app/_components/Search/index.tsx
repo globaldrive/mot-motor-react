@@ -7,13 +7,14 @@ import SearchSvg from "@/_assets/images/general/search.svg";
 import SearchProps from "@/_components/Search/Search.interface";
 import { Input } from "@/_components/ui/input";
 
-const Search = ({ onClickSearchBtn, searchClassname }: SearchProps) => {
+const Search = ({ onClickSearchBtn, className }: SearchProps) => {
   const [searchValue, setSearchValue] = useState("");
+
   return (
     <div
       className={classNames(
         "relative w-full select-none",
-        searchClassname && searchClassname,
+        className && className,
       )}
     >
       <Input

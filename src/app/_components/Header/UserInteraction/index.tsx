@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Basket from "@/_components/Basket";
 import Burger from "@/_components/Burger";
+import CityPicker from "@/_components/CityPicker";
 import CitySearch from "@/_components/CityPicker/CitySearch";
 import Communication from "@/_components/Communication";
-import styles from "@/_components/Header/UserInteraction/userInteraction.module.scss";
 import ArrowIcon from "@/_components/Icons/Arrow";
 import Logo from "@/_components/Logo";
 import ModalWindows from "@/_components/ModalWindows";
@@ -52,10 +52,10 @@ const UserInteraction = () => {
           >
             <Logo />
           </Link>
-          {/*<CityPicker />*/}
+          <CityPicker className="flex md:hidden" />
         </div>
 
-        <Search searchClassname={styles.search} />
+        <Search className="hidden md:flex md:max-w-[426px]" />
 
         <div className="flex items-center gap-2.5 md:gap-5">
           <div className="hidden md:block">
@@ -95,7 +95,9 @@ const UserInteraction = () => {
           </div>
         </div>
         <div className="hidden md:flex" onClick={handleCallBackBtnClick}>
-          <Button variant="secondary">Бесплатный звонок</Button>
+          <Button className="hidden lg:flex" variant="secondary">
+            Бесплатный звонок
+          </Button>
         </div>
         {showCallback && <ModalWindows callback />}
         {showCityModal && <CitySearch />}
