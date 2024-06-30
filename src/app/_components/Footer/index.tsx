@@ -8,13 +8,13 @@ import SimpleBar from "simplebar-react";
 
 import styles from "./footer.module.scss";
 import EmailSvg from "@/_assets/images/general/email.svg";
-import LogoPng from "@/_assets/images/general/logo.png";
 import SentSvg from "@/_assets/images/general/sent.svg";
 import CatalogPng from "@/_assets/images/pngs/catalog.png";
 import ConsultantPng from "@/_assets/images/pngs/consultant.png";
 import PaymentOptionsPng from "@/_assets/images/pngs/paymentOptions.png";
 import PodvesnoyMotorPng from "@/_assets/images/pngs/plm.png";
 import Arrow from "@/_components/Icons/Arrow";
+import Logo from "@/_components/Logo";
 import citiesData from "@/_data/cities/cities.json";
 import footerNavData from "@/_data/navigation/footerNav.json";
 import {
@@ -22,6 +22,7 @@ import {
   toggleModalOverlay,
 } from "@/_store/slices/ModalWindows";
 import FormatPhoneNumber from "@/_utils/formatPhoneNumber";
+import RoutesPaths from "@/types/enums/routes";
 
 const Footer = () => {
   const dispatch = useDispatch();
@@ -72,23 +73,27 @@ const Footer = () => {
     dispatch(toggleCallbackWindow());
   };
   return (
-    <footer className={styles.footer}>
+    <footer className="bg-mm-milk">
       <div className="container">
-        <div className={styles.mainContent}>
-          <div className={styles.detailsInfo}>
-            <Image src={LogoPng} alt="Логотип" width={177} height={34} />
+        <div className="flex gap-5 flex-col sm:flex-row pt-11 pb-5 md:py-11 flex-wrap lg:flex-nowrap justify-center lg:justify-between">
+          <div className="flex flex-col gap-4 sm:gap-8">
+            <Link href={RoutesPaths.home}>
+              <Logo />
+            </Link>
             <div>
-              <h4 className={styles.detailsTitle}>Фактический адрес</h4>
-              <div className={styles.detailsSubtitle}>
+              <h4 className="mb-2 font-bold text-sm leading-4">
+                Фактический адрес
+              </h4>
+              <div className="mb-1 text-sm font-medium leading-4">
                 {citiesData[0].address}
               </div>
             </div>
-            <div className={styles.schedule}>
-              <h4 className={styles.detailsTitle}>Время работы</h4>
-              <div className={styles.detailsSubtitle}>
+            <div className="mb-auto">
+              <h4 className="font-bold text-sm leading-4">Время работы</h4>
+              <div className="font-medium text-sm leading-4">
                 {citiesData[0].weekdayHours}
               </div>
-              <div className={styles.detailsSubtitle}>
+              <div className="font-medium text-sm leading-4">
                 {citiesData[0].weekendHours}
               </div>
             </div>
@@ -100,13 +105,18 @@ const Footer = () => {
             />
           </div>
           <div>
-            <h3 className={styles.navTitle}>О компании</h3>
+            <h3 className="mb-4 sm:mb-5 text-mm-main font-bold select-none leading-6">
+              О компании
+            </h3>
             <nav>
-              <ul className={styles.navFooterList}>
+              <ul className="flex gap-3 flex-col">
                 {footerNavData.map(item => {
                   return (
-                    <li key={item.id}>
-                      <Link className={styles.navLink} href={item.route}>
+                    <li key={item.id} className="box-border h-fit">
+                      <Link
+                        className="flex text-sm font-medium whitespace-nowrap select-none transition-colors duration-200 hover:text-mm-main-hover"
+                        href={item.route}
+                      >
                         {item.title}
                       </Link>
                     </li>
@@ -115,28 +125,29 @@ const Footer = () => {
               </ul>
             </nav>
           </div>
-          <div className={styles.additionalInfo}>
-            <div className={styles.callbackSection}>
+          <div className="flex flex-col gap-5 sm:gap-10">
+            <div className="flex gap-5 justify-between">
               <Image
+                className="h-[105px]"
                 src={ConsultantPng}
                 alt="Консультант"
-                width={75}
+                width={88}
                 height={105}
               />
-              <div className={styles.callbackWrapper}>
-                <div>
-                  <h3 className={styles.callbackTitle}>Остались вопросы?</h3>
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col">
+                  <h3 className="text-base font-bold">Остались вопросы?</h3>
                   <button
-                    className={styles.callbackBtn}
+                    className="outline-none border-none bg-transparent text-mm-main text-base font-bold cursor-pointer hover:text-mm-main-hover transition-colors duration-200"
                     onClick={handleCallbackBtn}
                   >
                     Проконсультируем бесплатно!
                   </button>
                 </div>
-                <div>
-                  <h4 className={styles.storePhoneTitle}>Телефон магазин</h4>
+                <div className="flex flex-col">
+                  <h4 className=" font-medium text-sm">Телефон магазин</h4>
                   <a
-                    className={styles.storePhone}
+                    className="font-bold text-base text-mm-main hover:text-mm-main-hover transition-colors duration-200"
                     href={`tel:${citiesData[0].phoneNumber}`}
                   >
                     {FormatPhoneNumber(citiesData[0].phoneNumber)}
@@ -145,24 +156,24 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <h3 className={styles.subscribeTitle}>
+              <h3 className="text-base font-bold mb-3 leading-5">
                 Будьте вкурсе последних скидок и новинок !
               </h3>
-              <form className={styles.subscribeForm} action="">
+              <form className="flex relative" action="">
                 <input
-                  className={styles.subscribeInput}
+                  className="flex py-4 pl-11 pr-14 w-full text-base border border-solid border-[#dedede] rounded-lg"
                   placeholder="Ваш E-mail"
                   type="text"
                 />
                 <Image
-                  className={styles.subscriptionEmail}
+                  className="absolute left-5 top-1/2 transform -translate-y-1/2"
                   src={EmailSvg}
                   alt="Иконка Email"
                   width={18}
                   height={14}
                 />
                 <button
-                  className={styles.subscribeSentBtn}
+                  className="flex absolute w-16 h-12 justify-center items-center border-none right-0 bg-mm-main rounded-lg cursor-pointer"
                   type="submit"
                   onClick={e => handleSubmitForm(e)}
                 >
@@ -173,8 +184,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className={styles.seoBlockWrapper}>
-          <div className={styles.seoInfoBtnsWrapper}>
+        <div className="relative mb-5 sm:mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 ">
             <button
               className={classNames(
                 styles.seoInfoBtn,
@@ -183,13 +194,15 @@ const Footer = () => {
               onClick={() => handleButtonClick(1)}
             >
               <Image
-                className={styles.seoBtnPic}
+                className="mr-4"
                 src={CatalogPng}
                 alt="Каталог"
                 width={82}
                 height={46}
               />
-              <span className={styles.seoBtnTitle}>Каталог</span>
+              <span className="inline-block mr-auto text-base font-bold">
+                Каталог
+              </span>
               <Arrow tertiary flip={activeButton === 1} />
             </button>
             <button
@@ -206,41 +219,56 @@ const Footer = () => {
                 width={48}
                 height={48}
               />
-              <span className={styles.seoBtnTitle}>Популярные бренды</span>{" "}
+              <span className="inline-block mr-auto text-base font-bold">
+                Популярные бренды
+              </span>{" "}
               <Arrow tertiary flip={activeButton === 2} />
             </button>
           </div>
           <div
             className={classNames(
+              "absolute p-5 min-h-[300px] sm:min-h-0 bg-white w-full -translate-x-[10000px] rounded-sm",
               styles.seoRequests,
               activeButton !== null && styles.showSeo,
             )}
           >
             <SimpleBar className={styles.simpleBar}>
-              <div className={styles.listsWrapper}>
+              <div className="relative min-h-[300px] sm:min-h-[150px]">
                 <ul
                   className={classNames(
                     styles.seoList,
                     activeButton === 1 && styles.activeList,
                   )}
                 >
-                  <li>
-                    <Link className={styles.seoLink} href="#">
+                  <li className="w-full">
+                    <Link
+                      className="flex justify-center transition-colors duration-200 hover:text-mm-main-hover text-base"
+                      href="#"
+                    >
                       Result 1
                     </Link>
                   </li>
-                  <li>
-                    <Link className={styles.seoLink} href="#">
+                  <li className="w-full">
+                    <Link
+                      className="flex justify-center transition-colors duration-200 hover:text-mm-main-hover text-base"
+                      href="#"
+                    >
                       Result 2
                     </Link>
                   </li>
-                  <li>
-                    <Link className={styles.seoLink} href="#">
+                  <li className="w-full">
+                    <Link
+                      className="flex justify-center transition-colors duration-200 hover:text-mm-main-hover text-base"
+                      href="#"
+                    >
                       Result 3
                     </Link>
                   </li>
-                  <li>
-                    <Link className={styles.seoLink} href="#">
+                  <li className="w-full">
+                    <Link
+                      className="flex justify-center transition-colors duration-200 hover:text-mm-main-hover text-base"
+                      href="#"
+                    >
                       Result 5
                     </Link>
                   </li>
@@ -251,23 +279,35 @@ const Footer = () => {
                     activeButton === 2 && styles.activeList,
                   )}
                 >
-                  <li>
-                    <Link className={styles.seoLink} href="#">
+                  <li className="w-full">
+                    <Link
+                      className="flex justify-center transition-colors duration-200 hover:text-mm-main-hover text-base"
+                      href="#"
+                    >
                       Result 2
                     </Link>
                   </li>
-                  <li>
-                    <Link className={styles.seoLink} href="#">
+                  <li className="w-full">
+                    <Link
+                      className="flex justify-center transition-colors duration-200 hover:text-mm-main-hover text-base"
+                      href="#"
+                    >
                       Result 4
                     </Link>
                   </li>
-                  <li>
-                    <Link className={styles.seoLink} href="#">
+                  <li className="w-full">
+                    <Link
+                      className="flex justify-center transition-colors duration-200 hover:text-mm-main-hover text-base"
+                      href="#"
+                    >
                       Result 6
                     </Link>
                   </li>
-                  <li>
-                    <Link className={styles.seoLink} href="#">
+                  <li className="w-full">
+                    <Link
+                      className="flex justify-center transition-colors duration-200 hover:text-mm-main-hover text-base"
+                      href="#"
+                    >
                       Result 8
                     </Link>
                   </li>
@@ -277,9 +317,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={styles.bottomLine}>
+      <div className="bg-[#f1f1f1]">
         <div className="container">
-          <div className={styles.bottomLineContent}>
+          <div className="py-4 sm:py-8 text-xs sm:text-sm font-semibold sm:font-bold leading-4">
             © Mot Motor – интернет-магазин в Москве: купить лодочный мотор,
             лодку ПВХ, лодку РИБ-ПВХ, SUP-доску, квадроцикл, мотобуксировщик,
             снегоход, снегоуборщик

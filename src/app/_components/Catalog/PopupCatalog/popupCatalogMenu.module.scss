@@ -1,16 +1,10 @@
 @import "@/_assets/styles/variables";
 
 .categoryWrapper {
-  min-width: 312px;
-  padding: 24px;
-  background-color: $light;
   border-bottom-left-radius: $borderRadiusSmall;
   border-bottom-right-radius: $borderRadiusSmall;
   &.withContent {
     border-bottom-right-radius: 0;
-  }
-  @media(max-width: $mediaMobile) {
-    width: 100%;
   }
 }
 

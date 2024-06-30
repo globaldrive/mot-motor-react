@@ -20,8 +20,8 @@ const PopupCatalogResults = ({
     resultsData[activeResultInx].content &&
     resultsData[activeResultInx].content!.length > 0;
   const resultsClassname = classNames(
+    `${isSomethingInResults ? "block" : "hidden"} absolute md:relative left-0 h-full md:h-auto w-full bg-mm-milk py-9 px-5 lg:p-12 lg:min-w-[65%] text-sm lg:text-base`,
     styles.root,
-    isSomethingInResults && styles.showResults,
   );
   return (
     <div className={resultsClassname}>
@@ -29,6 +29,7 @@ const PopupCatalogResults = ({
         resultsData.map((item, index) => {
           const isActive = index === activeResultInx;
           const listItemClass = classNames(
+            "font-medium leading-5",
             styles.list,
             isActive ? styles.activeList : "",
           );

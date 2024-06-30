@@ -43,6 +43,9 @@ module.exports = {
         "mm-attention": "#FF2D2D",
         "mm-overlay": "rgba(51, 60, 73, 0.3)",
       },
+      boxShadow: {
+        benefitsMainPage: "1px 1px 8px 8px rgba(230, 230, 230, .4)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

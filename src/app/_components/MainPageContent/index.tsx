@@ -1,8 +1,10 @@
+import Benefits from "@/_components/MainPageContent/Benefits";
+
 const MainPageContent = () => {
   return (
     <>
       {/*<MainBanner />*/}
-      {/*<Benefits />*/}
+      <Benefits />
       {/*<TagsFilter />*/}
       {/*<VideoConsultation />*/}
       {/*<div>Секция Новые поступления</div>*/}
