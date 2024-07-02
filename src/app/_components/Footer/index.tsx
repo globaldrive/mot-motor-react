@@ -187,10 +187,7 @@ const Footer = () => {
         <div className="relative mb-5 sm:mb-8">
           <div className="flex flex-col sm:flex-row gap-3 ">
             <button
-              className={classNames(
-                styles.seoInfoBtn,
-                activeButton === 1 && styles.activeBtn,
-              )}
+              className={`flex py-2.5 pr-3 pl-8 w-full items-center font-bold text-mm-main bg-white outline-none border border-[#E9E9E9] border-b-2 border-b-[#E9E9E9] rounded-lg cursor-pointer ${activeButton === 1 && "border-b-mm-main"}`}
               onClick={() => handleButtonClick(1)}
             >
               <Image
@@ -206,10 +203,7 @@ const Footer = () => {
               <Arrow tertiary flip={activeButton === 1} />
             </button>
             <button
-              className={classNames(
-                styles.seoInfoBtn,
-                activeButton === 2 && styles.activeBtn,
-              )}
+              className={`flex py-2.5 pr-3 pl-8 w-full items-center font-bold text-mm-main bg-white outline-none border border-[#E9E9E9] border-b-2 border-b-[#E9E9E9] rounded-lg cursor-pointer ${activeButton === 2 && "border-b-mm-main"}`}
               onClick={() => handleButtonClick(2)}
             >
               <Image
@@ -235,10 +229,7 @@ const Footer = () => {
             <SimpleBar className={styles.simpleBar}>
               <div className="relative min-h-[300px] sm:min-h-[150px]">
                 <ul
-                  className={classNames(
-                    styles.seoList,
-                    activeButton === 1 && styles.activeList,
-                  )}
+                  className={`absolute flex flex-col md:gap-2.5 md:grid md:grid-cols-2 w-full h-full justify-center items-start transform -translate-x-[10000px] ${activeButton === 1 && "-translate-x-0"}`}
                 >
                   <li className="w-full">
                     <Link
@@ -274,10 +265,7 @@ const Footer = () => {
                   </li>
                 </ul>
                 <ul
-                  className={classNames(
-                    styles.seoList,
-                    activeButton === 2 && styles.activeList,
-                  )}
+                  className={`absolute flex flex-col md:gap-2.5 md:grid md:grid-cols-2 w-full h-full justify-center items-start transform -translate-x-[10000px] ${activeButton === 2 && "-translate-x-0"}`}
                 >
                   <li className="w-full">
                     <Link

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Button from "@/_components/Button";
+import { Button } from "@/_components/ui/button";
 import FormatPhoneNumber from "@/_utils/formatPhoneNumber";
 
 const VideoConsultation = () => {

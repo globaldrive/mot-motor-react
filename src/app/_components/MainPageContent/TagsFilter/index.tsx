@@ -42,13 +42,13 @@ const TagsFilter = () => {
       <div className="container">
         <Tabs
           defaultValue={mockTabsContent[0].title}
-          className="w-[400px] md:mb-9 xl:mb-14"
+          className="md:mb-9 xl:mb-14"
         >
-          <TabsList className="bg-transparent">
+          <TabsList className="gap-5 pb-5 md:gap-12 whitespace-nowrap w-full justify-start bg-transparent mb-9 border-b border-[#ccc]">
             {mockTabsContent.map(tab => {
               return (
                 <TabsTrigger
-                  className="flex gap-3 mr-12 text-xl font-bold data-[state=active]:bg-transparent border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-mm-main "
+                  className="pb-4 px-0 md:pb-6 gap-3 text-xl font-medium data-[state=active]:bg-transparent border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-mm-main shadow-none"
                   key={tab.title}
                   value={tab.title}
                 >

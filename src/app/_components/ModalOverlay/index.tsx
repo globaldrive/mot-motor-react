@@ -59,7 +59,7 @@ const ModalOverlay = ({ children }: ModalOverlayProps) => {
           className="absolute h-full bg-mm-overlay inset-0 z-[999]"
           onClick={handleOverlayClick}
         >
-          <div className="fixed min-w-[350px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl z-[999]">
+          <div className="fixed min-w-[350px] md:min-w-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl z-[999]">
             {children} <CrossSvg main onClick={handleCrossClick} />
           </div>
         </div>

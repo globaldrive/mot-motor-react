@@ -58,7 +58,7 @@ const CitySearch = () => {
           <div className="text-center max-w-[250px] text-base">
             Введите не менее 3 символов и выберите из списка ниже:
           </div>
-          <div className="w-full md:w-auto overflow-hidden">
+          <div className="md:w-full overflow-hidden">
             <SimpleBar style={{ maxHeight: 200 }}>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 content-start p-5 min-h-[200px] bg-mm-cement">
                 {cities
