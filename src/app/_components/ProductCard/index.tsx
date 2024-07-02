@@ -1,15 +1,11 @@
 import classNames from "classnames";
 import Image from "next/image";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import styles from "./productCard.module.scss";
+import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
 import { Button } from "@/_components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/_components/ui/card";
 
 const ProductCard = ({
   id,
@@ -19,25 +15,47 @@ const ProductCard = ({
   oldPrice,
   main,
 }: ProductCardProps) => {
-  const productCardClassname = classNames(styles.root, {
-    [styles.main]: main,
-  });
   const bankCreditMonths = 12;
   const savingAmount = Math.ceil(oldPrice - currentPrice);
   const partlyPaymentAmount = Math.ceil(currentPrice / bankCreditMonths);
 
+  const slides = images.map((img, index) => {
+    return (
+      <SwiperSlide key={String(id) + String(index)}>
+        <Image
+          className="w-36 h-36 md:w-52 md:h-52 select-none"
+          src={hangkaiPng}
+          alt="Изображение товара"
+          width={211}
+          height={211}
+        />
+      </SwiperSlide>
+    );
+  });
+
   return (
-    <Card className="flex flex-col justify-between">
-      <CardHeader>
-        <div>
-          <CardTitle>{title}</CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <div className={styles.priceWrapper}>
-          <div className={styles.oldPrice}>{oldPrice} руб.</div>
-          <div className={styles.currentPrice}>{currentPrice} руб.</div>
-          <div className={styles.savingWrapper}>
+    <div className="py-3 px-2.5 md:px-4 md:pt-3.5 md:pb-6 h-full w-[187px] md:w-[282px] border border-white border-solid hover:md:border-[#ccc] rounded-2xl">
+      <div>
+        <Swiper
+          className="mb-3"
+          modules={[Pagination]}
+          pagination={{ clickable: true }}
+          loop={true}
+        >
+          {slides}
+        </Swiper>
+        <h4
+          className={classNames(
+            styles.title,
+            "mb-3 md:mb-5 text-xs md:text-sm",
+          )}
+        >
+          {title}
+        </h4>
+        <div className="flex flex-col gap-1 mb-3.5 md:mb-8">
+          <div className="text-sm line-through opacity-30">{oldPrice} руб.</div>
+          <div className="text-xl text-mm-main">{currentPrice} руб.</div>
+          <div className="flex gap-1.5 text-xs md:text-sm font-medium">
             <Image
               src="/discount.svg"
               alt="Иконка процента"
@@ -47,22 +65,20 @@ const ProductCard = ({
             <div>Экономия {savingAmount} руб.</div>
           </div>
         </div>
-      </CardContent>
-      <CardFooter className="flex flex-col">
-        <div className="flex flex-col">
-          <Button>Купить в 1 клик</Button>
+        <div className="flex flex-col gap-2 mb-2.5 md:mb-5 ">
+          <Button variant="secondary">Купить в 1 клик</Button>
           <Button>Купить</Button>
         </div>
-        <div className={styles.partlyPaymentWrapper}>
-          <span className={styles.partlyPaymentText}>
+        <div className="flex flex-col p-2.5 gap-1 justify-center items-center bg-mm-cement rounded-2xl select-none">
+          <span className="text-xs md:text-sm font-medium opacity-30">
             Или оплачивай частями
           </span>
-          <div className={styles.partlyPaymentAmount}>
+          <div className="text-sm md:text-base font-bold text-mm-main">
             от {partlyPaymentAmount} / мес.
           </div>
         </div>
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 };
 
