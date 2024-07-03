@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Image from "next/image";
+import Link from "next/link";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -69,14 +70,17 @@ const ProductCard = ({
           <Button variant="secondary">Купить в 1 клик</Button>
           <Button>Купить</Button>
         </div>
-        <div className="flex flex-col p-2.5 gap-1 justify-center items-center bg-mm-cement rounded-2xl select-none">
+        <Link
+          href="#"
+          className="flex flex-col p-2.5 gap-1 justify-center items-center bg-mm-cement rounded-2xl select-none hover:opacity-70"
+        >
           <span className="text-xs md:text-sm font-medium opacity-30">
             Или оплачивай частями
           </span>
           <div className="text-sm md:text-base font-bold text-mm-main">
             от {partlyPaymentAmount} / мес.
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
