@@ -1,7 +1,4 @@
 "use client";
-import Image from "next/image";
-
-import "swiper/css/navigation";
 import ProductCardCarousel from "@/_components/ProductCardCarousel";
 import {
   Tabs,
@@ -13,27 +10,37 @@ import productCardsData from "@/_data/mockProductCardsData/productCardData.json"
 
 const mockTabsContent = [
   {
-    title: "Выбор покупателей",
-    svgIcon: "/like.svg",
+    title: "Все предложения",
     tabsContent: "Карточки товара 1й набор",
   },
   {
-    title: "Скидки",
-    svgIcon: "/discount.svg",
+    title: "Лодки ПВХ",
     tabsContent: "Карточки товара 2й набор",
   },
   {
-    title: "Успей купить",
-    svgIcon: "/fire.svg",
+    title: "Техника с пробегом",
     tabsContent: "Карточки товара 3й набор",
   },
+  {
+    title: "SUP Доски",
+    tabsContent: "Карточки товара 4й набор",
+  },
+  {
+    title: "Лодочные моторы",
+    tabsContent: "Карточки товара 5й набор",
+  },
+  {
+    title: "Мотобуксировщики",
+    tabsContent: "Карточки товара 6й набор",
+  },
 ];
-const TagsFilter = () => {
-  const handleTabClick = () => {};
-
+const BestOffers = () => {
   return (
     <section>
       <div className="container">
+        <h2 className="font-bold text-3xl text-center md:text-start md:text-mm-title-two mb-9">
+          Лучшие предложения <span className="text-mm-main">MotMotor</span>
+        </h2>
         <Tabs
           defaultValue={mockTabsContent[0].title}
           className="md:mb-9 xl:mb-14"
@@ -42,16 +49,10 @@ const TagsFilter = () => {
             {mockTabsContent.map(tab => {
               return (
                 <TabsTrigger
-                  className="pb-4 px-0 md:pb-6 gap-3 text-xl font-medium data-[state=active]:bg-transparent border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-mm-main shadow-none"
+                  className="pb-4 px-0 md:pb-6 text-xl font-medium data-[state=active]:bg-transparent border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-mm-main shadow-none"
                   key={tab.title}
                   value={tab.title}
                 >
-                  <Image
-                    src={tab.svgIcon}
-                    alt="Иконка тега"
-                    width={26}
-                    height={26}
-                  />
                   {tab.title}
                 </TabsTrigger>
               );
@@ -65,11 +66,10 @@ const TagsFilter = () => {
             );
           })}
         </Tabs>
-
         <ProductCardCarousel cardsContent={productCardsData} />
       </div>
     </section>
   );
 };
 
-export default TagsFilter;
+export default BestOffers;

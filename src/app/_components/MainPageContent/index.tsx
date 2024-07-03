@@ -1,6 +1,8 @@
 import AdditionalInformation from "@/_components/MainPageContent/AdditionalInformation";
 import Benefits from "@/_components/MainPageContent/Benefits";
+import BestOffers from "@/_components/MainPageContent/BestOffers";
 import MainBanner from "@/_components/MainPageContent/MainBanner";
+import NewArrivals from "@/_components/MainPageContent/NewArrivals";
 import TagsFilter from "@/_components/MainPageContent/TagsFilter";
 import VideoConsultation from "@/_components/MainPageContent/VideoConsultation";
 
@@ -11,7 +13,8 @@ const MainPageContent = () => {
       <Benefits />
       <TagsFilter />
       <VideoConsultation />
-      <div>Секция Новые поступления</div>
+      <BestOffers />
+      <NewArrivals />
       <div>Секция Бренды (Не делаем - ждем дизайн)</div>
       <div>
         Секция Рекомендуем / хит продаж / успейте купить (Не делаем - ждем
