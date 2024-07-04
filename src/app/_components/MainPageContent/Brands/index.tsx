@@ -13,9 +13,17 @@ const Brands = () => {
   return (
     <section>
       <div className="container">
-        <div className="flex mb-5 md:mb-12 items-center gap-8">
-          <h2>Популярные бренды</h2>
-          <Image src={RightArrowSvg} alt="arrow" width={30} height={14} />
+        <div className="flex mb-5 md:mb-12 items-center gap-3 md:gap-8">
+          <h2 className="text-2xl md:text-3xl font-medium">
+            Популярные бренды
+          </h2>
+          <Image
+            className="md:w-8 md:h-3.5"
+            src={RightArrowSvg}
+            alt="arrow"
+            width={12}
+            height={8}
+          />
         </div>
         <div className="relative md:mx-2.5">
           <ChangeSlideButton
@@ -29,7 +37,7 @@ const Brands = () => {
               loop={true}
               onSwiper={swiper => setSwiperInstance(swiper)}
               breakpoints={{
-                350: {
+                319: {
                   spaceBetween: 20,
                   slidesPerView: 2,
                   slidesPerGroup: 2,

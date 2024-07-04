@@ -173,7 +173,7 @@ const Footer = () => {
                   height={14}
                 />
                 <button
-                  className="flex absolute w-16 h-12 justify-center items-center border-none right-0 bg-mm-main rounded-lg cursor-pointer"
+                  className="flex absolute w-16 h-full justify-center items-center border-none right-0 bg-mm-main rounded-lg cursor-pointer"
                   type="submit"
                   onClick={e => handleSubmitForm(e)}
                 >
