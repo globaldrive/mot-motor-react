@@ -5,7 +5,7 @@ import RoutesPaths from "@/types/enums/routes";
 const AdditionalInformation = () => {
   return (
     <section className="mb-12">
-      <div className="container flex justify-center">
+      <div className="container flex justify-start md:justify-center">
         <div className="flex flex-col gap-2.5 lg:gap-3.5 max-w-[546px] md:max-w-[690px] lg:max-w-[895px] xl:max-w-full">
           <div>
             <h1 className="mb-3.5 md:mb-5 text-2xl md:text-4xl font-medium ">

@@ -3,8 +3,8 @@ import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import styles from "./productCardCarousel.module.scss";
+import ChangeSlideButton from "@/_components/Buttons/ChangeSlideButton";
 import ProductCard from "@/_components/ProductCard";
-import ChangeSlideButton from "@/_components/ProductCardCarousel/ChangeSlideButton";
 import ProductCardCarouselProps from "@/_components/ProductCardCarousel/ProductCardCarousel.interface";
 
 const ProductCardCarousel = ({ cardsContent }: ProductCardCarouselProps) => {
@@ -12,7 +12,7 @@ const ProductCardCarousel = ({ cardsContent }: ProductCardCarouselProps) => {
   return (
     <>
       <div className="relative hidden md:block md:mx-2.5">
-        <ChangeSlideButton swiper={swiperInstance} left main />
+        <ChangeSlideButton swiper={swiperInstance} position="left" left />
         <ul className="flex justify-between gap-3.5">
           <Swiper
             loop={true}
@@ -53,7 +53,7 @@ const ProductCardCarousel = ({ cardsContent }: ProductCardCarouselProps) => {
             })}
           </Swiper>
         </ul>
-        <ChangeSlideButton swiper={swiperInstance} right main />
+        <ChangeSlideButton swiper={swiperInstance} position="right" right />
       </div>
       <div className="flex justify-center md:hidden">
         <ul className="grid grid-cols-2 w-fit">

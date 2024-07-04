@@ -45,19 +45,21 @@ const BestOffers = () => {
           defaultValue={mockTabsContent[0].title}
           className="md:mb-9 xl:mb-14"
         >
-          <TabsList className="gap-5 pb-5 md:gap-12 whitespace-nowrap w-full justify-start bg-transparent mb-9 border-b border-[#ccc]">
-            {mockTabsContent.map(tab => {
-              return (
-                <TabsTrigger
-                  className="pb-4 px-0 md:pb-6 text-xl font-medium data-[state=active]:bg-transparent border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-mm-main shadow-none"
-                  key={tab.title}
-                  value={tab.title}
-                >
-                  {tab.title}
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
+          <div className="overflow-auto">
+            <TabsList className="gap-5 pb-5 md:gap-12 whitespace-nowrap w-full justify-start bg-transparent mb-9 border-b border-[#ccc]">
+              {mockTabsContent.map(tab => {
+                return (
+                  <TabsTrigger
+                    className="pb-4 px-0 md:pb-6 text-xl font-medium data-[state=active]:bg-transparent border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-mm-main shadow-none"
+                    key={tab.title}
+                    value={tab.title}
+                  >
+                    {tab.title}
+                  </TabsTrigger>
+                );
+              })}
+            </TabsList>
+          </div>
           {mockTabsContent.map(tab => {
             return (
               <TabsContent key={tab.tabsContent} value={tab.title}>
