@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 
-import benefitSvg from "@/_assets/images/svgs/1.svg";
 import benefitsData from "@/_data/mainPage/benefits.json";
 import benefitsLineData from "@/_data/mainPage/benefitsLine.json";
 
@@ -51,7 +50,7 @@ const Benefits = () => {
                   className="flex p-4 flex-1 gap-6 items-center flex-nowrap border-l border-[#ddd] select-none"
                 >
                   <Image
-                    src={benefitSvg}
+                    src={`/benefitsLineSvg/${benefit.id}.svg`}
                     alt="Иконка преимущества"
                     width={40}
                     height={40}
