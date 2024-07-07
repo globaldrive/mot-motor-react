@@ -42,12 +42,12 @@ const Benefits = () => {
           })}
         </ul>
         <div className="overflow-auto pt-10">
-          <ul className="flex flex-nowrap border border-[#ddd]">
+          <ul className="flex lg:border lg:border-[#ddd]">
             {benefitsLineData.map(benefit => {
               return (
                 <li
                   key={benefit.id}
-                  className="flex p-4 flex-1 gap-6 items-center flex-nowrap border-l border-[#ddd] select-none"
+                  className="flex min-w-fit lg:flex-1 p-4 gap-2 xl:gap-6 items-center border-l border-[#ddd] select-none"
                 >
                   <Image
                     src={`/benefitsLineSvg/${benefit.id}.svg`}

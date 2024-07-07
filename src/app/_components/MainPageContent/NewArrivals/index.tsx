@@ -1,5 +1,5 @@
 "use client";
-import ProductCardCarousel from "@/_components/ProductCardCarousel";
+import ProductCardCarouselSecondary from "@/_components/ProductCardCarousel/ProductCardCarouselSecondary";
 import productCardsData from "@/_data/mockProductCardsData/productCardData.json";
 
 const NewArrivals = () => {
@@ -9,7 +9,7 @@ const NewArrivals = () => {
         <h2 className="font-bold text-3xl text-center md:text-start md:text-mm-title-two mb-9">
           Новые поступления
         </h2>
-        <ProductCardCarousel cardsContent={productCardsData} />
+        <ProductCardCarouselSecondary cardsContent={productCardsData} />
       </div>
     </section>
   );

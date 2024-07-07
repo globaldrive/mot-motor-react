@@ -138,7 +138,7 @@ const Footer = () => {
                 <div className="flex flex-col">
                   <h3 className="text-base font-bold">Остались вопросы?</h3>
                   <button
-                    className="outline-none border-none bg-transparent text-mm-main text-base font-bold cursor-pointer hover:text-mm-main-hover transition-colors duration-200"
+                    className="outline-none border-none bg-transparent text-mm-main text-base text-start font-bold cursor-pointer hover:text-mm-main-hover transition-colors duration-200"
                     onClick={handleCallbackBtn}
                   >
                     Проконсультируем бесплатно!
@@ -156,7 +156,7 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-base font-bold mb-3 leading-5">
+              <h3 className="text-sm md:text-base font-bold mb-3 leading-5">
                 Будьте вкурсе последних скидок и новинок !
               </h3>
               <form className="flex relative" action="">

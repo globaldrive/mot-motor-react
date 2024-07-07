@@ -1,5 +1,5 @@
 "use client";
-import ProductCardCarousel from "@/_components/ProductCardCarousel";
+import ProductCardCarouselSecondary from "@/_components/ProductCardCarousel/ProductCardCarouselSecondary";
 import {
   Tabs,
   TabsContent,
@@ -68,7 +68,7 @@ const BestOffers = () => {
             );
           })}
         </Tabs>
-        <ProductCardCarousel cardsContent={productCardsData} />
+        <ProductCardCarouselSecondary cardsContent={productCardsData} />
       </div>
     </section>
   );

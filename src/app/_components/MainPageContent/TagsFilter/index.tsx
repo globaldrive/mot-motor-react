@@ -41,7 +41,7 @@ const TagsFilter = () => {
               {mockTabsContent.map(tab => {
                 return (
                   <TabsTrigger
-                    className="pb-4 px-0 md:pb-6 gap-3 text-xl font-medium data-[state=active]:bg-transparent border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-mm-main shadow-none"
+                    className="pb-4 min-w-fit px-0 md:pb-6 gap-3 text-xl font-medium data-[state=active]:bg-transparent border-b-2 border-transparent data-[state=active]:border-b-2 data-[state=active]:border-mm-main shadow-none"
                     key={tab.title}
                     value={tab.title}
                   >
