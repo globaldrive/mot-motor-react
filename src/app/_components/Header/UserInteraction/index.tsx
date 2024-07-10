@@ -57,7 +57,7 @@ const UserInteraction = () => {
 
         <Search className="hidden md:flex md:max-w-[426px]" />
 
-        <div className="flex items-center gap-2.5 md:gap-5">
+        <div className="flex min-w-fit items-center gap-2.5 md:gap-5">
           <div className="hidden md:block">
             <div className="flex gap-1.5 items-center">
               <Communication
