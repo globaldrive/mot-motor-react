@@ -6,7 +6,7 @@ import MainBanner from "@/_components/MainPageContent/MainBanner";
 import NewArrivals from "@/_components/MainPageContent/NewArrivals";
 import Recommendations from "@/_components/MainPageContent/Recommendations";
 import TagsFilter from "@/_components/MainPageContent/TagsFilter";
-import VideoConsultation from "@/_components/MainPageContent/VideoConsultation";
+import VideoConsultation from "@/_components/VideoConsultation";
 
 const MainPageContent = () => {
   return (
