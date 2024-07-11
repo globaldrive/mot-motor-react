@@ -15,7 +15,7 @@ const Header = () => {
     (state: RootState) => state.catalogPopup,
   );
   return (
-    <header>
+    <header className="relative">
       <GreetingsInfo />
       <UserInteraction />
       <Navigation />

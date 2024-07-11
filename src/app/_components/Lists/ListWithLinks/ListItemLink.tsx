@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "@/_components/Button/button.module.scss";
+import styles from "./listItemLink.module.scss";
 import { ListItemLinkProps } from "@/_components/Lists/ListWithLinks/ListItemLink.interface";
 
 const ListItemLink = ({

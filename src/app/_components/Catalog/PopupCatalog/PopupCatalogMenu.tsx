@@ -20,6 +20,7 @@ const PopupCatalogMenu = ({
     categoryData[activeMenuIdx].content &&
     categoryData[activeMenuIdx].content!.length > 0;
   const wrapperClassname = classNames(
+    "w-full md:w-auto min-w-[312px] p-6 bg-white",
     styles.categoryWrapper,
     isSomethingInResults && styles.withContent,
   );

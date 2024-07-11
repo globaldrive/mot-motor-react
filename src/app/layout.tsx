@@ -25,7 +25,9 @@ export default function RootLayout({
       <Providers>
         <body className={fontsNextClassname}>
           <Header />
-          <main>{children}</main>
+          <main className="flex flex-col gap-6 grow relative md:gap-11 lg:gap-14">
+            {children}
+          </main>
           <Footer />
           <div id="modal-root"></div>
         </body>

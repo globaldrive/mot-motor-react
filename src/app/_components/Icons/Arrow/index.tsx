@@ -11,8 +11,9 @@ const ArrowIcon = ({
   secondary,
   tertiary,
   customClassname,
+  className,
 }: ArrowIconProps) => {
-  const svgClassname = classNames(styles.svg, customClassname, {
+  const svgClassname = classNames(styles.svg, className, customClassname, {
     [styles.flip]: flip,
     [styles.main]: main,
     [styles.secondary]: secondary,

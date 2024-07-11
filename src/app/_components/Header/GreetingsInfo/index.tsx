@@ -1,14 +1,11 @@
-import classNames from "classnames";
-
-import styles from "./greetingsInfo.module.scss";
 import CityPicker from "@/_components/CityPicker";
 
 const GreetingsInfo = () => {
   return (
-    <div className={styles.root}>
-      <div className={classNames(styles.content, "container")}>
+    <div className="hidden bg-mm-milk py-2 md:block">
+      <div className="container flex gap-5 items-center">
         <CityPicker />
-        <div className={styles.storeAboutText}>
+        <div className="text-xs font-semibold leading-3 opacity-30">
           Лодочные моторы, лодки ПВХ, лодки РИБ-ПВХ под мотор, SUP доски,
           квадроциклы, мотобуксировщики, снегоходы, снегоуборщики, сноуборды
           (snowboard)

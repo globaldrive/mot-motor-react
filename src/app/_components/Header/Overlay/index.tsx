@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import styles from "./overlay.module.scss";
 import { toggleCatalogPopup } from "@/_store/slices/Catalogs";
 import { RootState } from "@/_store/store";
 
@@ -15,7 +14,10 @@ const Overlay = () => {
   return (
     <>
       {isCatalogOpen && (
-        <div className={styles.overlay} onClick={handleOverlayClick} />
+        <div
+          className="flex absolute w-screen h-screen bg-[#333C494D] z-20"
+          onClick={handleOverlayClick}
+        />
       )}
     </>
   );

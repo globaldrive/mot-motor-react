@@ -1,9 +1,6 @@
-import classNames from "classnames";
 import Image from "next/image";
 import React from "react";
 
-import styles from "./benefits.module.scss";
-import benefitSvg from "@/_assets/images/svgs/1.svg";
 import benefitsData from "@/_data/mainPage/benefits.json";
 import benefitsLineData from "@/_data/mainPage/benefitsLine.json";
 
@@ -17,41 +14,49 @@ const Benefits = () => {
     ));
   };
   return (
-    <section className={styles.section}>
+    <section>
       <div className="container">
-        <h2 className={styles.title}>ПОЧЕМУ С НАМИ ВЫГОДНО</h2>
-        <ul className={styles.list}>
+        <h2 className="mb-11 text-3xl text-center select-none leading-10">
+          ПОЧЕМУ С НАМИ ВЫГОДНО
+        </h2>
+        <ul className="grid mb-8 grid-cols-2 gap-4 justify-items-center md:grid-cols-3 lg:grid-cols-5">
           {benefitsData.map(benefit => {
             return (
-              <li key={benefit.id} className={styles.item}>
-                <div className={styles.round}>
+              <li
+                key={benefit.id}
+                className="flex flex-col items-center gap-2.5 w-fit select-none"
+              >
+                <div className="flex w-20 h-20 justify-center items-center rounded-full shadow-benefitsMainPage">
                   <Image
-                    src={benefitSvg}
+                    src={`/benefitsSvg/${benefit.id}.svg`}
                     alt="Иконка преимущества"
                     width={40}
                     height={40}
                   />
                 </div>
-                <span className={classNames(styles.text, styles.lineText)}>
+                <span className="max-w-[155px] inline-block text-sm text-center leading-6">
                   {renderWithLineBreaks(benefit.title)}
                 </span>
               </li>
             );
           })}
         </ul>
-        <div className={styles.benefitLine}>
-          <ul className={styles.lineList}>
+        <div className="overflow-auto pt-10">
+          <ul className="flex lg:border lg:border-[#ddd]">
             {benefitsLineData.map(benefit => {
               return (
-                <li key={benefit.id} className={styles.lineListItem}>
+                <li
+                  key={benefit.id}
+                  className="flex min-w-fit lg:flex-1 p-4 gap-2 xl:gap-6 items-center border-l border-[#ddd] select-none"
+                >
                   <Image
-                    src={benefitSvg}
+                    src={`/benefitsLineSvg/${benefit.id}.svg`}
                     alt="Иконка преимущества"
                     width={40}
                     height={40}
                   />
-                  <div className={styles.lineTextWrapper}>
-                    <h5 className={styles.lineTextTitle}>{benefit.title}</h5>
+                  <div className="flex flex-col whitespace-nowrap items-center text-center text-sm">
+                    <h5 className="text-xs">{benefit.title}</h5>
                     <span>{renderWithLineBreaks(benefit.description)}</span>
                   </div>
                 </li>

@@ -8,11 +8,11 @@ import {
   toggleCallbackWindow,
   toggleModalOverlay,
 } from "../../_store/slices/ModalWindows";
-import Button from "@/_components/Button";
 import InputField from "@/_components/InputField";
 import ModalOverlay from "@/_components/ModalOverlay";
 import ModalPortal from "@/_components/ModalPortal";
 import ModalWindowsProps from "@/_components/ModalWindows/ModalWindows.interface";
+import { Button } from "@/_components/ui/button";
 
 const ModalWindows = ({ callback }: ModalWindowsProps) => {
   const dynamicClassname = { [styles.callback]: callback };
@@ -104,9 +104,7 @@ const ModalWindows = ({ callback }: ModalWindowsProps) => {
                   </div>
                 </>
               )}
-              <Button type="submit" main>
-                Отправить
-              </Button>
+              <Button type="submit">Отправить</Button>
             </form>
           </div>
         </div>

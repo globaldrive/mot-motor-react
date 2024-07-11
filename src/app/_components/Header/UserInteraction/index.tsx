@@ -1,20 +1,17 @@
 "use client";
-import classNames from "classnames";
-import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 
-import LogoPng from "@/_assets/images/general/logo.png";
 import Basket from "@/_components/Basket";
 import Burger from "@/_components/Burger";
-import Button from "@/_components/Button";
 import CityPicker from "@/_components/CityPicker";
 import CitySearch from "@/_components/CityPicker/CitySearch";
 import Communication from "@/_components/Communication";
-import styles from "@/_components/Header/UserInteraction/userInteraction.module.scss";
 import ArrowIcon from "@/_components/Icons/Arrow";
+import Logo from "@/_components/Logo";
 import ModalWindows from "@/_components/ModalWindows";
 import Search from "@/_components/Search";
+import { Button } from "@/_components/ui/button";
 import communicationDetails from "@/_data/communication/communication.json";
 import { toggleBurgerMenu } from "@/_store/slices/BurgerMenu";
 import {
@@ -46,68 +43,71 @@ const UserInteraction = () => {
   );
 
   return (
-    <div className={classNames(styles.root, "container")}>
-      <div className={styles.logoMobileWrapper}>
-        <Link href={RoutesPaths.home} className={styles.logoLink}>
-          <Image
-            className={styles.logoImg}
-            src={LogoPng}
-            alt="Лого компании"
-            width={177}
-            height={34}
-          />
-        </Link>
-        <CityPicker className={styles.cityPickerMobile} />
-      </div>
+    <div className="container mb-5">
+      <div className="flex items-center mb-3 pt-3 gap-2 md:justify-between md:pt-5 md:gap-4 md:mb-0">
+        <div className="flex flex-col gap-2 md:gap-0 mr-auto md:mr-0">
+          <Link
+            href={RoutesPaths.home}
+            className="flex items-center select-none"
+          >
+            <Logo />
+          </Link>
+          <CityPicker className="flex md:hidden" />
+        </div>
 
-      <Search searchClassname={styles.search} />
+        <Search className="hidden md:flex md:max-w-[426px]" />
 
-      <div className={styles.communicationWrapper}>
-        <div className={styles.availableDetails}>
-          <div className={styles.phoneWrapper}>
-            <Communication
-              phoneNumber={communicationDetails.mainNumber}
-              communicationType={{ phoneCall: true }}
-              showPhoneNumber
-              phoneClassname={styles.phoneNumber}
-            />
-            <ArrowIcon main />
-          </div>
-          <div className={styles.weAreOnline}>
-            <div className={styles.outsideRing}>
-              <div className={styles.insideRing}></div>
+        <div className="flex min-w-fit items-center gap-2.5 md:gap-5">
+          <div className="hidden md:block">
+            <div className="flex gap-1.5 items-center">
+              <Communication
+                phoneNumber={communicationDetails.mainNumber}
+                communicationType={{ phoneCall: true }}
+                showPhoneNumber
+                variant="default"
+              />
+              <ArrowIcon main />
             </div>
-            <div className={styles.weOnlineText}>Мы сейчас на связи</div>
+            <div className="flex items-center gap-2">
+              <div className="flex items-center justify-center w-2 h-2 bg-mm-grass rounded-full">
+                <div className="w-1 h-1 rounded-full bg-mm-leaf"></div>
+              </div>
+              <div className="text-xs font-medium select-none whitespace-nowrap">
+                Мы сейчас на связи
+              </div>
+            </div>
           </div>
-        </div>
-        <div className={styles.fastActionBtns}>
-          <div className={styles.fastCallBtn}>
+          <div className="flex items-center gap-2 md:flex-none md:items-start md:gap-0">
+            <div className="md:hidden">
+              <Communication
+                phoneNumber={communicationDetails.mainNumber}
+                communicationType={{ phoneCall: true }}
+                showIcon
+              />
+            </div>
             <Communication
-              phoneNumber={communicationDetails.mainNumber}
-              communicationType={{ phoneCall: true }}
+              phoneNumber={communicationDetails.whatsApp.number}
+              communicationType={{ whatsApp: true }}
               showIcon
+              whatsAppPreviewText={communicationDetails.whatsApp.text}
+              openInNewTab
             />
           </div>
-          <Communication
-            phoneNumber={communicationDetails.whatsApp.number}
-            communicationType={{ whatsApp: true }}
-            showIcon
-            whatsAppPreviewText={communicationDetails.whatsApp.text}
-            openInNewTab
-          />
         </div>
+        <div className="hidden md:flex" onClick={handleCallBackBtnClick}>
+          <Button className="hidden lg:flex" variant="secondary">
+            Бесплатный звонок
+          </Button>
+        </div>
+        {showCallback && <ModalWindows callback />}
+        {showCityModal && <CitySearch />}
+        <Basket />
+        <Burger
+          mobile
+          isBurgerOpen={isBurgerOpen}
+          onBurgerClick={handleBurgerClick}
+        />
       </div>
-      <div className={styles.callBackBtn} onClick={handleCallBackBtnClick}>
-        <Button secondary>Бесплатный звонок</Button>
-      </div>
-      {showCallback && <ModalWindows callback />}
-      {showCityModal && <CitySearch />}
-      <Basket />
-      <Burger
-        mobile
-        isBurgerOpen={isBurgerOpen}
-        onBurgerClick={handleBurgerClick}
-      />
     </div>
   );
 };
