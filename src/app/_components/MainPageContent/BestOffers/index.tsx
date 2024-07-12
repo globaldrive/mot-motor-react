@@ -46,7 +46,7 @@ const BestOffers = () => {
           className="md:mb-9 xl:mb-14"
         >
           <div className="overflow-auto">
-            <TabsList className="gap-5 pb-5 md:gap-12 whitespace-nowrap w-full justify-start bg-transparent mb-9 border-b border-[#ccc]">
+            <TabsList className="gap-5 pb-5 md:gap-12 whitespace-nowrap w-full justify-start bg-transparent mb-2 border-b border-[#ccc]">
               {mockTabsContent.map(tab => {
                 return (
                   <TabsTrigger

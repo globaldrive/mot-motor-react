@@ -1,12 +1,13 @@
 import classNames from "classnames";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import styles from "./productCard.module.scss";
 import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
 import { Button } from "@/_components/ui/button";
+import RoutesPaths from "@/types/enums/routes";
 
 const ProductCard = ({
   id,
@@ -19,6 +20,22 @@ const ProductCard = ({
   const bankCreditMonths = 12;
   const savingAmount = Math.ceil(oldPrice - currentPrice);
   const partlyPaymentAmount = Math.ceil(currentPrice / bankCreditMonths);
+  const router = useRouter();
+
+  const handleProductCardClick = () => {
+    router.push(RoutesPaths.productCard + id);
+  };
+  const handleBuyOnOneClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
+  const handleBuyBtnClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
+  const handlePartlyPaymentClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
 
   const slides = images.map((img, index) => {
     return (
@@ -37,7 +54,10 @@ const ProductCard = ({
   });
 
   return (
-    <div className="px-4 pt-3.5 pb-6 h-full w-[282px] border border-white border-solid hover:border-[#ccc] rounded-2xl">
+    <div
+      onClick={handleProductCardClick}
+      className="block px-4 pt-3.5 pb-6 h-full w-[282px] border border-white border-solid hover:border-[#ccc] rounded-2xl cursor-pointer"
+    >
       <div>
         <Swiper
           className="mb-3"
@@ -62,11 +82,13 @@ const ProductCard = ({
           </div>
         </div>
         <div className="flex flex-col gap-2 mb-5 ">
-          <Button variant="secondary">Купить в 1 клик</Button>
-          <Button>Купить</Button>
+          <Button onClick={e => handleBuyOnOneClick(e)} variant="secondary">
+            Купить в 1 клик
+          </Button>
+          <Button onClick={e => handleBuyBtnClick(e)}>Купить</Button>
         </div>
-        <Link
-          href="#"
+        <div
+          onClick={e => handlePartlyPaymentClick(e)}
           className="flex flex-col p-2.5 gap-1 justify-center items-center bg-mm-cement rounded-2xl select-none hover:opacity-70"
         >
           <span className="text-sm font-medium opacity-30">
@@ -75,7 +97,7 @@ const ProductCard = ({
           <div className="text-base font-bold text-mm-main">
             от {partlyPaymentAmount} / мес.
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );

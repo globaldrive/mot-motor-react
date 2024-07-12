@@ -42,12 +42,12 @@ const Benefits = () => {
           })}
         </ul>
         <div className="overflow-auto pt-10">
-          <ul className="flex lg:border lg:border-[#ddd]">
+          <ul className="flex lg:border lg:border-[#ddd] rounded-lg">
             {benefitsLineData.map(benefit => {
               return (
                 <li
                   key={benefit.id}
-                  className="flex min-w-fit lg:flex-1 p-4 gap-2 xl:gap-6 items-center border-l border-[#ddd] select-none"
+                  className="flex min-w-fit lg:flex-1 p-4 gap-2 xl:gap-6 items-center first:border-l-0 border-l border-[#ddd] select-none"
                 >
                   <Image
                     src={`/benefitsLineSvg/${benefit.id}.svg`}
@@ -55,8 +55,8 @@ const Benefits = () => {
                     width={40}
                     height={40}
                   />
-                  <div className="flex flex-col whitespace-nowrap items-center text-center text-sm">
-                    <h5 className="text-xs">{benefit.title}</h5>
+                  <div className="flex flex-col whitespace-nowrap items-center text-center text-xs md:text-sm">
+                    <h5 className="font-semibold">{benefit.title}</h5>
                     <span>{renderWithLineBreaks(benefit.description)}</span>
                   </div>
                 </li>

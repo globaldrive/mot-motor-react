@@ -10,7 +10,7 @@ const Recommendations = () => {
     <section>
       <div className="container">
         <div className="flex mb-5 md:mb-12 items-center gap-3 md:gap-8">
-          <h2>Рекомендуем</h2>
+          <h2 className="text-2xl md:text-3xl font-medium">Рекомендуем</h2>
           <Image
             className="md:w-8 md:h-3.5"
             src={RightArrowSvg}

@@ -18,7 +18,7 @@ const TabsSwitcher = () => {
       <div className="container">
         <Tabs defaultValue={mockTabsList[0].title} className="md:mb-9 xl:mb-14">
           <div className="overflow-auto">
-            <TabsList className="flex h-full gap-5 pb-5 md:gap-12 whitespace-nowrap w-full justify-start bg-transparent mb-6 border-b border-[#ccc]">
+            <TabsList className="flex h-full gap-5 pb-0 md:gap-12 whitespace-nowrap w-full justify-start bg-transparent mb-6 border-b border-[#ccc]">
               {mockTabsList.map(tab => {
                 return (
                   <TabsTrigger
