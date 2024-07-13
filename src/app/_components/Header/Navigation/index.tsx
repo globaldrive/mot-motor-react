@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,6 +37,11 @@ const Navigation = () => {
   };
 
   const handleNavItemClick = (route: string) => {
+    router.push(route);
+  };
+
+  const handleMenuItemClick = (e: React.MouseEvent, route: string) => {
+    e.stopPropagation();
     router.push(route);
   };
 
@@ -92,12 +96,14 @@ const Navigation = () => {
                             {item.content.map(result => {
                               return (
                                 <DropdownMenuItem key={result.id}>
-                                  <Link
-                                    href={result.route}
-                                    className="flex w-full hover:text-mm-main-hover"
+                                  <div
+                                    onClick={e =>
+                                      handleMenuItemClick(e, result.route)
+                                    }
+                                    className="flex w-full hover:text-mm-main-hover cursor-pointer"
                                   >
                                     {result.title}
-                                  </Link>
+                                  </div>
                                 </DropdownMenuItem>
                               );
                             })}

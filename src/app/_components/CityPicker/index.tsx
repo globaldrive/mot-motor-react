@@ -24,7 +24,7 @@ const CityPicker = ({ className }: CityPickerProps) => {
 
   return (
     <button
-      className={`flex w-32 justify-between items-center bg-transparent border-0 outline-0 cursor-pointer ${className}`}
+      className={`contents justify-between items-center bg-transparent border-0 outline-0 cursor-pointer ${className}`}
       onClick={handleBtnClick}
     >
       <Image

@@ -7,7 +7,6 @@ import Burger from "@/_components/Burger";
 import CityPicker from "@/_components/CityPicker";
 import CitySearch from "@/_components/CityPicker/CitySearch";
 import Communication from "@/_components/Communication";
-import ArrowIcon from "@/_components/Icons/Arrow";
 import Logo from "@/_components/Logo";
 import ModalWindows from "@/_components/ModalWindows";
 import Search from "@/_components/Search";
@@ -66,7 +65,6 @@ const UserInteraction = () => {
                 showPhoneNumber
                 variant="default"
               />
-              <ArrowIcon main />
             </div>
             <div className="flex items-center gap-2">
               <div className="flex items-center justify-center w-2 h-2 bg-mm-grass rounded-full">
