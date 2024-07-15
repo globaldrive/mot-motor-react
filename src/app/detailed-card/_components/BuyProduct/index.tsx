@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import WhiteBasketSvg from "@/_assets/images/general/basketWhite.svg";
+import GreenCheckMarkSvg from "@/_assets/images/general/greenCheckMark.svg";
 import PhoneSvg from "@/_assets/images/general/phone.svg";
 import { Button } from "@/_components/ui/button";
 import communicationDetails from "@/_data/communication/communication.json";
@@ -17,7 +18,12 @@ const BuyProduct = ({ characteristics }: BuyProductProps) => {
     <div className="flex flex-col gap-6">
       <div>
         <div className="flex gap-1.5 mb-3">
-          <Image src="/" alt="Зеленая галочка" width={13} height={11} />
+          <Image
+            src={GreenCheckMarkSvg}
+            alt="Зеленая галочка"
+            width={13}
+            height={11}
+          />
           <span className="text-xs font-medium">В наличии</span>
         </div>
         <h3 className="text-xl font-bold">(МОК НЕЙМ ТОВАРА)</h3>
