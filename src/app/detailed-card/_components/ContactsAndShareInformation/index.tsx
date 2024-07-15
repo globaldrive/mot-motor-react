@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 
 import contactDetails from "@/_data/communication/communication.json";
+import shareToOptions from "@/_data/communication/shareContactsOptions.json";
 import { RootState } from "@/_store/store";
 import FormatPhoneNumber from "@/_utils/formatPhoneNumber";
 import RoutesPaths from "@/types/enums/routes";
@@ -16,6 +17,7 @@ const ContactsAndShareInformation = ({
   productTitle,
 }: ContactsAndShareInformationProps) => {
   const currentCity = useSelector((state: RootState) => state.userDetails.city);
+  const currentUrl = window.location.href;
 
   return (
     <section>
@@ -61,7 +63,27 @@ const ContactsAndShareInformation = ({
             Перешлите друзьям ссылку на {productTitle} в {currentCity}
           </p>
         </div>
-        <div></div>
+        <div>
+          <ul className="flex gap-1">
+            {shareToOptions.map(option => {
+              return (
+                <li
+                  key={option.id}
+                  className="flex justify-center items-center rounded hover:opacity-50 transition-opacity duration-200"
+                  style={{ backgroundColor: option.bgColor }}
+                >
+                  <a
+                    href={option.href + currentUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {option.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   );

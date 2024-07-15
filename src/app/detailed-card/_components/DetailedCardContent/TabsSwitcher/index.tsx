@@ -4,12 +4,14 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/_components/ui/tabs";
+import CardCharacteristics from "@/detailed-card/_components/DetailedCardContent/TabsSwitcher/TabsContent/CardCharacteristics";
+import DetailedCardReviews from "@/detailed-card/_components/DetailedCardContent/TabsSwitcher/TabsContent/DetailedCardReviews";
 import ProductDescription from "@/detailed-card/_components/DetailedCardContent/TabsSwitcher/TabsContent/ProductDescription";
 
 const mockTabsList = [
   { id: 1, title: "Описание", content: <ProductDescription /> },
-  { id: 2, title: "Все характеристики", content: "Page 2" },
-  { id: 3, title: "Отзывы", content: "Page 3" },
+  { id: 2, title: "Все характеристики", content: <CardCharacteristics /> },
+  { id: 3, title: "Отзывы", content: <DetailedCardReviews /> },
 ];
 
 const TabsSwitcher = () => {
