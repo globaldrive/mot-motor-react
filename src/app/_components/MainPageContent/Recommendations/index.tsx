@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 import RightArrowSvg from "@/_assets/images/svgs/RightArrow.svg";
-import Index from "@/_components/ProductCardCarousel";
+import ProductCardCarousel from "@/_components/ProductCardCarousel";
 import productCardsData from "@/_data/mockProductCardsData/productCardData.json";
 
 const Recommendations = () => {
@@ -19,7 +19,7 @@ const Recommendations = () => {
             height={8}
           />
         </div>
-        <Index cardsContent={productCardsData} />
+        <ProductCardCarousel cardsContent={productCardsData} />
       </div>
     </section>
   );

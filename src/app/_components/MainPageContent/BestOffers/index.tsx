@@ -1,5 +1,5 @@
 "use client";
-import Index from "@/_components/ProductCardCarousel";
+import ProductCardCarousel from "@/_components/ProductCardCarousel";
 import {
   Tabs,
   TabsContent,
@@ -68,7 +68,7 @@ const BestOffers = () => {
             );
           })}
         </Tabs>
-        <Index cardsContent={productCardsData} />
+        <ProductCardCarousel cardsContent={productCardsData} />
       </div>
     </section>
   );

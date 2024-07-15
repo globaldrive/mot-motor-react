@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 import "swiper/css/navigation";
-import Index from "@/_components/ProductCardCarousel";
+import ProductCardCarousel from "@/_components/ProductCardCarousel";
 import {
   Tabs,
   TabsContent,
@@ -66,7 +66,7 @@ const TagsFilter = () => {
           })}
         </Tabs>
 
-        <Index cardsContent={productCardsData} />
+        <ProductCardCarousel cardsContent={productCardsData} />
       </div>
     </section>
   );
