@@ -4,11 +4,11 @@ const CardCharacteristics = () => {
   return (
     <section>
       <div className="container">
-        <h3 className="mb-14 text-xl font-bold">
+        <h3 className="mb-5 md:mb-14 text-xl font-bold">
           Характеристики{" "}
           <span className="font-normal">Лодка ПВХ Altair HD 320 НДНД</span>
         </h3>
-        <ul className="grid grid-cols-2 gap-x-20 gap-y-3.5">
+        <ul className="grid grid-cols-1 md:grid-cols-2 md:gap-x-11 lg:gap-x-20 gap-y-2 md:gap-y-3.5">
           {characteristicsList.map(item => {
             return (
               <li

@@ -22,7 +22,7 @@ const ContactsAndShareInformation = ({
   return (
     <section>
       <div className="container">
-        <h2 className="text-3xl mb-4 font-medium">
+        <h2 className="text-lg md:text-3xl mb-4 font-medium">
           {productTitle} - продажа в {currentCity} -{" "}
           <a
             href={`tel:${contactDetails.mainNumber}`}
@@ -31,7 +31,7 @@ const ContactsAndShareInformation = ({
             {FormatPhoneNumber(contactDetails.mainNumber)}
           </a>
         </h2>
-        <div className="text-sm font-bold">
+        <div className="text-xs md:text-sm font-bold mb-4">
           <p>
             Купить {productTitle} в {currentCity} СО СКЛАДА в интернет-магазине
             Mot-motor. Доступен НАЛОЖЕННЫЙ ПЛАТЕЖ. Продажа в{" "}
@@ -64,7 +64,7 @@ const ContactsAndShareInformation = ({
           </p>
         </div>
         <div>
-          <ul className="flex gap-1">
+          <ul className="flex gap-1 flex-wrap">
             {shareToOptions.map(option => {
               return (
                 <li
