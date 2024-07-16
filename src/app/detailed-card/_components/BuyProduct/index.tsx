@@ -4,6 +4,7 @@ import Link from "next/link";
 import WhiteBasketSvg from "@/_assets/images/general/basketWhite.svg";
 import GreenCheckMarkSvg from "@/_assets/images/general/greenCheckMark.svg";
 import PhoneSvg from "@/_assets/images/general/phone.svg";
+import VideoCallSvg from "@/_assets/images/general/videoCall.svg";
 import { Button } from "@/_components/ui/button";
 import communicationDetails from "@/_data/communication/communication.json";
 import FormatPhoneNumber from "@/_utils/formatPhoneNumber";
@@ -19,6 +20,7 @@ const BuyProduct = ({ characteristics }: BuyProductProps) => {
       <div>
         <div className="flex gap-1.5 mb-3">
           <Image
+            className="w-auto h-auto"
             src={GreenCheckMarkSvg}
             alt="Зеленая галочка"
             width={13}
@@ -51,7 +53,7 @@ const BuyProduct = ({ characteristics }: BuyProductProps) => {
         </Button>
         <Button className="md:w-full gap-2 text-base">
           <Image
-            className="text-white"
+            className="text-white w-auto h-auto"
             src={WhiteBasketSvg}
             alt="иконка корзины"
             width={22}
@@ -62,7 +64,7 @@ const BuyProduct = ({ characteristics }: BuyProductProps) => {
       </div>
       <Link
         href="/"
-        className="group flex justify-between py-2 px-3.5 bg-mm-cement rounded-lg md:mb-3.5"
+        className="group flex justify-between p-3.5 pl-6 bg-mm-cement rounded-lg md:mb-3.5"
       >
         <div className="flex flex-col">
           <span className="text-sm font-medium">Оплачивай частями</span>
@@ -99,7 +101,7 @@ const BuyProduct = ({ characteristics }: BuyProductProps) => {
         <a href="#" className="group flex gap-3">
           <div className="flex justify-center items-center w-10 h-10 p-2.5 border rounded-xl border-gray-300">
             <Image
-              src={PhoneSvg}
+              src={VideoCallSvg}
               alt="иконка телефона"
               width={20}
               height={20}

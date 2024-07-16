@@ -36,7 +36,7 @@ const VideoConsultation = () => {
             >
               Заказать видеоконсультацию
               <Image
-                className="absolute right-0 bottom-full sm:hidden"
+                className="absolute right-0 bottom-full sm:hidden w-auto h-auto"
                 src="/consultant.png"
                 alt="Консультант"
                 width={126}
@@ -56,7 +56,7 @@ const VideoConsultation = () => {
             </a>
           </div>
           <Image
-            className="absolute right-1 lg:right-28 bottom-0 hidden sm:block"
+            className="absolute right-1 lg:right-28 bottom-0 hidden sm:block w-auto h-auto"
             src="/consultant.png"
             alt="Консультант"
             width={265}

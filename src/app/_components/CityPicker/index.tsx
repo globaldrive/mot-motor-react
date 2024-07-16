@@ -28,7 +28,7 @@ const CityPicker = ({ className }: CityPickerProps) => {
       onClick={handleBtnClick}
     >
       <Image
-        className="w-4 h-4 mr-1.5"
+        className="w-4 h-4 mr-1.5 w-auto h-auto"
         src={locationSvg}
         alt="знак локации"
         width={16}

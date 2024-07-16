@@ -4,9 +4,9 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/_components/ui/tabs";
-import CardCharacteristics from "@/detailed-card/_components/DetailedCardContent/TabsSwitcher/TabsContent/CardCharacteristics";
-import DetailedCardReviews from "@/detailed-card/_components/DetailedCardContent/TabsSwitcher/TabsContent/DetailedCardReviews";
-import ProductDescription from "@/detailed-card/_components/DetailedCardContent/TabsSwitcher/TabsContent/ProductDescription";
+import CardCharacteristics from "@/detailed-card/_DetailedCardContent/TabsSwitcher/TabsContent/CardCharacteristics";
+import DetailedCardReviews from "@/detailed-card/_DetailedCardContent/TabsSwitcher/TabsContent/DetailedCardReviews";
+import ProductDescription from "@/detailed-card/_DetailedCardContent/TabsSwitcher/TabsContent/ProductDescription";
 
 const mockTabsList = [
   { id: 1, title: "Описание", content: <ProductDescription /> },
@@ -20,7 +20,7 @@ const TabsSwitcher = () => {
       <div className="container">
         <Tabs defaultValue={mockTabsList[0].title} className="md:mb-9 xl:mb-14">
           <div className="overflow-auto">
-            <TabsList className="flex h-full gap-5 pb-0 md:gap-12 whitespace-nowrap w-full justify-start bg-transparent mb-6 border-b border-[#ccc]">
+            <TabsList className="flex h-full gap-5 pb-0 md:gap-12 whitespace-nowrap w-full justify-start bg-transparent border-b border-[#ccc]">
               {mockTabsList.map(tab => {
                 return (
                   <TabsTrigger
@@ -36,7 +36,11 @@ const TabsSwitcher = () => {
           </div>
           {mockTabsList.map(tab => {
             return (
-              <TabsContent key={tab.id} value={tab.title}>
+              <TabsContent
+                key={tab.id}
+                value={tab.title}
+                className="pt-6 md:pt-8 lg:pt-12 mt-0"
+              >
                 {tab.content}
               </TabsContent>
             );

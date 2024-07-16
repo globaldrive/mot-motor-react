@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 import RightArrowSvg from "@/_assets/images/svgs/RightArrow.svg";
-import ProductCardCarousel from "@/_components/ProductCardCarousel";
+import ProductCardCarousel from "@/_components/ProductCardCarousel/index";
 import productCardsData from "@/_data/mockProductCardsData/productCardData.json";
 
 const Recommendations = () => {

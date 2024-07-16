@@ -9,7 +9,7 @@ import {
 
 const CardBreadCrumbs = () => {
   return (
-    <div className="pt-4 mb-7">
+    <div className="pt-4 md:mb-7">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

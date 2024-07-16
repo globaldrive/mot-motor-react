@@ -28,6 +28,7 @@ const Benefits = () => {
               >
                 <div className="flex w-20 h-20 justify-center items-center rounded-full shadow-benefitsMainPage">
                   <Image
+                    className="w-auto h-auto"
                     src={`/benefitsSvg/${benefit.id}.svg`}
                     alt="Иконка преимущества"
                     width={40}
@@ -50,6 +51,7 @@ const Benefits = () => {
                   className="flex min-w-fit lg:flex-1 p-4 gap-2 xl:gap-6 items-center first:border-l-0 border-l border-[#ddd] select-none"
                 >
                   <Image
+                    className="w-auto h-auto"
                     src={`/benefitsLineSvg/${benefit.id}.svg`}
                     alt="Иконка преимущества"
                     width={40}

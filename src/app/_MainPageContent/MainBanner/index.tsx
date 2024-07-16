@@ -20,7 +20,7 @@ const MainBanner = () => {
       <SwiperSlide key={`product-${banner.id}`}>
         <Link href={banner.route} className="flex rounded-lg md:rounded-2xl">
           <Image
-            className="rounded-lg w-full h=[230px] md:h-full xl:rounded-2xl"
+            className="rounded-lg w-auto h-auto h=[230px] xl:rounded-2xl"
             src={mainBannerJpg}
             alt="Главный банер"
             width={670}
@@ -59,7 +59,7 @@ const MainBanner = () => {
                 >
                   <Link href={banner.route} className="rounded-lg ">
                     <Image
-                      className="grow min-w-[100px] w-[170px] h-[145px] rounded-lg lg:rounded-2xl md:w-[215px] md:h-[180px] lg:w-full lg:h-full"
+                      className="grow min-w-[100px] w-[170px] h-[145px] rounded-lg lg:rounded-2xl md:w-[215px] md:h-[180px] lg:w-auto lg:h-auto"
                       src={promoBannerJpg}
                       alt="Промо банер"
                       width={238}

@@ -46,6 +46,7 @@ const TagsFilter = () => {
                     value={tab.title}
                   >
                     <Image
+                      className="w-auto h-auto"
                       src={tab.svgIcon}
                       alt="Иконка тега"
                       width={26}

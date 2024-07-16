@@ -15,7 +15,7 @@ const MainCharacteristicsList = ({
 }: MainCharacteristicsListProps) => {
   return (
     <ul
-      className={`flex flex-col gap-5 md:grid md:grid-cols-3 ${hideMobile && "hidden md:flex"} ${hideDesktop && "md:hidden"}`}
+      className={`flex flex-col gap-5 md:pl-4 md:grid md:grid-cols-3 ${hideMobile && "hidden md:flex"} ${hideDesktop && "md:hidden"}`}
     >
       {characteristics.slice(0, 6).map((characteristic, index) => {
         return (

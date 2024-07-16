@@ -59,7 +59,7 @@ const Brands = () => {
                   <SwiperSlide key={brand.id}>
                     <li className="w-fit">
                       <Image
-                        className="md:w-[170px] md:h-[88px]"
+                        className="w-auto h-auto md:w-[170px] md:h-[88px]"
                         src={`/brands/${brand.id}.png`}
                         alt="brand logo"
                         width={120}
