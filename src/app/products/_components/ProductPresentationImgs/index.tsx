@@ -24,7 +24,6 @@ const ProductPresentationImgs = () => {
           <CarouselContent className="h-[460px]">
             {[1, 2, 3, 4, 5, 6, 7].map((img, index) => {
               const currentActiveSlide = activeSlide === index;
-              console.log(currentActiveSlide, "IS?");
 
               return (
                 <CarouselItem
