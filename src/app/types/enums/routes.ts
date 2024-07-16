@@ -3,7 +3,7 @@ enum RoutesPaths {
   basket = "/cart/",
   credit = "/vzjat-tehniku-v-kredit/",
   loan = "/credit/",
-  productCard = "/detailed-card/",
+  productCard = "/products/",
 }
 
 export default RoutesPaths;

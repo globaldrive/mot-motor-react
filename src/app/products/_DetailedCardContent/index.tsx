@@ -1,11 +1,11 @@
 import ContactsAndShareInformation from "./ContactsAndShareInformation";
-import Reccomendations from "@/_components/ProductCardCarousel/Recommendations";
+import Recommendations from "@/_components/ProductCardCarousel/Recommendations";
 import VideoConsultation from "@/_components/VideoConsultation";
 import productCards from "@/_data/mockProductCardsData/productCardData.json";
-import ExtraOffers from "@/detailed-card/_DetailedCardContent/ExtraOffers";
-import FirstImpression from "@/detailed-card/_DetailedCardContent/FirstImpression";
-import SimilarProducts from "@/detailed-card/_DetailedCardContent/SimilarProducts";
-import TabsSwitcher from "@/detailed-card/_DetailedCardContent/TabsSwitcher";
+import ExtraOffers from "@/products/_DetailedCardContent/ExtraOffers";
+import FirstImpression from "@/products/_DetailedCardContent/FirstImpression";
+import SimilarProducts from "@/products/_DetailedCardContent/SimilarProducts";
+import TabsSwitcher from "@/products/_DetailedCardContent/TabsSwitcher";
 
 const DetailedCardContent = () => {
   return (
@@ -19,7 +19,7 @@ const DetailedCardContent = () => {
         productTitle={productCards[1].title}
         productId={productCards[1].id}
       />
-      <Reccomendations />
+      <Recommendations />
     </>
   );
 };

@@ -1,9 +1,10 @@
 import Image from "next/image";
 
-import BuyProduct from "@/detailed-card/_components/BuyProduct";
-import CardBreadCrumbs from "@/detailed-card/_components/CardBreadCrumbs";
-import MainCharacteristicsList from "@/detailed-card/_components/MainCharacteristicsList";
-import ProductPresentationImgs from "@/detailed-card/_components/ProductPresentationImgs";
+import CustomBreadCrumb from "@/_components/CustomBreadCrumb";
+import mockProductCardBreadCrumbData from "@/_data/mockProductCardsData/productCardBreadCrumb.json";
+import BuyProduct from "@/products/_components/BuyProduct";
+import MainCharacteristicsList from "@/products/_components/MainCharacteristicsList";
+import ProductPresentationImgs from "@/products/_components/ProductPresentationImgs";
 
 const mockMainCharacteristics = {
   Бренд: "Hangkai",
@@ -18,7 +19,9 @@ const FirstImpression = () => {
   return (
     <section>
       <div className="container">
-        <CardBreadCrumbs />
+        <div className="pt-4 md:mb-7">
+          <CustomBreadCrumb routes={mockProductCardBreadCrumbData} />
+        </div>
         <div className="flex flex-col gap-8 lg:gap-12 lg:flex-row lg:justify-between">
           <div className="relative pt-10 md:pt-0  md:border md:border-gray-300 md:p-5 md:rounded-lg">
             <ProductPresentationImgs />

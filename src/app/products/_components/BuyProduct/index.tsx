@@ -8,7 +8,7 @@ import VideoCallSvg from "@/_assets/images/general/videoCall.svg";
 import { Button } from "@/_components/ui/button";
 import communicationDetails from "@/_data/communication/communication.json";
 import FormatPhoneNumber from "@/_utils/formatPhoneNumber";
-import MainCharacteristicsList from "@/detailed-card/_components/MainCharacteristicsList";
+import MainCharacteristicsList from "@/products/_components/MainCharacteristicsList";
 
 interface BuyProductProps {
   characteristics: string[][];
