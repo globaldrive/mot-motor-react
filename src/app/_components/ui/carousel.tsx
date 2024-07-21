@@ -213,6 +213,7 @@ const CarouselPrevious = React.forwardRef<
   return (
     <Button
       ref={ref}
+      // @ts-ignore
       variant={variant}
       size={size}
       className={cn(
@@ -236,7 +237,6 @@ CarouselPrevious.propTypes = {
   className: PropTypes.string,
   variant: PropTypes.oneOf([
     "default",
-    "outline",
     "secondary",
     "catalog",
     "catalogBurgerMenu",
@@ -253,6 +253,7 @@ const CarouselNext = React.forwardRef<
   return (
     <Button
       ref={ref}
+      // @ts-ignore
       variant={variant}
       size={size}
       className={cn(
@@ -274,6 +275,13 @@ const CarouselNext = React.forwardRef<
 CarouselNext.displayName = "CarouselNext";
 CarouselNext.propTypes = {
   className: PropTypes.string,
+  variant: PropTypes.oneOf([
+    "default",
+    "secondary",
+    "catalog",
+    "catalogBurgerMenu",
+  ]),
+  size: PropTypes.oneOf(["sm", "lg", "icon"]),
 };
 
 export {

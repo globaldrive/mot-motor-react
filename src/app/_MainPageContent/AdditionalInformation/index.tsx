@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import RoutesPaths from "@/types/enums/routes";
+import RoutesPaths from "@/_types/enums/routes";
 
 const AdditionalInformation = () => {
   return (

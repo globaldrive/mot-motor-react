@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import contactDetails from "@/_data/communication/communication.json";
 import shareToOptions from "@/_data/communication/shareContactsOptions.json";
 import { RootState } from "@/_store/store";
+import RoutesPaths from "@/_types/enums/routes";
 import FormatPhoneNumber from "@/_utils/formatPhoneNumber";
-import RoutesPaths from "@/types/enums/routes";
 
 interface ContactsAndShareInformationProps {
   productTitle: string;

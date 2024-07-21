@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import basketIcon from "@/_assets/images/general/basket.svg";
 import { RootState } from "@/_store/store";
-import RoutesPaths from "@/types/enums/routes";
+import RoutesPaths from "@/_types/enums/routes";
 
 const Basket = () => {
   const purchasesQnt = useSelector(

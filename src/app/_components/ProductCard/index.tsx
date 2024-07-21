@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./productCard.module.scss";
 import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
 import { Button } from "@/_components/ui/button";
-import RoutesPaths from "@/types/enums/routes";
+import RoutesPaths from "@/_types/enums/routes";
 
 const ProductCard = ({
   id,
@@ -75,7 +75,7 @@ const ProductCard = ({
           <div className="text-xl text-mm-main">{currentPrice} руб.</div>
           <div className="flex gap-1.5 text-sm font-medium">
             <Image
-              src="/discount.svg"
+              src="./discount.svg"
               alt="Иконка процента"
               width={16}
               height={16}

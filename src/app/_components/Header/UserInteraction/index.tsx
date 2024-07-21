@@ -18,7 +18,7 @@ import {
   toggleModalOverlay,
 } from "@/_store/slices/ModalWindows";
 import { RootState } from "@/_store/store";
-import RoutesPaths from "@/types/enums/routes";
+import RoutesPaths from "@/_types/enums/routes";
 
 const UserInteraction = () => {
   const dispatch = useDispatch();

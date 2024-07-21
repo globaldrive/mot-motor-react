@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-import { catalogMenuItem } from "@/types/intefaces/catalogData";
+import { catalogMenuItem } from "@/_types/intefaces/catalogData";
 
 interface PopupCatalogResultsProps {
   resultsData: catalogMenuItem[];

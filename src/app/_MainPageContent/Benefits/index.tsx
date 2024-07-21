@@ -29,7 +29,7 @@ const Benefits = () => {
                 <div className="flex w-20 h-20 justify-center items-center rounded-full shadow-benefitsMainPage">
                   <Image
                     className="w-auto h-auto"
-                    src={`/benefitsSvg/${benefit.id}.svg`}
+                    src={`./benefitsSvg/${benefit.id}.svg`}
                     alt="Иконка преимущества"
                     width={40}
                     height={40}
@@ -52,7 +52,7 @@ const Benefits = () => {
                 >
                   <Image
                     className="w-auto h-auto"
-                    src={`/benefitsLineSvg/${benefit.id}.svg`}
+                    src={`./benefitsLineSvg/${benefit.id}.svg`}
                     alt="Иконка преимущества"
                     width={40}
                     height={40}

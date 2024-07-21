@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 
 import { RootState } from "@/_store/store";
-import RoutesPaths from "@/types/enums/routes";
+import RoutesPaths from "@/_types/enums/routes";
 
 const CatalogResults = () => {
   const currentCity = useSelector((state: RootState) => state.userDetails.city);

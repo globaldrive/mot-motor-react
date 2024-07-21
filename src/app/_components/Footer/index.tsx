@@ -21,8 +21,8 @@ import {
   toggleCallbackWindow,
   toggleModalOverlay,
 } from "@/_store/slices/ModalWindows";
+import RoutesPaths from "@/_types/enums/routes";
 import FormatPhoneNumber from "@/_utils/formatPhoneNumber";
-import RoutesPaths from "@/types/enums/routes";
 
 const Footer = () => {
   const dispatch = useDispatch();
