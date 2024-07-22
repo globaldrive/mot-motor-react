@@ -1,12 +1,15 @@
 import classNames from "classnames";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 import styles from "./productCard.module.scss";
 import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
 import { Button } from "@/_components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/_components/ui/carousel";
 import RoutesPaths from "@/_types/enums/routes";
 
 const ProductCard = ({ cardData }: ProductCardProps) => {
@@ -31,36 +34,32 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
     e.stopPropagation();
   };
 
-  const slides = images.map((img, index) => {
-    return (
-      <SwiperSlide key={String(id) + String(index)}>
-        <div className="flex justify-center">
-          <Image
-            className="w-36 h-36 md:w-52 md:h-52 select-none"
-            src={hangkaiPng}
-            alt="Изображение товара"
-            width={211}
-            height={211}
-          />
-        </div>
-      </SwiperSlide>
-    );
-  });
-
   return (
     <div
       onClick={handleProductCardClick}
       className="block px-4 pt-3.5 pb-6 h-full w-[282px] border border-white border-solid hover:border-[#ccc] rounded-2xl cursor-pointer"
     >
       <div>
-        <Swiper
-          className="mb-3"
-          modules={[Pagination]}
-          pagination={{ clickable: true }}
-          loop={true}
-        >
-          {slides}
-        </Swiper>
+        <Carousel opts={{ loop: true }}>
+          <CarouselContent>
+            {images.map((img, index) => {
+              return (
+                <CarouselItem key={String(id) + String(index)}>
+                  <div className="flex justify-center">
+                    <Image
+                      className="w-36 h-36 md:w-52 md:h-52 select-none"
+                      src={hangkaiPng}
+                      alt="Изображение товара"
+                      width={211}
+                      height={211}
+                    />
+                  </div>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+        </Carousel>
+        {/*</Swiper>*/}
         <h4 className={classNames(styles.title, "mb-5 text-sm font-bold")}>
           {title}
         </h4>
