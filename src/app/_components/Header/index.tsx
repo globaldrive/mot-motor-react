@@ -7,7 +7,7 @@ import GreetingsInfo from "@/_components/Header/GreetingsInfo";
 import Navigation from "@/_components/Header/Navigation";
 import Overlay from "@/_components/Header/Overlay";
 import UserInteraction from "@/_components/Header/UserInteraction";
-import popupCatalogData from "@/_data/catalogHeader/catalogHeader.json";
+import popupCatalogData from "@/_data/catalog/catalogHeader.json";
 import { RootState } from "@/_store/store";
 
 const Header = () => {

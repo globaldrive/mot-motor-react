@@ -50,4 +50,22 @@
       transform: scale(0);
     }
   }
+  &.asideMenu {
+    &:before,
+    &:after,
+    & div {
+      height: 2px;
+      margin: 2px 0;
+      background: white;
+    }
+    &.isOpen:before {
+      transform: translateY(4px) rotate(135deg);
+    }
+    &.isOpen:after {
+      transform: translateY(-4px) rotate(-135deg);
+    }
+    &.isOpen div {
+      transform: scale(0);
+    }
+  }
 }

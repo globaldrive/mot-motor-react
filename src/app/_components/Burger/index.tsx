@@ -9,13 +9,17 @@ const Burger = ({
   onBurgerClick,
   mobile,
   catalog,
+  asideMenu,
+  className,
 }: BurgerProps) => {
   const burgerClassname = classNames(
     styles.burger,
     isBurgerOpen && styles.isOpen,
+    className,
     {
       [styles.mobile]: mobile,
       [styles.catalog]: catalog,
+      [styles.asideMenu]: asideMenu,
     },
   );
 

@@ -9,14 +9,8 @@ import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
 import { Button } from "@/_components/ui/button";
 import RoutesPaths from "@/_types/enums/routes";
 
-const ProductCard = ({
-  id,
-  images,
-  title,
-  currentPrice,
-  oldPrice,
-  main,
-}: ProductCardProps) => {
+const ProductCard = ({ cardData }: ProductCardProps) => {
+  const { id, images, title, currentPrice, oldPrice } = cardData;
   const bankCreditMonths = 12;
   const savingAmount = Math.ceil(oldPrice - currentPrice);
   const partlyPaymentAmount = Math.ceil(currentPrice / bankCreditMonths);

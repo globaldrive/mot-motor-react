@@ -39,14 +39,7 @@ const ProductCardCarousel = ({ cardsContent }: ProductCardCarouselProps) => {
               return (
                 <SwiperSlide key={card.id}>
                   <li className="w-fit">
-                    <ProductCard
-                      id={card.id}
-                      title={card.title}
-                      images={card.images}
-                      currentPrice={card.currentPrice}
-                      oldPrice={card.oldPrice}
-                      main
-                    />
+                    <ProductCard cardData={card} />
                   </li>
                 </SwiperSlide>
               );
@@ -60,14 +53,7 @@ const ProductCardCarousel = ({ cardsContent }: ProductCardCarouselProps) => {
           {cardsContent.map(card => {
             return (
               <li className={styles.listItemMobile} key={card.id}>
-                <ProductCard
-                  id={card.id}
-                  title={card.title}
-                  images={card.images}
-                  currentPrice={card.currentPrice}
-                  oldPrice={card.oldPrice}
-                  main
-                />
+                <ProductCard cardData={card} />
               </li>
             );
           })}
