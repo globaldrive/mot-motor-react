@@ -20,6 +20,7 @@ const DetailedCardContent = () => {
         productId={productCards[1].id}
       />
       <Recommendations />
+      <div className="mb-5"></div>
     </>
   );
 };

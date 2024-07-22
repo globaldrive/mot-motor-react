@@ -36,14 +36,14 @@ const Navigation = () => {
     setOpenDropdown(null);
   };
 
-  const handleNavItemClick = (route: string) => {
-    router.push(route);
-  };
-
-  const handleMenuItemClick = (e: React.MouseEvent, route: string) => {
-    e.stopPropagation();
-    router.push(route);
-  };
+  // const handleNavItemClick = (route: string) => {
+  //   router.push(route);
+  // };
+  //
+  // const handleMenuItemClick = (e: React.MouseEvent, route: string) => {
+  //   e.stopPropagation();
+  //   router.push(route);
+  // };
 
   return (
     <div className="bg-transparent py-1.5 text-base text-white md:bg-mm-main">
@@ -78,7 +78,7 @@ const Navigation = () => {
                   className="relative flex items-center h-full text-xs lg:text-base"
                 >
                   <div
-                    onClick={e => handleNavItemClick(item.route)}
+                    // onClick={e => handleNavItemClick(item.route)}
                     className="flex h-full gap-1.5 items-center select-none whitespace-nowrap"
                   >
                     <DropdownMenu open={isDropdownOpen}>
@@ -97,9 +97,9 @@ const Navigation = () => {
                               return (
                                 <DropdownMenuItem key={result.id}>
                                   <div
-                                    onClick={e =>
-                                      handleMenuItemClick(e, result.route)
-                                    }
+                                    // onClick={e =>
+                                    //   handleMenuItemClick(e, result.route)
+                                    // }
                                     className="flex w-full hover:text-mm-main-hover cursor-pointer"
                                   >
                                     {result.title}

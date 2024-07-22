@@ -21,22 +21,22 @@
     "content": [
       {
         "id": 20,
-        "src": "/_assets/images/jpgs/saleHit.jpg",
+        "src": "./mainPromoBanners/1.jpg",
         "route": "#"
       },
       {
         "id": 21,
-        "src": "/_assets/images/jpgs/tradeIn.jpg",
+        "src": "./mainPromoBanners/2.jpg",
         "route": "#"
       },
       {
         "id": 22,
-        "src": "/_assets/images/jpgs/offers.jpg",
+        "src": "./mainPromoBanners/3.jpg",
         "route": "#"
       },
       {
         "id": 23,
-        "src": "/_assets/images/jpgs/repair.jpg",
+        "src": "./mainPromoBanners/4.jpg",
         "route": "#"
       }
     ]

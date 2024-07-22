@@ -10,7 +10,6 @@ import "swiper/css/pagination";
 import styles from "./mainBanner.module.scss";
 import "./customerSwiper.scss";
 import mainBannerJpg from "@/_assets/images/jpgs/mainBanner.jpg";
-import promoBannerJpg from "@/_assets/images/jpgs/tradeIn.jpg";
 import mainBannerData from "@/_data/mainPage/mainBanner.json";
 
 const MainBanner = () => {
@@ -48,7 +47,7 @@ const MainBanner = () => {
         </div>
         <div className="flex justify-center rounded-lg lg:rounded-2xl">
           <ul className="flex gap-1.5 md:gap-3 lg:gap-1.5 flex-wrap justify-center max-w-[500px] rounded-2xl shadow-none">
-            {mainBannerData[1].content.map(banner => {
+            {mainBannerData[1].content.map((banner, index) => {
               return (
                 <li
                   key={banner.id}
@@ -60,7 +59,7 @@ const MainBanner = () => {
                   <Link href={banner.route} className="rounded-lg ">
                     <Image
                       className="grow min-w-[100px] w-[170px] h-[145px] rounded-lg lg:rounded-2xl md:w-[215px] md:h-[180px] lg:w-auto lg:h-auto"
-                      src={promoBannerJpg}
+                      src={`/mainPromoBanners/${index + 1}.jpg`}
                       alt="Промо банер"
                       width={238}
                       height={200}
