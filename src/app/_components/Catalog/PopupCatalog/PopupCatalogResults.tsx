@@ -19,18 +19,16 @@ const PopupCatalogResults = ({
     resultsData[activeResultInx] &&
     resultsData[activeResultInx].content &&
     resultsData[activeResultInx].content!.length > 0;
-  const resultsClassname = classNames(
-    `${isSomethingInResults ? "block" : "hidden"} absolute md:relative left-0 h-full md:h-auto w-full bg-mm-milk py-9 px-5 lg:p-12 lg:min-w-[65%] text-sm lg:text-base`,
-    styles.root,
-  );
+
   return (
-    <div className={resultsClassname}>
+    <div
+      className={`${isSomethingInResults ? "block" : "hidden"} absolute md:relative left-0 h-full w-full md:h-auto bg-mm-milk py-9 px-5 lg:p-12 lg:min-w-[65%] text-sm lg:text-base rounded-br-lg`}
+    >
       {resultsData &&
         resultsData.map((item, index) => {
           const isActive = index === activeResultInx;
           const listItemClass = classNames(
-            "font-medium leading-5",
-            styles.list,
+            "hidden font-medium leading-5",
             isActive ? styles.activeList : "",
           );
           const handleClickResultTitle = () => {
@@ -44,11 +42,13 @@ const PopupCatalogResults = ({
                 <>
                   {isActive && (
                     <div
-                      className={styles.resultTitleWrapper}
+                      className="flex md:hidden items-center mb-7"
                       onClick={handleClickResultTitle}
                     >
-                      <ArrowIcon left main customClassname={styles.arrowBack} />
-                      <h3 className={styles.resultTitle}>{item.title}</h3>
+                      <ArrowIcon left main customClassname="mr-4" />
+                      <h3 className="m-0 mr-auto text-xl font-bold">
+                        {item.title}
+                      </h3>
                       <Image
                         src={item.svg || ""}
                         alt="Иконка пункта"
@@ -58,14 +58,14 @@ const PopupCatalogResults = ({
                     </div>
                   )}
 
-                  <SimpleBar className={styles.simpleBar}>
+                  <SimpleBar style={{ maxHeight: "55vh" }}>
                     <ul className={listItemClass}>
                       {item.content &&
                         item.content.map(content => {
                           const { id, title, route } = content;
                           return (
                             <li key={id} className={styles.listItem}>
-                              <Link className={styles.resultLink} href={route}>
+                              <Link className="w-full" href={route}>
                                 {title}
                               </Link>
                             </li>

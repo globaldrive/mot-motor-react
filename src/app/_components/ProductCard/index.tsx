@@ -1,12 +1,15 @@
 import classNames from "classnames";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import styles from "./productCard.module.scss";
 import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
+import CarouselPagination from "@/_components/CarouselPagination";
 import { Button } from "@/_components/ui/button";
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
 } from "@/_components/ui/carousel";
@@ -18,6 +21,34 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
   const savingAmount = Math.ceil(oldPrice - currentPrice);
   const partlyPaymentAmount = Math.ceil(currentPrice / bankCreditMonths);
   const router = useRouter();
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  const handleButtonClick = (
+    e: React.MouseEvent<HTMLLIElement, MouseEvent>,
+    currentInx: number,
+  ) => {
+    if (!api) {
+      return;
+    }
+    e.stopPropagation();
+    setCurrent(currentInx);
+    api.scrollTo(currentInx);
+  };
 
   const handleProductCardClick = () => {
     router.push(RoutesPaths.productCard + id);
@@ -37,17 +68,17 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
   return (
     <div
       onClick={handleProductCardClick}
-      className="block px-4 pt-3.5 pb-6 h-full w-[282px] border border-white border-solid hover:border-[#ccc] rounded-2xl cursor-pointer"
+      className="block px-4 pt-3.5 pb-6 h-full w-full border border-white border-solid hover:border-[#ccc] rounded-2xl cursor-pointer"
     >
       <div>
-        <Carousel opts={{ loop: true }}>
+        <Carousel opts={{ loop: true }} setApi={setApi}>
           <CarouselContent>
             {images.map((img, index) => {
               return (
                 <CarouselItem key={String(id) + String(index)}>
-                  <div className="flex justify-center">
+                  <div className="flex justify-center mb-4">
                     <Image
-                      className="w-36 h-36 md:w-52 md:h-52 select-none"
+                      className="md:w-52 md:h-52 select-none"
                       src={hangkaiPng}
                       alt="Изображение товара"
                       width={211}
@@ -59,7 +90,13 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
             })}
           </CarouselContent>
         </Carousel>
-        {/*</Swiper>*/}
+        <CarouselPagination
+          className="flex gap-1 justify-center mb-3"
+          totalLength={count}
+          activeIndex={current}
+          setActiveIndex={setCurrent}
+          emblaApi={api}
+        />
         <h4 className={classNames(styles.title, "mb-5 text-sm font-bold")}>
           {title}
         </h4>

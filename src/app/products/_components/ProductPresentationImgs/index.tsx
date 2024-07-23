@@ -32,12 +32,7 @@ const ProductPresentationImgs = () => {
                   onClick={() => setActiveSlide(index)}
                 >
                   <div
-                    className="flex justify-center items-center border border-gray-300 rounded-lg w-[72px] h-[72px]"
-                    style={{
-                      border: currentActiveSlide
-                        ? "1px solid #0787EA"
-                        : "1px solid #d5d8de",
-                    }}
+                    className={`flex justify-center items-center border border-gray-300 rounded-lg w-[72px] h-[72px] ${currentActiveSlide ? "border-mm-main" : "border-[#d5d8de]"}`}
                   >
                     <Image
                       className="w-auto h-auto rounded-lg"

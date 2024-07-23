@@ -1,33 +1,5 @@
 @import "@/_assets/styles/variables";
 
-.root {
-  border-bottom-right-radius: $borderRadiusSmall;
-}
-
-.resultTitleWrapper {
-  display: none;
-  @media(max-width: $mediaMobile) {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  .resultTitle {
-    margin: 0 auto 0 0;
-    @media(max-width: $mediaMobile) {
-      font-size: 2rem;
-      line-height: 2.4rem;
-      font-weight: 700;
-    }
-  }
-  .arrowBack {
-    margin-right: 15px;
-  }
-}
-
-.list {
-  display: none;
-}
-
 .activeList {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -56,12 +28,4 @@
       color: $mainColor;
     }
   }
-}
-
-.resultLink {
-  width: 100%;
-}
-
-.simpleBar {
-  max-height: 55vh;
 }

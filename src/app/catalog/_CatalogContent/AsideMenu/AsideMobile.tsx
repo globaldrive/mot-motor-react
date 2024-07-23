@@ -33,10 +33,10 @@ const AsideMenu = ({ filters, isVisible, setIsVisible }: AsideMenuProps) => {
 
   return (
     <aside
-      className={`fixed w-full md:w-fit h-screen left-0 top-0 md:relative bg-white md:bg-transparent z-10 ${isVisible ? "block" : "hidden"}`}
+      className={`fixed w-full lg:w-fit h-screen left-0 top-0 lg:relative bg-white lg:bg-transparent z-10 ${isVisible ? "block" : "hidden"}`}
     >
-      <div className="flex flex-col w-full h-full md:h-fit lg:w-64 shadow rounded-lg lg:p-5">
-        <div className="flex md:hidden mb-5 items-center justify-between bg-mm-main px-5 py-7">
+      <div className="flex flex-col w-full h-full lg:h-fit lg:w-64 shadow rounded-lg lg:p-5">
+        <div className="flex lg:hidden mb-5 items-center justify-between bg-mm-main px-5 py-7">
           <div className="flex gap-2.5">
             <Image
               src={FilterSvg}
@@ -54,7 +54,7 @@ const AsideMenu = ({ filters, isVisible, setIsVisible }: AsideMenuProps) => {
             onClick={() => setIsVisible(!isVisible)}
           />
         </div>
-        <ul className="flex px-5 mb-auto md:mb-0 md:px-0 flex-col gap-3.5 ">
+        <ul className="flex px-5 mb-auto lg:mb-0 lg:px-0 flex-col gap-3.5 ">
           {filters.map(filter => {
             return (
               <AsideMenuFilters
@@ -69,7 +69,7 @@ const AsideMenu = ({ filters, isVisible, setIsVisible }: AsideMenuProps) => {
             );
           })}
         </ul>
-        <div className="flex md:hidden gap-1.5 px-5 mb-6">
+        <div className="flex lg:hidden gap-1.5 px-5 mb-6">
           <Button className="flex-grow" onClick={handleResetBtn}>
             Сбросить
           </Button>

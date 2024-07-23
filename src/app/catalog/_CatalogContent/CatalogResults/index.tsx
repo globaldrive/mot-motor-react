@@ -50,7 +50,7 @@ const CatalogResults = ({
       </h3>
       <div className="flex gap-2.5 mb-6 md:mb-8">
         <Button
-          className="flex gap-2.5 md:hidden h-10"
+          className="flex gap-2.5 lg:hidden h-10"
           onClick={() => handleFilterBtn()}
         >
           <Image

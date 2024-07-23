@@ -15,8 +15,8 @@ const AsideMenu = ({ filters }: AsideMenuProps) => {
   const mockIdTestFilterDefaultVisible = 1;
 
   return (
-    <aside className="hidden md:block">
-      <div className="flex flex-col p-5 w-64 shadow rounded-lg">
+    <aside className="hidden lg:block">
+      <div className="flex min-h-[450px] flex-col p-5 w-64 shadow rounded-lg">
         <ul className="flex mb-0 px-0 flex-col gap-3.5 ">
           {filters.map(filter => {
             return (
