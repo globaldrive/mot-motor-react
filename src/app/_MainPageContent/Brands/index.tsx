@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
-import { Swiper as SwiperType } from "swiper";
 
 import RightArrowSvg from "@/_assets/images/svgs/RightArrow.svg";
 import {
@@ -14,7 +12,6 @@ import {
 import brandsData from "@/_data/mockBrands/mockBrands.json";
 
 const Brands = () => {
-  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
   return (
     <section>
       <div className="container">
@@ -52,8 +49,11 @@ const Brands = () => {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious variant="main" />
-            <CarouselNext variant="main" />
+            <CarouselPrevious
+              variant="default"
+              className="hidden lg:flex p-0"
+            />
+            <CarouselNext variant="default" className="hidden lg:flex p-0" />
           </Carousel>
         </div>
       </div>

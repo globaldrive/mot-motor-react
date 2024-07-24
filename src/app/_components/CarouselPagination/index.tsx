@@ -34,7 +34,7 @@ const CarouselPagination = ({
         return (
           <li
             key={index}
-            className={`w-1.5 h-1.5 rounded-full opacity-15 cursor-pointer ${activeItem ? "bg-mm-main w-5 opacity-100" : "bg-mm-primaryText"}`}
+            className={`w-1.5 h-1.5 rounded-full cursor-pointer ${activeItem ? "bg-mm-main w-5 opacity-100" : "bg-mm-primaryText opacity-15"}`}
             onClick={e => handleButtonClick(e, index)}
           />
         );

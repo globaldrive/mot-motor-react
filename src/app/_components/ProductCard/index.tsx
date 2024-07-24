@@ -53,10 +53,24 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
     e.stopPropagation();
   };
 
+  const stopPropagation = (
+    e:
+      | React.MouseEvent<HTMLDivElement, MouseEvent>
+      | React.TouchEvent<HTMLDivElement>,
+  ) => {
+    e.stopPropagation();
+  };
+
   return (
     <div
       onClick={handleProductCardClick}
       className="block px-4 pt-3.5 pb-6 h-full w-full border border-white border-solid hover:border-[#ccc] rounded-2xl cursor-pointer"
+      onMouseDown={e => stopPropagation(e)}
+      onMouseMove={e => stopPropagation(e)}
+      onMouseUp={e => stopPropagation(e)}
+      onTouchStart={e => stopPropagation(e)}
+      onTouchMove={e => stopPropagation(e)}
+      onTouchEnd={e => stopPropagation(e)}
     >
       <div>
         <Carousel opts={{ loop: true }} setApi={setApi}>

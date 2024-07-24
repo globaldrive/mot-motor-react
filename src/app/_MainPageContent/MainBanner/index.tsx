@@ -4,10 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import "swiper/css";
-import "swiper/css/pagination";
 import styles from "./mainBanner.module.scss";
-import "./customerSwiper.scss";
 import mainBannerJpg from "@/_assets/images/jpgs/mainBanner.jpg";
 import CarouselPagination from "@/_components/CarouselPagination";
 import {

@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 
-import "swiper/css/navigation";
 import ProductCardCarousel from "@/_components/ProductCardCarousel";
 import {
   Tabs,

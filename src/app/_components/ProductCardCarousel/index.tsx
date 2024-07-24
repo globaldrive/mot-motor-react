@@ -1,60 +1,33 @@
-import { useState } from "react";
-import { Swiper as SwiperType } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import ChangeSlideButton from "@/_components/Buttons/ChangeSlideButton";
 import ProductCard from "@/_components/ProductCard";
-import ProductCardCarouselProps from "@/_components/ProductCardCarousel/ProductCardCarousel.interface";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/_components/ui/carousel";
+import ProductCardContent from "@/_types/intefaces/productCard";
 
-const Index = ({ cardsContent }: ProductCardCarouselProps) => {
-  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+interface ProductCardCarouselProps {
+  cardsContent: ProductCardContent[];
+}
+
+const ProductCardCarousel = ({ cardsContent }: ProductCardCarouselProps) => {
   return (
-    <div className="relative md:mx-2.5">
-      <ChangeSlideButton swiper={swiperInstance} position="left" left />
-      <ul className="flex justify-between gap-3.5">
-        <Swiper
-          loop={true}
-          onSwiper={swiper => setSwiperInstance(swiper)}
-          breakpoints={{
-            0: {
-              centeredSlides: true,
-              slidesPerView: "auto",
-              spaceBetween: 25,
-            },
-            620: {
-              centeredSlides: false,
-              spaceBetween: 25,
-              slidesPerView: 2,
-              slidesPerGroup: 2,
-            },
-            830: {
-              centeredSlides: false,
-              spaceBetween: 25,
-              slidesPerView: 3,
-              slidesPerGroup: 3,
-            },
-            1280: {
-              centeredSlides: false,
-              spaceBetween: 10,
-              slidesPerView: 4,
-              slidesPerGroup: 4,
-            },
-          }}
-        >
-          {cardsContent.map(card => {
-            return (
-              <SwiperSlide key={card.id}>
-                <li className="m-auto md:m-0 w-fit">
-                  <ProductCard cardData={card} />
-                </li>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </ul>
-      <ChangeSlideButton swiper={swiperInstance} position="right" right />
-    </div>
+    <Carousel className="w-full" opts={{ loop: true }}>
+      <CarouselContent>
+        {cardsContent.map(card => {
+          return (
+            <CarouselItem key={card.id} className="sm:basis-1/3 lg:basis-1/4">
+              <ProductCard cardData={card} />
+            </CarouselItem>
+          );
+        })}
+      </CarouselContent>
+      <CarouselPrevious variant="default" className="hidden lg:flex p-0" />
+      <CarouselNext variant="default" className="hidden lg:flex p-0" />
+    </Carousel>
   );
 };
 
-export default Index;
+export default ProductCardCarousel;
