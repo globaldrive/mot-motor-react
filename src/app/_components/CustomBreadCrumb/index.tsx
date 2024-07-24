@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -18,12 +20,12 @@ const CustomBreadCrumb = ({ routes }: BreadCrumbProps) => {
           const lastRoute = routes.length - 1 === index;
 
           return (
-            <>
-              <BreadcrumbItem key={route.id}>
+            <Fragment key={route.id}>
+              <BreadcrumbItem>
                 <BreadcrumbLink href={route.href}>{route.title}</BreadcrumbLink>
               </BreadcrumbItem>
               {!lastRoute && <BreadcrumbSeparator />}
-            </>
+            </Fragment>
           );
         })}
       </BreadcrumbList>

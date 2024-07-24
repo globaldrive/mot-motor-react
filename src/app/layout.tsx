@@ -25,7 +25,7 @@ export default function RootLayout({
       <Providers>
         <body className={fontsNextClassname}>
           <Header />
-          <main className="flex flex-col gap-6 grow relative md:gap-11 lg:gap-14">
+          <main className="flex flex-col gap-6 grow md:gap-11 lg:gap-14">
             {children}
           </main>
           <Footer />

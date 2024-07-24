@@ -11,6 +11,7 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-mm-main text-white hover:bg-mm-main-hover font-bold active:bg-mm-main-active",
+        main: "bg-mm-main hover:bg-mm-main-hover active:bg-mm-main-active",
         secondary:
           "bg-transparent font-bold text-mm-main border border-mm-main hover:bg-mm-main-hover hover:border-mm-main-hover hover:text-white active:bg-mm-main-active active:border-mm-main-active",
         catalog:

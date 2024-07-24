@@ -3,7 +3,7 @@ import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ChangeSlideButton from "@/_components/Buttons/ChangeSlideButton";
-import ProductCardSecondary from "@/_components/ProductCard";
+import ProductCard from "@/_components/ProductCard";
 import ProductCardCarouselProps from "@/_components/ProductCardCarousel/ProductCardCarousel.interface";
 
 const Index = ({ cardsContent }: ProductCardCarouselProps) => {
@@ -45,14 +45,7 @@ const Index = ({ cardsContent }: ProductCardCarouselProps) => {
             return (
               <SwiperSlide key={card.id}>
                 <li className="m-auto md:m-0 w-fit">
-                  <ProductCardSecondary
-                    id={card.id}
-                    title={card.title}
-                    images={card.images}
-                    currentPrice={card.currentPrice}
-                    oldPrice={card.oldPrice}
-                    main
-                  />
+                  <ProductCard cardData={card} />
                 </li>
               </SwiperSlide>
             );

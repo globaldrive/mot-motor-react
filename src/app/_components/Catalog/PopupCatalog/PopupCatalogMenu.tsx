@@ -1,9 +1,7 @@
-import classNames from "classnames";
 import SimpleBar from "simplebar-react";
 
 import ListWithLinks from "../../Lists/ListWithLinks";
 import PopupCatalogMenuProps from "@/_components/Catalog/PopupCatalog/PopupCatalogMenu.interface";
-import styles from "@/_components/Catalog/PopupCatalog/popupCatalogMenu.module.scss";
 import "simplebar-react/dist/simplebar.min.css";
 
 const PopupCatalogMenu = ({
@@ -19,11 +17,6 @@ const PopupCatalogMenu = ({
     categoryData[activeMenuIdx] &&
     categoryData[activeMenuIdx].content &&
     categoryData[activeMenuIdx].content!.length > 0;
-  const wrapperClassname = classNames(
-    "w-full md:w-auto min-w-[312px] p-6 bg-white",
-    styles.categoryWrapper,
-    isSomethingInResults && styles.withContent,
-  );
   const isTouchDevice =
     typeof window !== "undefined" &&
     ("ontouchstart" in window || navigator.maxTouchPoints);
@@ -36,25 +29,27 @@ const PopupCatalogMenu = ({
     }
   };
   return (
-    <div className={wrapperClassname}>
-      <SimpleBar className={styles.simpleBar}>
+    <div
+      className={`w-full md:w-auto min-w-[312px] p-6 bg-white ${isSomethingInResults ? "rounded-bl-none" : "rounded-bl-lg"}`}
+    >
+      <SimpleBar style={{ maxHeight: "65vh" }}>
         <ListWithLinks
           activeListItemInx={activeMenuIdx}
           setIsActiveListItemInx={setActiveMenuInx}
           menuData={categoryData}
           showArrow={showArrow && showArrow}
           showSvg={showSvg}
-          listClassname={styles.categoryList}
+          listClassname="flex flex-col gap-4 font-medium"
           itemClassnames={{
-            img: styles.itemSvg,
-            text: styles.itemText,
-            link: styles.itemLink,
-            activeItem: styles.activeMenuItem,
+            img: "mr-4",
+            text: "mr-auto transition-colors duration-200 group-hover:text-mm-main-hover group-hover:opacity-100",
+            link: "flex items-center group",
           }}
           arrowProps={{
             main: true,
             right: true,
-            customClassname: styles.arrowCategoryMenu,
+            customClassname:
+              "group-hover:text-mm-main-hover group-hover:opacity-100",
           }}
           onItemClick={onMenuItemClick}
         />
