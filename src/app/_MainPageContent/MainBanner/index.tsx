@@ -2,48 +2,85 @@
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { Autoplay, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useEffect, useState } from "react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import styles from "./mainBanner.module.scss";
 import "./customerSwiper.scss";
 import mainBannerJpg from "@/_assets/images/jpgs/mainBanner.jpg";
+import CarouselPagination from "@/_components/CarouselPagination";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "@/_components/ui/carousel";
 import mainBannerData from "@/_data/mainPage/mainBanner.json";
 
 const MainBanner = () => {
   const mainSliderAutoplayDelay = 3000;
-  const slides = mainBannerData[0].content.map(banner => {
-    return (
-      <SwiperSlide key={`product-${banner.id}`}>
-        <Link href={banner.route} className="flex rounded-lg md:rounded-2xl">
-          <Image
-            className="rounded-lg w-auto h-auto h=[230px] xl:rounded-2xl"
-            src={mainBannerJpg}
-            alt="Главный банер"
-            width={670}
-            height={415}
-          />
-        </Link>
-      </SwiperSlide>
-    );
-  });
+  const [emblaApi, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    setCount(emblaApi.scrollSnapList().length);
+    setCurrent(0);
+
+    const onSelect = () => setCurrent(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const intervalId = setInterval(() => {
+      emblaApi.scrollNext();
+    }, mainSliderAutoplayDelay);
+
+    return () => clearInterval(intervalId);
+  }, [emblaApi]);
+
   return (
     <section className="container mb-2.5 pt-3.5 md:pt-6">
       <div className="flex flex-col justify-between gap-3.5 md:gap-8 xl:flex-row lg:gap-3.5">
-        <div className="w-[375px] md:w-[670px] rounded-lg xl:rounded-2xl self-center xl:self-auto">
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            pagination={{ clickable: true }}
-            autoplay={{
-              delay: mainSliderAutoplayDelay,
-              disableOnInteraction: false,
-            }}
-            loop={true}
-          >
-            {slides}
-          </Swiper>
+        <div className="relative w-[375px] md:w-[670px] rounded-lg xl:rounded-2xl self-center xl:self-auto">
+          <Carousel opts={{ loop: true }} setApi={setApi}>
+            <CarouselContent>
+              {mainBannerData[0].content.map((img, index) => {
+                return (
+                  <CarouselItem key={img.id}>
+                    <Link
+                      href={img.route}
+                      className="flex rounded-lg md:rounded-2xl"
+                    >
+                      <Image
+                        className="rounded-lg w-auto h-auto h=[230px] xl:rounded-2xl"
+                        src={mainBannerJpg}
+                        alt="Главный банер"
+                        width={670}
+                        height={415}
+                      />
+                    </Link>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+          </Carousel>
+          <CarouselPagination
+            className="absolute -bottom-4 left-1/2 flex gap-1.5"
+            totalLength={count}
+            activeIndex={current + 1}
+            setActiveIndex={setCount}
+            emblaApi={emblaApi}
+          />
         </div>
         <div className="flex justify-center rounded-lg lg:rounded-2xl">
           <ul className="flex gap-1.5 md:gap-3 lg:gap-1.5 flex-wrap justify-center max-w-[500px] rounded-2xl shadow-none">

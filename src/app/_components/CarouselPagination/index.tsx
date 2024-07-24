@@ -23,7 +23,7 @@ const CarouselPagination = ({
     e.stopPropagation();
     setActiveIndex(currentInx);
     if (emblaApi) {
-      emblaApi.scrollTo(currentInx); // Прокручиваем к выбранному слайду (index начинается с 0)
+      emblaApi.scrollTo(currentInx);
     }
   };
 
@@ -34,7 +34,7 @@ const CarouselPagination = ({
         return (
           <li
             key={index}
-            className={`w-1.5 h-1.5 rounded-full opacity-15 ${activeItem ? "bg-mm-main w-5 opacity-100" : "bg-mm-primaryText"}`}
+            className={`w-1.5 h-1.5 rounded-full opacity-15 cursor-pointer ${activeItem ? "bg-mm-main w-5 opacity-100" : "bg-mm-primaryText"}`}
             onClick={e => handleButtonClick(e, index)}
           />
         );

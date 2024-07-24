@@ -1,16 +1,40 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import HangkaiPng from "@/_assets/images/pngs/hangkai.png";
+import CarouselPagination from "@/_components/CarouselPagination";
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
 } from "@/_components/ui/carousel";
 
 const ProductPresentationImgs = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [emblaApi, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  const handleVerticalImgsClick = (currInd: number) => {
+    setCurrent(currInd);
+    if (emblaApi) {
+      emblaApi.scrollTo(currInd);
+    }
+  };
+
+  useEffect(() => {
+    if (!emblaApi) {
+      return;
+    }
+
+    setCount(emblaApi.scrollSnapList().length);
+    setCurrent(emblaApi.selectedScrollSnap() + 1);
+
+    emblaApi.on("select", () => {
+      setCurrent(emblaApi.selectedScrollSnap() + 1);
+    });
+  }, [emblaApi]);
 
   return (
     <div className="flex lg:gap-16 justify-center items-center mb-8">
@@ -20,16 +44,17 @@ const ProductPresentationImgs = () => {
           opts={{
             align: "start",
           }}
+          setApi={setApi}
         >
           <CarouselContent className="h-[460px]">
             {[1, 2, 3, 4, 5, 6, 7].map((img, index) => {
-              const currentActiveSlide = activeSlide === index;
+              const currentActiveSlide = current === index + 1;
 
               return (
                 <CarouselItem
                   key={index}
                   className="w-fit basis-1/6 first:pt-6 pt-2"
-                  onClick={() => setActiveSlide(index)}
+                  onClick={() => handleVerticalImgsClick(index)}
                 >
                   <div
                     className={`flex justify-center items-center border border-gray-300 rounded-lg w-[72px] h-[72px] ${currentActiveSlide ? "border-mm-main" : "border-[#d5d8de]"}`}
@@ -48,8 +73,8 @@ const ProductPresentationImgs = () => {
           </CarouselContent>
         </Carousel>
       </div>
-      <div className="flex flex-col">
-        <Carousel orientation="horizontal">
+      <div className="flex flex-col gap-5 md:gap-0">
+        <Carousel orientation="horizontal" setApi={setApi}>
           <CarouselContent>
             {[1, 2, 3, 4, 5, 6, 7].map((img, index) => {
               return (
@@ -68,6 +93,13 @@ const ProductPresentationImgs = () => {
             })}
           </CarouselContent>
         </Carousel>
+        <CarouselPagination
+          className="flex justify-center gap-1.5 md:hidden"
+          totalLength={count}
+          activeIndex={current}
+          setActiveIndex={setCurrent}
+          emblaApi={emblaApi}
+        />
       </div>
     </div>
   );

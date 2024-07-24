@@ -38,18 +38,6 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
     });
   }, [api]);
 
-  const handleButtonClick = (
-    e: React.MouseEvent<HTMLLIElement, MouseEvent>,
-    currentInx: number,
-  ) => {
-    if (!api) {
-      return;
-    }
-    e.stopPropagation();
-    setCurrent(currentInx);
-    api.scrollTo(currentInx);
-  };
-
   const handleProductCardClick = () => {
     router.push(RoutesPaths.productCard + id);
   };

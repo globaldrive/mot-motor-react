@@ -12,6 +12,11 @@
         "id": 11,
         "src": "/_assets/images/jpgs/mainBanner.jpg",
         "route": "/#"
+      },
+      {
+        "id": 12,
+        "src": "/_assets/images/jpgs/mainBanner.jpg",
+        "route": "/#"
       }
     ]
   },

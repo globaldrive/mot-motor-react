@@ -22,7 +22,7 @@ const FirstImpression = () => {
         <div className="pt-4 md:mb-7">
           <CustomBreadCrumb routes={mockProductCardBreadCrumbData} />
         </div>
-        <div className="flex flex-col gap-8 lg:gap-12 lg:flex-row lg:justify-between">
+        <div className="flex flex-col gap-0 md:gap-8 lg:gap-12 lg:flex-row lg:justify-between">
           <div className="relative pt-10 md:pt-0  md:border md:border-gray-300 md:p-5 md:rounded-lg">
             <ProductPresentationImgs />
             <MainCharacteristicsList
