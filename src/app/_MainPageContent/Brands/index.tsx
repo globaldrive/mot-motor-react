@@ -2,10 +2,15 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Swiper as SwiperType } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 import RightArrowSvg from "@/_assets/images/svgs/RightArrow.svg";
-import ChangeSlideButton from "@/_components/Buttons/ChangeSlideButton";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/_components/ui/carousel";
 import brandsData from "@/_data/mockBrands/mockBrands.json";
 
 const Brands = () => {
@@ -26,52 +31,30 @@ const Brands = () => {
           />
         </div>
         <div className="relative md:mx-2.5">
-          <ChangeSlideButton
-            className="hidden"
-            swiper={swiperInstance}
-            left
-            position="left"
-          />
-          <ul className="flex justify-between gap-3.5">
-            <Swiper
-              loop={true}
-              onSwiper={swiper => setSwiperInstance(swiper)}
-              breakpoints={{
-                319: {
-                  spaceBetween: 20,
-                  slidesPerView: 2,
-                  slidesPerGroup: 2,
-                },
-                768: {
-                  spaceBetween: 30,
-                  slidesPerView: 4,
-                  slidesPerGroup: 4,
-                },
-                1280: {
-                  spaceBetween: 30,
-                  slidesPerView: 6,
-                  slidesPerGroup: 6,
-                },
-              }}
-            >
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
               {brandsData.map(brand => {
                 return (
-                  <SwiperSlide key={brand.id}>
-                    <li className="w-fit">
+                  <CarouselItem
+                    key={brand.id}
+                    className="basis-1/2 sm:basis-1/3 lg:basis-1/4 xl:basis-1/6"
+                  >
+                    <div className="w-fit">
                       <Image
-                        className="w-auto h-auto md:w-[170px] md:h-[88px]"
+                        className="w-auto h-auto md:w-[170px] md:h-[88px] select-none"
                         src={`/brands/${brand.id}.png`}
                         alt="brand logo"
                         width={120}
                         height={64}
                       />
-                    </li>
-                  </SwiperSlide>
+                    </div>
+                  </CarouselItem>
                 );
               })}
-            </Swiper>
-          </ul>
-          <ChangeSlideButton swiper={swiperInstance} position="right" right />
+            </CarouselContent>
+            <CarouselPrevious variant="main" />
+            <CarouselNext variant="main" />
+          </Carousel>
         </div>
       </div>
     </section>
