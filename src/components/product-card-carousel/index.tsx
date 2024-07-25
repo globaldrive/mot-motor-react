@@ -14,7 +14,18 @@ interface ProductCardCarouselProps {
 
 const ProductCardCarousel = ({ cardsContent }: ProductCardCarouselProps) => {
   return (
-    <Carousel className="w-full" opts={{ loop: true }}>
+    <Carousel
+      className="w-full"
+      opts={{
+        loop: true,
+        align: "start",
+        breakpoints: {
+          "(min-width: 640px)": { slidesToScroll: 3 },
+          "(min-width: 1024px)": { slidesToScroll: 4 },
+        },
+        slidesToScroll: 1,
+      }}
+    >
       <CarouselContent>
         {cardsContent.map(card => {
           return (

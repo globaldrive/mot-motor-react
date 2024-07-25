@@ -64,9 +64,11 @@ const ProductCardsResult = () => {
               </PaginationLink>
             </PaginationItem>
           ))}
-          <PaginationItem>
-            <PaginationNext href="#" onClick={handleNext} />
-          </PaginationItem>
+          {currentPage !== totalPages && (
+            <PaginationItem>
+              <PaginationNext href="#" onClick={handleNext} />
+            </PaginationItem>
+          )}
         </PaginationContent>
       </Pagination>
     </div>
