@@ -1,9 +1,7 @@
-import classNames from "classnames";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import styles from "./productCard.module.scss";
 import CarouselPagination from "../carousel-pagination";
 import { Button } from "../ui/button";
 import {
@@ -14,6 +12,7 @@ import {
 } from "../ui/carousel";
 import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
 import RoutesPaths from "@/_types/enums/routes";
+import formatNumberWithSpaces from "@/_utils/format-numbers-with-spaces";
 
 const ProductCard = ({ cardData }: ProductCardProps) => {
   const { id, images, title, currentPrice, oldPrice } = cardData;
@@ -99,12 +98,14 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
           setActiveIndex={setCurrent}
           emblaApi={api}
         />
-        <h4 className={classNames(styles.title, "mb-5 text-sm font-bold")}>
-          {title}
-        </h4>
+        <h4 className={"mb-5 text-sm font-bold line-clamp-2"}>{title}</h4>
         <div className="flex flex-col gap-1 mb-8">
-          <div className="text-sm line-through opacity-30">{oldPrice} руб.</div>
-          <div className="text-xl text-mm-main">{currentPrice} руб.</div>
+          <div className="text-sm line-through opacity-30">
+            {formatNumberWithSpaces(String(oldPrice))} руб.
+          </div>
+          <div className="text-xl text-mm-main">
+            {formatNumberWithSpaces(String(currentPrice))} руб.
+          </div>
           <div className="flex gap-1.5 text-sm font-medium">
             <Image
               src="./discount.svg"
@@ -112,7 +113,9 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
               width={16}
               height={16}
             />
-            <div>Экономия {savingAmount} руб.</div>
+            <div>
+              Экономия {formatNumberWithSpaces(String(savingAmount))} руб.
+            </div>
           </div>
         </div>
         <div className="flex flex-col gap-2 mb-5 ">
@@ -129,7 +132,7 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
             Или оплачивай частями
           </span>
           <div className="text-base font-bold text-mm-main">
-            от {partlyPaymentAmount} / мес.
+            от {formatNumberWithSpaces(String(partlyPaymentAmount))} / мес.
           </div>
         </div>
       </div>

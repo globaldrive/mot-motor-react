@@ -8,6 +8,7 @@ import GreenCheckMarkSvg from "@/_assets/images/general/greenCheckMark.svg";
 import PhoneSvg from "@/_assets/images/general/phone.svg";
 import VideoCallSvg from "@/_assets/images/general/videoCall.svg";
 import communicationDetails from "@/_data/communication/communication.json";
+import formatNumberWithSpaces from "@/_utils/format-numbers-with-spaces";
 import FormatPhoneNumber from "@/_utils/format-phone-number";
 
 interface BuyProductProps {
@@ -45,7 +46,9 @@ const BuyProduct = ({ characteristics }: BuyProductProps) => {
             <span className="text-sm font-medium">Экономия в мок руб.</span>
           </div>
         </div>
-        <div className="text-3xl font-bold text-mm-main">(МОК 100 000руб.)</div>
+        <div className="text-3xl font-bold text-mm-main">
+          (МОК {formatNumberWithSpaces("100000")}руб.)
+        </div>
       </div>
       <div className="flex flex-col gap-2 md:flex-row md:mb-2.5">
         <Button className="md:w-full text-base" variant="secondary">
@@ -69,7 +72,7 @@ const BuyProduct = ({ characteristics }: BuyProductProps) => {
         <div className="flex flex-col">
           <span className="text-sm font-medium">Оплачивай частями</span>
           <span className="text-base text-mm-main font-bold">
-            От (МОК 10 000) / мес.
+            От (МОК {formatNumberWithSpaces("10000")}) / мес.
           </span>
         </div>
         <div className="flex justify-center items-center py-3.5 px-8 bg-white rounded-lg text-sm text-mm-main font-bold group-hover:text-white group-hover:bg-mm-main-hover group-active:text-white group-active:bg-mm-main-active">
