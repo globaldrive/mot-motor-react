@@ -1,4 +1,4 @@
-import { catalogMenuItem } from "../../app/_types/intefaces/catalog-data";
+import { catalogMenuItem } from "@/_types/intefaces/catalog-data";
 
 interface PopupCatalogProps {
   catalogData: catalogMenuItem[];

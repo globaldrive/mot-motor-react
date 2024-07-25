@@ -1,16 +1,10 @@
 "use client";
-import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import SimpleBar from "simplebar-react";
 
-import styles from "./footer.module.scss";
-import {
-  toggleCallbackWindow,
-  toggleModalOverlay,
-} from "../../app/_store/slices/modal-windows";
 import Arrow from "../icons/arrow";
 import Logo from "../logo";
 import EmailSvg from "@/_assets/images/general/email.svg";
@@ -21,6 +15,10 @@ import PaymentOptionsPng from "@/_assets/images/pngs/paymentOptions.png";
 import PodvesnoyMotorPng from "@/_assets/images/pngs/plm.png";
 import citiesData from "@/_data/cities/cities.json";
 import footerNavData from "@/_data/navigation/footer-nav.json";
+import {
+  toggleCallbackWindow,
+  toggleModalOverlay,
+} from "@/_store/slices/modal-windows";
 import RoutesPaths from "@/_types/enums/routes";
 import FormatPhoneNumber from "@/_utils/format-phone-number";
 
@@ -207,7 +205,6 @@ const Footer = () => {
               onClick={() => handleButtonClick(2)}
             >
               <Image
-                className={styles.seoBtnPic}
                 src={PodvesnoyMotorPng}
                 alt="Популярные бренды"
                 width={48}
@@ -220,13 +217,9 @@ const Footer = () => {
             </button>
           </div>
           <div
-            className={classNames(
-              "absolute p-5 min-h-[300px] sm:min-h-0 bg-white w-full -translate-x-[10000px] rounded-sm",
-              styles.seoRequests,
-              activeButton !== null && styles.showSeo,
-            )}
+            className={`absolute p-5 min-h-[300px] sm:min-h-0 bg-white w-full -translate-x-[10000px] rounded-sm bottom-[110%] ${activeButton !== null ? "translate-x-0" : "-translate-x-[10000px]"}`}
           >
-            <SimpleBar className={styles.simpleBar}>
+            <SimpleBar className="min-h-[300px] md:min-h-fit max-h-[150px]">
               <div className="relative min-h-[300px] sm:min-h-[150px]">
                 <ul
                   className={`absolute flex flex-col md:gap-2.5 md:grid md:grid-cols-2 w-full h-full justify-center items-start transform -translate-x-[10000px] ${activeButton === 1 && "translate-x-0"}`}

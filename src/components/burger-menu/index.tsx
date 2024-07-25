@@ -3,11 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SimpleBar from "simplebar-react";
 
-import styles from "./burgerMenu.module.scss";
 import useScrollControl from "../../app/_hooks/use-scroll-control";
-import { toggleBurgerMenu } from "../../app/_store/slices/burger-menu";
-import { toggleCatalogPopup } from "../../app/_store/slices/catalogs";
-import { toggleModalOverlay } from "../../app/_store/slices/modal-windows";
 import Burger from "../burger";
 import Communication from "../communication";
 import ArrowIcon from "../icons/arrow";
@@ -15,6 +11,9 @@ import ListItemLink from "../lists/lists-with-links/list-item-link";
 import { Button } from "../ui/button";
 import communicationDetails from "@/_data/communication/communication.json";
 import navigationData from "@/_data/navigation/navigation.json";
+import { toggleBurgerMenu } from "@/_store/slices/burger-menu";
+import { toggleCatalogPopup } from "@/_store/slices/catalogs";
+import { toggleModalOverlay } from "@/_store/slices/modal-windows";
 import { RootState } from "@/_store/store";
 
 const BurgerMenu = () => {
@@ -100,7 +99,7 @@ const BurgerMenu = () => {
                   phoneNumber={communicationDetails.mainNumber}
                   communicationType={{ phoneCall: true }}
                   showPhoneNumber
-                  phoneClassname={styles.phoneNumber}
+                  phoneClassname="mr-1.5 font-bold no-underline text-mm-main"
                 />
                 <ArrowIcon main />
               </div>
@@ -150,9 +149,8 @@ const BurgerMenu = () => {
                               href={result.route}
                               itemText={result.title}
                               customClassnames={{
-                                root: styles.resultItem,
-                                link: styles.resultLink,
-                                text: styles.resultText,
+                                link: "flex py-2.5",
+                                text: "text-sm font-medium",
                               }}
                             />
                           );

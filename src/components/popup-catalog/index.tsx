@@ -1,12 +1,10 @@
 "use client";
-import classNames from "classnames";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import PopupCatalogMenu from "./popup-catalog-menu";
 import PopupCatalogResults from "./popup-catalog-results";
 import PopupCatalogProps from "./PopupCatalog.interface";
-import styles from "./popupCatalog.module.scss";
 import { RootState } from "@/_store/store";
 
 const PopupCatalog = ({ catalogData, main }: PopupCatalogProps) => {
@@ -25,11 +23,7 @@ const PopupCatalog = ({ catalogData, main }: PopupCatalogProps) => {
       onMouseLeave={onMouseLeavePopupMenu}
     >
       <div
-        className={classNames(
-          styles.popupMenuWrapper,
-          menuItemActive !== undefined && styles.withContent,
-          `flex left-0 sm:left-auto absolute z-10`,
-        )}
+        className={`flex left-0 sm:left-auto absolute z-10 w-full ${menuItemActive ? "lg:w-full" : "lg:w-fit"}`}
       >
         <PopupCatalogMenu
           categoryData={catalogData}

@@ -19,11 +19,11 @@ const ProductCardCarousel = ({ cardsContent }: ProductCardCarouselProps) => {
       opts={{
         loop: true,
         align: "start",
+        slidesToScroll: 1,
         breakpoints: {
           "(min-width: 640px)": { slidesToScroll: 3 },
           "(min-width: 1024px)": { slidesToScroll: 4 },
         },
-        slidesToScroll: 1,
       }}
     >
       <CarouselContent>
