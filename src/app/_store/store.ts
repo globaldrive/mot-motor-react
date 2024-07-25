@@ -2,10 +2,10 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 
-import BurgerMenuReducer from "./slices/BurgerMenu";
-import CatalogPopupReducer from "./slices/Catalogs";
-import ModalWindowsReducer from "./slices/ModalWindows";
-import UserDetailsReducer from "./slices/UserDetails";
+import BurgerMenuReducer from "./slices/burger-menu";
+import CatalogPopupReducer from "./slices/catalogs";
+import ModalWindowsReducer from "./slices/modal-windows";
+import UserDetailsReducer from "./slices/user-details";
 
 export const store = configureStore({
   reducer: {
