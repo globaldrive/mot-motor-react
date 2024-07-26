@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Burger from "../burger";

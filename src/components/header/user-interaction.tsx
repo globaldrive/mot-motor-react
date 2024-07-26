@@ -2,11 +2,6 @@
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 
-import { toggleBurgerMenu } from "../../app/_store/slices/burger-menu";
-import {
-  toggleCallbackWindow,
-  toggleModalOverlay,
-} from "../../app/_store/slices/modal-windows";
 import Basket from "../basket";
 import Burger from "../burger";
 import CityPicker from "../city-picker";
@@ -17,6 +12,11 @@ import ModalWindows from "../modal-windows";
 import Search from "../search";
 import { Button } from "../ui/button";
 import communicationDetails from "@/_data/communication/communication.json";
+import { toggleBurgerMenu } from "@/_store/slices/burger-menu";
+import {
+  toggleCallbackWindow,
+  toggleModalOverlay,
+} from "@/_store/slices/modal-windows";
 import { RootState } from "@/_store/store";
 import RoutesPaths from "@/_types/enums/routes";
 

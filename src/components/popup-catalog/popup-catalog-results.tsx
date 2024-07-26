@@ -1,12 +1,18 @@
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import SimpleBar from "simplebar-react";
 
-import PopupCatalogResultsProps from "./PopupCatalogResults.interface";
 import styles from "./popupCatalogResults.module.scss";
 import ArrowIcon from "../icons/arrow-icon";
+import { catalogMenuItem } from "@/_types/intefaces/catalog-data";
+
+interface PopupCatalogResultsProps {
+  resultsData: catalogMenuItem[];
+  activeResultInx?: number;
+  setActiveResultInx?: Dispatch<SetStateAction<number | undefined>>;
+}
 
 const PopupCatalogResults = ({
   resultsData,

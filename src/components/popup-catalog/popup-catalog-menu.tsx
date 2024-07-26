@@ -1,8 +1,17 @@
+import { Dispatch, SetStateAction } from "react";
 import SimpleBar from "simplebar-react";
 
-import PopupCatalogMenuProps from "./PopupCatalogMenu.interface";
 import ListWithLinks from "../lists/lists-with-links";
 import "simplebar-react/dist/simplebar.min.css";
+import { catalogMenuItem } from "@/_types/intefaces/catalog-data";
+
+interface PopupCatalogMenuProps {
+  categoryData: catalogMenuItem[];
+  showArrow?: boolean;
+  showSvg?: boolean;
+  activeMenuIdx?: number;
+  setActiveMenuInx?: Dispatch<SetStateAction<number | undefined>>;
+}
 
 const PopupCatalogMenu = ({
   categoryData,

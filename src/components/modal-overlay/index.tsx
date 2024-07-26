@@ -1,8 +1,8 @@
 "use client";
 
+import React, { HTMLAttributes } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import ModalOverlayProps from "./ModalOverylay.interface";
 import useScrollControl from "../../app/_hooks/use-scroll-control";
 import CrossSvg from "../icons/cross-icon";
 import {
@@ -12,7 +12,7 @@ import {
 } from "@/_store/slices/modal-windows";
 import { RootState } from "@/_store/store";
 
-const ModalOverlay = ({ children }: ModalOverlayProps) => {
+const ModalOverlay = ({ children }: HTMLAttributes<HTMLDivElement>) => {
   const dispatch = useDispatch();
 
   const { isModalOverlayOpen, showCallback, showCitySearch } = useSelector(

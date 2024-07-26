@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import SimpleBar from "simplebar-react";
 
-import {
-  toggleCityWindow,
-  toggleModalOverlay,
-} from "../../app/_store/slices/modal-windows";
-import { changeUserCity } from "../../app/_store/slices/user-details";
 import ModalOverlay from "../modal-overlay";
 import ModalPortal from "../modal-portal";
 import { Input } from "../ui/input";
 import locationSvg from "@/_assets/images/general/location.svg";
+import {
+  toggleCityWindow,
+  toggleModalOverlay,
+} from "@/_store/slices/modal-windows";
+import { changeUserCity } from "@/_store/slices/user-details";
 
 const CitySearch = () => {
   const dispatch = useDispatch();

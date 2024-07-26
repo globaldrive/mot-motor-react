@@ -4,10 +4,14 @@ import { useSelector } from "react-redux";
 
 import PopupCatalogMenu from "./popup-catalog-menu";
 import PopupCatalogResults from "./popup-catalog-results";
-import PopupCatalogProps from "./PopupCatalog.interface";
 import { RootState } from "@/_store/store";
+import { catalogMenuItem } from "@/_types/intefaces/catalog-data";
 
-const PopupCatalog = ({ catalogData, main }: PopupCatalogProps) => {
+interface PopupCatalogProps {
+  catalogData: catalogMenuItem[];
+}
+
+const PopupCatalog = ({ catalogData }: PopupCatalogProps) => {
   const showCatalogMenu = useSelector(
     (state: RootState) => state.catalogPopup.isCatalogPopupOpen,
   );

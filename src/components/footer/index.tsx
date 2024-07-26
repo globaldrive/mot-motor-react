@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import SimpleBar from "simplebar-react";
 
@@ -198,7 +198,7 @@ const Footer = () => {
               <span className="inline-block mr-auto text-base font-bold">
                 Каталог
               </span>
-              <Arrow tertiary flip={activeButton === 1} />
+              <Arrow variant="tertiary" flip={activeButton === 1} />
             </button>
             <button
               className={`flex py-2.5 pr-3 pl-8 w-full items-center font-bold text-mm-main bg-white outline-none border border-[#E9E9E9] border-b-2 border-b-[#E9E9E9] rounded-lg cursor-pointer ${activeButton === 2 && "border-b-mm-main"}`}
@@ -213,7 +213,7 @@ const Footer = () => {
               <span className="inline-block mr-auto text-base font-bold">
                 Популярные бренды
               </span>{" "}
-              <Arrow tertiary flip={activeButton === 2} />
+              <Arrow variant="tertiary" flip={activeButton === 2} />
             </button>
           </div>
           <div

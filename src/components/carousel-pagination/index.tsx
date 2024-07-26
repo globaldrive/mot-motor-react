@@ -1,5 +1,5 @@
 import { EmblaCarouselType } from "embla-carousel";
-import { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 interface CarouselPaginationProps
   extends React.HTMLAttributes<HTMLUListElement> {

@@ -1,13 +1,14 @@
 "use client";
 import Image from "next/image";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import ArrowIcon from "../icons/arrow-icon";
+import locationSvg from "@/_assets/images/general/location.svg";
 import {
   toggleCityWindow,
   toggleModalOverlay,
-} from "../../app/_store/slices/modal-windows";
-import ArrowIcon from "../icons/arrow-icon";
-import locationSvg from "@/_assets/images/general/location.svg";
+} from "@/_store/slices/modal-windows";
 import { RootState } from "@/_store/store";
 
 interface CityPickerProps

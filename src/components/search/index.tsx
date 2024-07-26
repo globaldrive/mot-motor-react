@@ -3,9 +3,12 @@ import classNames from "classnames";
 import Image from "next/image";
 import { useState } from "react";
 
-import SearchProps from "./Search.interface";
 import { Input } from "../ui/input";
 import SearchSvg from "@/_assets/images/general/search.svg";
+
+interface SearchProps extends React.HTMLAttributes<HTMLDivElement> {
+  onClickSearchBtn?: () => void;
+}
 
 const Search = ({ onClickSearchBtn, className }: SearchProps) => {
   const [searchValue, setSearchValue] = useState("");

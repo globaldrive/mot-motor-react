@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import CarouselPagination from "../carousel-pagination";
 import { Button } from "../ui/button";
@@ -13,6 +13,16 @@ import {
 import hangkaiPng from "@/_assets/images/pngs/hangkai.png";
 import RoutesPaths from "@/_types/enums/routes";
 import formatNumberWithSpaces from "@/_utils/format-numbers-with-spaces";
+
+interface ProductCardProps {
+  cardData: {
+    id: number;
+    title: string;
+    images: string[];
+    currentPrice: number;
+    oldPrice: number;
+  };
+}
 
 const ProductCard = ({ cardData }: ProductCardProps) => {
   const { id, images, title, currentPrice, oldPrice } = cardData;
@@ -74,7 +84,7 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
       <div>
         <Carousel opts={{ loop: true }} setApi={setApi}>
           <CarouselContent>
-            {images.map((img, index) => {
+            {images.map((_, index) => {
               return (
                 <CarouselItem key={String(id) + String(index)}>
                   <div className="flex justify-center mb-4">

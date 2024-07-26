@@ -2,12 +2,12 @@
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 
+import { Button } from "../ui/button";
+import phoneSvg from "@/_assets/images/general/phone.svg";
 import {
   toggleCallbackWindow,
   toggleModalOverlay,
-} from "../../app/_store/slices/modal-windows";
-import { Button } from "../ui/button";
-import phoneSvg from "@/_assets/images/general/phone.svg";
+} from "@/_store/slices/modal-windows";
 import FormatPhoneNumber from "@/_utils/format-phone-number";
 
 const VideoConsultation = () => {
