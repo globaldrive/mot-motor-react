@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import * as React from "react";
 
 import { Button } from "./button";
-import ArrowIcon from "../icons/arrow";
+import ArrowIcon from "../icons/arrow-icon";
 import { cn } from "@/_utils/_utils";
 
 type CarouselApi = UseEmblaCarouselType[1];
@@ -227,7 +227,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowIcon left className="w-3 h-3" />
+      <ArrowIcon direction="left" className="w-3 h-3" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -267,7 +267,7 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <ArrowIcon right className="w-3 h-3" />
+      <ArrowIcon direction="right" className="w-3 h-3" />
       <span className="sr-only">Next slide</span>
     </Button>
   );

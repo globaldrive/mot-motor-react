@@ -1,6 +1,6 @@
 import ListItemLink from "./list-item-link";
 import ListWithLinksProps from "./ListWithLinks.interface";
-import ArrowIcon from "../../icons/arrow";
+import ArrowIcon from "../../icons/arrow-icon";
 
 const ListWithLinks = ({
   menuData,
@@ -32,11 +32,10 @@ const ListWithLinks = ({
             >
               {showArrow && item.content && item.content?.length > 0 && (
                 <ArrowIcon
-                  main={arrowProps?.main}
-                  secondary={arrowProps?.secondary}
+                  variant={arrowProps}
                   flip={arrowProps?.flip}
-                  right={arrowProps?.right}
-                  customClassname={arrowProps?.customClassname}
+                  direction={arrowProps?.right}
+                  className={arrowProps?.customClassname}
                 />
               )}
             </ListItemLink>

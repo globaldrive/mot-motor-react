@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import ArrowIcon from "../../../../components/icons/arrow";
+import ArrowIcon from "../../../../components/icons/arrow-icon";
 import { Checkbox } from "../../../../components/ui/checkbox";
 import { Input } from "../../../../components/ui/input";
 import FilterTypes from "@/_types/enums/filter-types";
@@ -33,7 +33,7 @@ const AsideMenuFilters = ({
         onClick={handleItemClick}
       >
         <h3 className="max-w-[140px] font-bold text-base">{title}</h3>
-        <ArrowIcon main flip={isValuesHidden} />
+        <ArrowIcon flip={isValuesHidden} />
       </div>
       {!isValuesHidden && filterType === FilterTypes.checkBoxList && (
         <ul>

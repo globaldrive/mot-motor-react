@@ -6,7 +6,7 @@ import SimpleBar from "simplebar-react";
 import useScrollControl from "../../app/_hooks/use-scroll-control";
 import Burger from "../burger";
 import Communication from "../communication";
-import ArrowIcon from "../icons/arrow";
+import ArrowIcon from "../icons/arrow-icon";
 import ListItemLink from "../lists/lists-with-links/list-item-link";
 import { Button } from "../ui/button";
 import communicationDetails from "@/_data/communication/communication.json";
@@ -55,7 +55,7 @@ const BurgerMenu = () => {
               <Burger catalog isBurgerOpen={false} />
             </div>
             <span className="mr-auto font-bold text-base">Каталог</span>
-            <ArrowIcon secondary right />
+            <ArrowIcon variant="secondary" direction="right" />
           </Button>
         </div>
         <div className="py-8 mb-8">
@@ -82,7 +82,7 @@ const BurgerMenu = () => {
                     >
                       <span>{item.title}</span>
                       {item.content && item.content?.length > 0 && (
-                        <ArrowIcon main right />
+                        <ArrowIcon direction="right" />
                       )}
                     </Link>
                   </li>
@@ -101,7 +101,7 @@ const BurgerMenu = () => {
                   showPhoneNumber
                   phoneClassname="mr-1.5 font-bold no-underline text-mm-main"
                 />
-                <ArrowIcon main />
+                <ArrowIcon />
               </div>
               <div className="flex gap-2 items-center">
                 <div className="flex items-center justify-center w-2 h-2 bg-mm-grass rounded-full">
@@ -138,7 +138,7 @@ const BurgerMenu = () => {
                         className="flex items-center gap-4 mb-2 pt-8 pb-2"
                         onClick={handleBackResultBtn}
                       >
-                        <ArrowIcon left main />
+                        <ArrowIcon direction="left" />
                         <h3 className="m-0 text-xl font-bold">{item.title}</h3>
                       </div>
                       <ul className="flex flex-col gap-1.5">

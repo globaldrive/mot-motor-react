@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import SimpleBar from "simplebar-react";
 
-import Arrow from "../icons/arrow";
+import Arrow from "../icons/arrow-icon";
 import Logo from "../logo";
 import EmailSvg from "@/_assets/images/general/email.svg";
 import SentSvg from "@/_assets/images/general/sent.svg";

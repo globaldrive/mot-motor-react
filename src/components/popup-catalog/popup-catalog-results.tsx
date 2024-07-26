@@ -6,7 +6,7 @@ import SimpleBar from "simplebar-react";
 
 import PopupCatalogResultsProps from "./PopupCatalogResults.interface";
 import styles from "./popupCatalogResults.module.scss";
-import ArrowIcon from "../icons/arrow";
+import ArrowIcon from "../icons/arrow-icon";
 
 const PopupCatalogResults = ({
   resultsData,
@@ -45,7 +45,7 @@ const PopupCatalogResults = ({
                       className="flex md:hidden items-center mb-7"
                       onClick={handleClickResultTitle}
                     >
-                      <ArrowIcon left main customClassname="mr-4" />
+                      <ArrowIcon direction="left" className="mr-4" />
                       <h3 className="m-0 mr-auto text-xl font-bold">
                         {item.title}
                       </h3>

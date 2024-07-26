@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import ModalOverlayProps from "./ModalOverylay.interface";
 import useScrollControl from "../../app/_hooks/use-scroll-control";
+import CrossSvg from "../icons/cross-icon";
 import {
   toggleCallbackWindow,
   toggleCityWindow,
   toggleModalOverlay,
-} from "../../app/_store/slices/modal-windows";
-import CrossSvg from "../icons/cross";
+} from "@/_store/slices/modal-windows";
 import { RootState } from "@/_store/store";
 
 const ModalOverlay = ({ children }: ModalOverlayProps) => {
@@ -60,7 +60,8 @@ const ModalOverlay = ({ children }: ModalOverlayProps) => {
           onClick={handleOverlayClick}
         >
           <div className="fixed min-w-[350px] md:min-w-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-3xl z-[999]">
-            {children} <CrossSvg main onClick={handleCrossClick} />
+            {children}{" "}
+            <CrossSvg position="rightTop" onClick={handleCrossClick} />
           </div>
         </div>
       )}

@@ -3,9 +3,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { toggleCatalogPopup } from "../../app/_store/slices/catalogs";
 import Burger from "../burger";
-import ArrowIcon from "../icons/arrow";
+import ArrowIcon from "../icons/arrow-icon";
 import Search from "../search";
 import { Button } from "../ui/button";
 import {
@@ -15,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import navigationData from "@/_data/navigation/navigation.json";
+import { toggleCatalogPopup } from "@/_store/slices/catalogs";
 import { RootState } from "@/_store/store";
 
 const Navigation = () => {
@@ -36,14 +36,14 @@ const Navigation = () => {
     setOpenDropdown(null);
   };
 
-  // const handleNavItemClick = (route: string) => {
-  //   router.push(route);
-  // };
-  //
-  // const handleMenuItemClick = (e: React.MouseEvent, route: string) => {
-  //   e.stopPropagation();
-  //   router.push(route);
-  // };
+  const handleNavItemClick = (route: string) => {
+    router.push(route);
+  };
+
+  const handleMenuItemClick = (e: React.MouseEvent, route: string) => {
+    e.stopPropagation();
+    router.push(route);
+  };
 
   return (
     <div className="bg-transparent py-1.5 text-base text-white md:bg-mm-main">
@@ -61,7 +61,7 @@ const Navigation = () => {
             </div>
             <span className="hidden md:inline-block mr-auto">Каталог</span>
             <ArrowIcon
-              secondary
+              variant="secondary"
               className="hidden md:block"
               flip={isCatalogOpen}
             />
@@ -78,7 +78,7 @@ const Navigation = () => {
                   className="relative flex items-center h-full text-xs lg:text-base"
                 >
                   <div
-                    // onClick={e => handleNavItemClick(item.route)}
+                    onClick={() => handleNavItemClick(item.route)}
                     className="flex h-full gap-1.5 items-center select-none whitespace-nowrap"
                   >
                     <DropdownMenu open={isDropdownOpen}>
@@ -89,7 +89,7 @@ const Navigation = () => {
                       >
                         {item.title}
                         {item.content && item.content?.length > 0 && (
-                          <ArrowIcon secondary />
+                          <ArrowIcon variant="secondary" />
                         )}
                         {item.content && item.content.length > 0 && (
                           <DropdownMenuContent align="start">
@@ -97,9 +97,9 @@ const Navigation = () => {
                               return (
                                 <DropdownMenuItem key={result.id}>
                                   <div
-                                    // onClick={e =>
-                                    //   handleMenuItemClick(e, result.route)
-                                    // }
+                                    onClick={e =>
+                                      handleMenuItemClick(e, result.route)
+                                    }
                                     className="flex w-full hover:text-mm-main-hover cursor-pointer"
                                   >
                                     {result.title}

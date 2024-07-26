@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 
-import CrossSvg from "../../../../components/icons/cross";
+import CrossSvg from "../../../../components/icons/cross-icon";
 import { Button } from "../../../../components/ui/button";
 import useScrollControl from "../../../_hooks/use-scroll-control";
 import AsideMenuFilters from "../../_components/aside-menu-filters";
@@ -46,7 +46,10 @@ const AsideMenu = ({ filters, isVisible, setIsVisible }: AsideMenuProps) => {
             />
             <span className="text-xl font-bold text-white">Фильтры</span>
           </div>
-          <CrossSvg onClick={() => setIsVisible(!isVisible)} />
+          <CrossSvg
+            position="rightTop"
+            onClick={() => setIsVisible(!isVisible)}
+          />
         </div>
         <ul className="flex px-5 mb-auto lg:mb-0 lg:px-0 flex-col gap-3.5 ">
           {filters.map(filter => {
