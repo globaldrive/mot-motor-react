@@ -1,8 +1,13 @@
-import classNames from "classnames";
+import React, { ChangeEventHandler, ReactNode } from "react";
 
-import InputFieldProps from "./InputField.interface";
-import styles from "./inputField.module.scss";
 import PhoneInput from "./phone-input";
+
+interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  title?: string;
+  consentText?: string | ReactNode;
+  onCheckboxChange?: ChangeEventHandler<HTMLInputElement>;
+  main?: boolean;
+}
 
 const InputField = ({
   type,
@@ -15,19 +20,16 @@ const InputField = ({
   title,
   main,
 }: InputFieldProps) => {
-  const inputClassname = classNames(styles.input, {
-    [styles.main]: main,
-  });
-  const titleClassname = classNames(styles.title, {
-    [styles.main]: main,
-  });
-
   return (
     <>
-      {title && <div className={titleClassname}>{title}</div>}
+      {title && (
+        <div className="mb-2 md:mb-3 text-sm md:text-base select-none">
+          {title}
+        </div>
+      )}
       {type !== "checkbox" && type !== "tel" && (
         <input
-          className={inputClassname}
+          className="flex py-4 px-8 w-full bg-mm-cement font-medium text-xs border-0 rounded-lg outline-0"
           type={type}
           placeholder={placeholder}
           value={value}
@@ -36,13 +38,13 @@ const InputField = ({
       )}
       {type === "tel" && (
         <PhoneInput
-          inputClassname={inputClassname}
+          inputClassname="flex py-4 px-8 w-full bg-mm-cement font-medium text-xs border-0 rounded-lg outline-0"
           value={value}
           onChange={onChange}
         />
       )}
       {type === "checkbox" && (
-        <label className={styles.checkboxLabel}>
+        <label className="flex max-w-[400px] items-baseline gap-3.5">
           <input
             type="checkbox"
             checked={checked}
