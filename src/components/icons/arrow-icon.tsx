@@ -39,10 +39,11 @@ interface ArrowIconProps extends React.SVGProps<SVGSVGElement> {
   flip?: boolean;
 }
 
-const ArrowIcon = React.forwardRef<HTMLOrSVGElement, ArrowIconProps>(
-  ({ className, variant, size, direction, flip = false, ...props }) => {
+const ArrowIcon = React.forwardRef<SVGSVGElement, ArrowIconProps>(
+  ({ className, variant, size, direction, flip = false, ...props }, ref) => {
     return (
       <svg
+        ref={ref}
         className={cn(
           arrowVariants({
             variant,
@@ -69,3 +70,4 @@ const ArrowIcon = React.forwardRef<HTMLOrSVGElement, ArrowIconProps>(
 ArrowIcon.displayName = "ArrowIcon";
 
 export default ArrowIcon;
+export type { ArrowIconProps };

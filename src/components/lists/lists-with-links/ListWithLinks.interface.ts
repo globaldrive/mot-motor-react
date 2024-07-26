@@ -1,8 +1,8 @@
 import { Dispatch } from "react";
 
 import { listItemClassname } from "./ListItemLink.interface";
-import { catalogMenuItem } from "../../../app/_types/intefaces/catalog-data";
-import ArrowIconProps from "../../icons/arrow/Arrow.interface";
+import { ArrowIconProps } from "../../icons/arrow-icon";
+import { catalogMenuItem } from "@/_types/intefaces/catalog-data";
 
 interface ListWithLinksProps extends React.HTMLAttributes<HTMLUListElement> {
   menuData: catalogMenuItem[];

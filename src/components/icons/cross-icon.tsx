@@ -31,13 +31,13 @@ interface CrossIconProps extends React.SVGProps<SVGSVGElement> {
   variant?: "default" | "secondary";
   size?: "default" | "secondary";
   position: "default" | "rightTop";
-  flip?: boolean;
 }
 
-const CrossSvg = React.forwardRef<HTMLOrSVGElement, CrossIconProps>(
-  ({ className, variant, size, position, ...props }) => {
+const CrossSvg = React.forwardRef<SVGSVGElement, CrossIconProps>(
+  ({ className, variant, size, position, ...props }, ref) => {
     return (
       <svg
+        ref={ref}
         className={cn(
           crossVariants({
             variant,

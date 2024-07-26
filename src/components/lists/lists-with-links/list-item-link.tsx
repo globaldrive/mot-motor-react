@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ListItemLinkProps } from "./ListItemLink.interface";
-import styles from "./listItemLink.module.scss";
+// import styles from "./listItemLink.module.scss";
 
 const ListItemLink = ({
   href,
@@ -25,13 +25,9 @@ const ListItemLink = ({
   const isActive = itemInx === activeItemInx;
 
   const rootClassname = classNames(
-    styles.item,
     customClassnames?.root,
     isActive && customClassnames?.activeItem,
   );
-  const linkClassname = classNames(styles.link, customClassnames?.link);
-  const textClassname = classNames(styles.text, customClassnames?.text);
-  const imgClassname = classNames(styles.img, customClassnames?.img);
 
   const handleItemClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -44,20 +40,20 @@ const ListItemLink = ({
   return (
     <li className={rootClassname} onMouseEnter={handleItemMouseEnter}>
       <Link
-        className={linkClassname}
+        className={customClassnames?.link}
         href={href}
         onClick={e => handleItemClick(e)}
       >
         {svgSrc && showSvg && (
           <Image
-            className={imgClassname}
+            className={customClassnames?.img}
             src={svgSrc}
             alt="Иконка пункта"
             width={22}
             height={22}
           />
         )}
-        {itemText && <span className={textClassname}>{itemText}</span>}
+        {itemText && <span className={customClassnames?.text}>{itemText}</span>}
         {children}
       </Link>
     </li>

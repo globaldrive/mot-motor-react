@@ -1,8 +1,15 @@
 "use client";
 import classNames from "classnames";
 
-import BurgerProps from "./Burger.interface";
 import styles from "./burger.module.scss";
+
+interface BurgerProps extends React.HTMLAttributes<HTMLDivElement> {
+  isBurgerOpen?: boolean;
+  onBurgerClick?: () => void;
+  mobile?: boolean;
+  catalog?: boolean;
+  asideMenu?: boolean;
+}
 
 const Burger = ({
   isBurgerOpen,

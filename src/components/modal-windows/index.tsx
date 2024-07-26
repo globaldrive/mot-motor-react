@@ -1,21 +1,21 @@
-import classNames from "classnames";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import ModalWindowsProps from "./ModalWindows.interface";
-import styles from "./modalWindows.module.scss";
-import {
-  toggleCallbackWindow,
-  toggleModalOverlay,
-} from "../../app/_store/slices/modal-windows";
 import InputField from "../input-field";
 import ModalOverlay from "../modal-overlay";
 import ModalPortal from "../modal-portal";
 import { Button } from "../ui/button";
+import {
+  toggleCallbackWindow,
+  toggleModalOverlay,
+} from "@/_store/slices/modal-windows";
+
+interface ModalWindowsProps {
+  callback?: boolean;
+}
 
 const ModalWindows = ({ callback }: ModalWindowsProps) => {
-  const dynamicClassname = { [styles.callback]: callback };
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [consent, setConsent] = useState(false);
@@ -31,30 +31,24 @@ const ModalWindows = ({ callback }: ModalWindowsProps) => {
   return (
     <ModalPortal>
       <ModalOverlay>
-        <div className={classNames(styles.root, dynamicClassname)}>
-          <div className={classNames(styles.modal, dynamicClassname)}>
-            <div className={classNames(styles.titleWrapper, dynamicClassname)}>
-              <h2 className={classNames(styles.title, dynamicClassname)}>
+        <div className="py-8 px-4 md:py-12 md:px-14 rounded-lg bg-white">
+          <div className="flex flex-col">
+            <div className="flex mb-6 flex-col justify-center items-center">
+              <h2
+                className={`text-xl md:text-2xl font-semibold select-none${callback ? "mb-2.5" : "mb-0"}`}
+              >
                 {callback && "Заказать звонок"}
               </h2>
-              <p className={classNames(styles.subtitle, dynamicClassname)}>
+              <p className="m-0 max-w-[336px] text-sm md:text-base text-center opacity-60 select-none">
                 {callback &&
                   "Наш оператор свяжется с Вами в течение нескольких минут"}
               </p>
             </div>
 
-            <form
-              onSubmit={handleSubmit}
-              className={classNames(styles.form, dynamicClassname)}
-            >
+            <form onSubmit={handleSubmit} className="flex flex-col">
               {callback && (
                 <>
-                  <div
-                    className={classNames(
-                      styles.callbackInputsWrapper,
-                      dynamicClassname,
-                    )}
-                  >
+                  <div className="flex mb-10 flex-col gap-5">
                     <InputField
                       title="Ваше имя"
                       type="text"
@@ -71,31 +65,20 @@ const ModalWindows = ({ callback }: ModalWindowsProps) => {
                       main
                     />
                   </div>
-                  <div
-                    className={classNames(
-                      styles.checkboxCallbackWrapper,
-                      dynamicClassname,
-                    )}
-                  >
+                  <div className="mb-6 md:mb-8">
                     <InputField
                       type="checkbox"
                       checked={consent}
                       onCheckboxChange={e => setConsent(e.target.checked)}
                       consentText={
-                        <span className={styles.callbackConsentText}>
+                        <span className="text-sm select-none">
                           Даю свое согласие на обработку персональных данных,
                           соглашаюсь с{" "}
-                          <Link
-                            className={styles.callbackConsentLink}
-                            href={"#"}
-                          >
+                          <Link className="underline" href={"#"}>
                             политикой конфиденциальности
                           </Link>{" "}
                           и принимаю{" "}
-                          <Link
-                            className={styles.callbackConsentLink}
-                            href={"#"}
-                          >
+                          <Link className="underline" href={"#"}>
                             условия оферты
                           </Link>
                         </span>

@@ -32,10 +32,9 @@ const ListWithLinks = ({
             >
               {showArrow && item.content && item.content?.length > 0 && (
                 <ArrowIcon
-                  variant={arrowProps}
+                  variant={arrowProps?.variant}
                   flip={arrowProps?.flip}
-                  direction={arrowProps?.right}
-                  className={arrowProps?.customClassname}
+                  direction={arrowProps?.direction}
                 />
               )}
             </ListItemLink>
