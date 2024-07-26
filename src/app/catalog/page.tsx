@@ -1,4 +1,4 @@
-import CatalogContent from "@/catalog/_CatalogContent";
+import CatalogContent from "./_catalog-content";
 
 const Catalog = () => {
   return <CatalogContent />;
