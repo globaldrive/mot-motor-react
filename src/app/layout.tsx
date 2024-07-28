@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
 
-import "@/_assets/styles/global.scss";
-import Footer from "../components/footer";
-import Header from "../components/header";
-import { Providers } from "@/_store/provider";
+import "@/assets/styles/global.scss";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import { Providers } from "@/store/provider";
 
 import type { Metadata } from "next";
 

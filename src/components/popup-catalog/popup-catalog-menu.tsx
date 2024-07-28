@@ -3,7 +3,7 @@ import SimpleBar from "simplebar-react";
 
 import ListWithLinks from "../lists/lists-with-links";
 import "simplebar-react/dist/simplebar.min.css";
-import { catalogMenuItem } from "@/_types/intefaces/catalog-data";
+import { catalogMenuItem } from "../../types/intefaces/catalog-data";
 
 interface PopupCatalogMenuProps {
   categoryData: catalogMenuItem[];

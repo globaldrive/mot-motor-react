@@ -1,6 +1,6 @@
 import ListItemLink from "./list-item-link";
 import ListWithLinksProps from "./ListWithLinks.interface";
-import ArrowIcon from "../../icons/arrow-icon";
+import IconArrow from "../../icons/icon-arrow";
 
 const ListWithLinks = ({
   menuData,
@@ -31,7 +31,7 @@ const ListWithLinks = ({
               onItemClick={onItemClick}
             >
               {showArrow && item.content && item.content?.length > 0 && (
-                <ArrowIcon
+                <IconArrow
                   variant={arrowProps?.variant}
                   flip={arrowProps?.flip}
                   direction={arrowProps?.direction}

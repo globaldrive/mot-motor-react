@@ -5,8 +5,8 @@ import React, { Dispatch, SetStateAction } from "react";
 import SimpleBar from "simplebar-react";
 
 import styles from "./popupCatalogResults.module.scss";
-import ArrowIcon from "../icons/arrow-icon";
-import { catalogMenuItem } from "@/_types/intefaces/catalog-data";
+import { catalogMenuItem } from "../../types/intefaces/catalog-data";
+import IconArrow from "../icons/icon-arrow";
 
 interface PopupCatalogResultsProps {
   resultsData: catalogMenuItem[];
@@ -51,7 +51,7 @@ const PopupCatalogResults = ({
                       className="flex md:hidden items-center mb-7"
                       onClick={handleClickResultTitle}
                     >
-                      <ArrowIcon direction="left" className="mr-4" />
+                      <IconArrow direction="left" className="mr-4" />
                       <h3 className="m-0 mr-auto text-xl font-bold">
                         {item.title}
                       </h3>

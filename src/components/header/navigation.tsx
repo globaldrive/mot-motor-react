@@ -3,19 +3,19 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Burger from "../burger";
-import ArrowIcon from "../icons/arrow-icon";
-import Search from "../search";
-import { Button } from "../ui/button";
+import Burger from "@/components/burger";
+import IconArrow from "@/components/icons/icon-arrow";
+import Search from "@/components/search";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import navigationData from "@/_data/navigation/navigation.json";
-import { toggleCatalogPopup } from "@/_store/slices/catalogs";
-import { RootState } from "@/_store/store";
+} from "@/components/ui/dropdown-menu";
+import navigationData from "@/data/navigation/navigation.json";
+import { toggleCatalogPopup } from "@/store/slices/catalogs";
+import { RootState } from "@/store/store";
 
 const Navigation = () => {
   const isCatalogOpen = useSelector(
@@ -60,7 +60,7 @@ const Navigation = () => {
               <Burger catalog isBurgerOpen={isCatalogOpen} />
             </div>
             <span className="hidden md:inline-block mr-auto">Каталог</span>
-            <ArrowIcon
+            <IconArrow
               variant="secondary"
               className="hidden md:block"
               flip={isCatalogOpen}
@@ -89,7 +89,7 @@ const Navigation = () => {
                       >
                         {item.title}
                         {item.content && item.content?.length > 0 && (
-                          <ArrowIcon variant="secondary" />
+                          <IconArrow variant="secondary" />
                         )}
                         {item.content && item.content.length > 0 && (
                           <DropdownMenuContent align="start">

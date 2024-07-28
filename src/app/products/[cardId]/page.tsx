@@ -1,5 +1,5 @@
-import DetailedCardContent from "../_detailed-card-content";
-import cardData from "@/_data/mock-product-cards-data/product-card-data.json";
+import DetailedCardContent from "../../../components/page-detailed-card-content";
+import cardData from "../../../data/mock-product-cards-data/product-card-data.json";
 
 const DetailedCard = (props: {
   params: {
