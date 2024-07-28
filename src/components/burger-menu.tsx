@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SimpleBar from "simplebar-react";
 
-import Burger from "./burger";
 import IconArrow from "./icons/icon-arrow";
 import ListItemLink from "./lists/lists-with-links/list-item-link";
 import { Button } from "./ui/button";
 import communicationDetails from "../data/communication/communication.json";
 import navigationData from "../data/navigation/navigation.json";
 import useScrollControl from "../hooks/use-scroll-control";
+import Burger from "@/components/burger";
 import Communication from "@/components/communication";
 import { toggleBurgerMenu } from "@/store/slices/burger-menu";
 import { toggleCatalogPopup } from "@/store/slices/catalogs";
@@ -52,7 +52,7 @@ const BurgerMenu = () => {
             onClick={handleCatalogBtnClick}
           >
             <div className="flex justify-center items-center mr-2.5 w-6 h-6 bg-white rounded-full">
-              <Burger catalog isBurgerOpen={false} />
+              <Burger isOpen={false} variant="secondary" size="secondary" />
             </div>
             <span className="mr-auto font-bold text-base">Каталог</span>
             <IconArrow variant="secondary" direction="right" />

@@ -100,11 +100,7 @@ const UserInteraction = () => {
         {showCallback && <ModalWindows callback />}
         {showCityModal && <CitySearch />}
         <Basket />
-        <Burger
-          mobile
-          isBurgerOpen={isBurgerOpen}
-          onBurgerClick={handleBurgerClick}
-        />
+        <Burger isOpen={isBurgerOpen} onClick={handleBurgerClick} />
       </div>
     </div>
   );

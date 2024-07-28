@@ -47,8 +47,8 @@ const AsideMenu = ({ filters, isVisible, setIsVisible }: AsideMenuProps) => {
             <span className="text-xl font-bold text-white">Фильтры</span>
           </div>
           <CrossSvg
-            position="rightTop"
             onClick={() => setIsVisible(!isVisible)}
+            className="w-6 h-6"
           />
         </div>
         <ul className="flex px-5 mb-auto lg:mb-0 lg:px-0 flex-col gap-3.5 ">

@@ -57,7 +57,11 @@ const Navigation = () => {
         >
           <Button variant="catalog" padding="catalog">
             <div className="m-0 md:mr-4 flex items-center justify-center w-6 h-6 bg-white rounded-full">
-              <Burger catalog isBurgerOpen={isCatalogOpen} />
+              <Burger
+                isOpen={isCatalogOpen}
+                variant="secondary"
+                size="secondary"
+              />
             </div>
             <span className="hidden md:inline-block mr-auto">Каталог</span>
             <IconArrow

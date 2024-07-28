@@ -1,7 +1,13 @@
 import { cva } from "class-variance-authority";
 import * as React from "react";
 
-import { cn } from "../../utils/_utils";
+import { cn } from "@/utils/_utils";
+
+interface CrossIconProps extends React.SVGProps<SVGSVGElement> {
+  variant?: "default" | "secondary";
+  size?: "default" | "secondary";
+  position?: "default" | "rightTop";
+}
 
 const crossVariants = cva(
   `cursor-pointer transition-transform hover:rotate-45`,
@@ -26,12 +32,6 @@ const crossVariants = cva(
     },
   },
 );
-
-interface CrossIconProps extends React.SVGProps<SVGSVGElement> {
-  variant?: "default" | "secondary";
-  size?: "default" | "secondary";
-  position: "default" | "rightTop";
-}
 
 const CrossSvg = React.forwardRef<SVGSVGElement, CrossIconProps>(
   ({ className, variant, size, position, ...props }, ref) => {

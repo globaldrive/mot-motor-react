@@ -7,8 +7,8 @@ import PropTypes from "prop-types";
 import * as React from "react";
 
 import { Button } from "./button";
-import { cn } from "../../utils/_utils";
 import IconArrow from "../icons/icon-arrow";
+import { cn } from "@/utils/_utils";
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
