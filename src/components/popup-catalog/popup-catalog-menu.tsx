@@ -1,9 +1,9 @@
-import { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import SimpleBar from "simplebar-react";
 
 import ListWithLinks from "../lists/lists-with-links";
 import "simplebar-react/dist/simplebar.min.css";
-import { catalogMenuItem } from "../../types/intefaces/catalog-data.interface";
+import { catalogMenuItem } from "@/types/intefaces/catalog-data.interface";
 
 interface PopupCatalogMenuProps {
   categoryData: catalogMenuItem[];
@@ -55,10 +55,8 @@ const PopupCatalogMenu = ({
             link: "flex items-center group",
           }}
           arrowProps={{
-            main: true,
-            right: true,
-            customClassname:
-              "group-hover:text-mm-main-hover group-hover:opacity-100",
+            direction: "right",
+            className: "group-hover:text-mm-main-hover group-hover:opacity-100",
           }}
           onItemClick={onMenuItemClick}
         />
