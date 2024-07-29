@@ -1,19 +1,17 @@
 "use client";
-import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import styles from "./mainBanner.module.scss";
-import mainBannerJpg from "../../assets/images/jpgs/mainBanner.jpg";
-import mainBannerData from "../../data/main-page/main-banner.json";
-import CarouselPagination from "../carousel-pagination";
+import mainBannerJpg from "@/assets/images/jpgs/mainBanner.jpg";
+import CarouselPagination from "@/components/carousel-pagination";
 import {
   Carousel,
   CarouselApi,
   CarouselContent,
   CarouselItem,
-} from "../ui/carousel";
+} from "@/components/ui/carousel";
+import mainBannerData from "@/data/main-page/main-banner.json";
 
 const MainBanner = () => {
   const mainSliderAutoplayDelay = 3000;
@@ -51,7 +49,7 @@ const MainBanner = () => {
         <div className="relative w-[375px] md:w-[670px] rounded-lg xl:rounded-2xl self-center xl:self-auto">
           <Carousel opts={{ loop: true }} setApi={setApi}>
             <CarouselContent>
-              {mainBannerData[0].content.map((img, index) => {
+              {mainBannerData[0].content.map(img => {
                 return (
                   <CarouselItem key={img.id}>
                     <Link
@@ -85,10 +83,12 @@ const MainBanner = () => {
               return (
                 <li
                   key={banner.id}
-                  className={classNames(
-                    styles.promoLink,
-                    "flex border-2 border-white border-solid rounded-lg w-fit md:rounded-2xl",
-                  )}
+                  className="flex border-2 border-white border-solid rounded-lg w-fit md:rounded-2xl"
+                  style={{
+                    boxShadow: "8px 8px 40px rgba(51, 60, 73, 0.1490196078)",
+                    background:
+                      "linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%)",
+                  }}
                 >
                   <Link href={banner.route} className="rounded-lg ">
                     <Image

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import PopupCatalogMenu from "./popup-catalog-menu";
 import PopupCatalogResults from "./popup-catalog-results";
 import { RootState } from "@/store/store";
-import { catalogMenuItem } from "@/types/intefaces/catalog-data";
+import { catalogMenuItem } from "@/types/intefaces/catalog-data.interface";
 
 interface PopupCatalogProps {
   catalogData: catalogMenuItem[];

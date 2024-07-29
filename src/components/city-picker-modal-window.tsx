@@ -13,7 +13,7 @@ import {
 } from "@/store/slices/modal-windows";
 import { changeUserCity } from "@/store/slices/user-details";
 
-const CitySearch = () => {
+const CityPickerModalWindow = () => {
   const dispatch = useDispatch();
   const cities = [
     "Москва",
@@ -83,4 +83,4 @@ const CitySearch = () => {
   );
 };
 
-export default CitySearch;
+export default CityPickerModalWindow;

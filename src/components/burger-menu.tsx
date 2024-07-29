@@ -15,6 +15,7 @@ import { toggleBurgerMenu } from "@/store/slices/burger-menu";
 import { toggleCatalogPopup } from "@/store/slices/catalogs";
 import { toggleModalOverlay } from "@/store/slices/modal-windows";
 import { RootState } from "@/store/store";
+import CommunicationTypes from "@/types/enums/communication-types";
 
 const BurgerMenu = () => {
   const [showResults, setShowResults] = useState(false);
@@ -97,7 +98,7 @@ const BurgerMenu = () => {
               <div className="flex items-center gap-1.5 mb-1.5 text-base">
                 <Communication
                   phoneNumber={communicationDetails.mainNumber}
-                  communicationType={{ phoneCall: true }}
+                  communicationType={CommunicationTypes.phoneCall}
                   showPhoneNumber
                   phoneClassname="mr-1.5 font-bold no-underline text-mm-main"
                 />
@@ -114,7 +115,7 @@ const BurgerMenu = () => {
             </div>
             <Communication
               phoneNumber={communicationDetails.whatsApp.number}
-              communicationType={{ whatsApp: true }}
+              communicationType={CommunicationTypes.whatsApp}
               showIcon
               whatsAppPreviewText={communicationDetails.whatsApp.text}
               openInNewTab

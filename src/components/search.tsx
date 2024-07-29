@@ -1,5 +1,4 @@
 "use client";
-import classNames from "classnames";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -14,12 +13,7 @@ const Search = ({ onClickSearchBtn, className }: SearchProps) => {
   const [searchValue, setSearchValue] = useState("");
 
   return (
-    <div
-      className={classNames(
-        "relative w-full select-none",
-        className && className,
-      )}
-    >
+    <div className={`relative w-full select-none ${className}`}>
       <Input
         className="h-full text-base p-3.5 pl-11 bg-mm-cement rounded-lg border-0"
         type="search"

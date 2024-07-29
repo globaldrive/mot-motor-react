@@ -7,6 +7,7 @@ interface CrossIconProps extends React.SVGProps<SVGSVGElement> {
   variant?: "default" | "secondary";
   size?: "default" | "secondary";
   position?: "default" | "rightTop";
+  color?: "default" | "bright";
 }
 
 const crossVariants = cva(
@@ -21,6 +22,10 @@ const crossVariants = cva(
         default: "w-3.5 h-3.5 md:w-6 md:h-6",
         secondary: "",
       },
+      color: {
+        default: "text-black",
+        bright: "text-white",
+      },
       position: {
         default: "",
         rightTop: "absolute top-2 md:top-4 right-2 md:right-4",
@@ -29,12 +34,13 @@ const crossVariants = cva(
     defaultVariants: {
       variant: "default",
       size: "default",
+      color: "default",
     },
   },
 );
 
 const CrossSvg = React.forwardRef<SVGSVGElement, CrossIconProps>(
-  ({ className, variant, size, position, ...props }, ref) => {
+  ({ className, variant, size, color, position, ...props }, ref) => {
     return (
       <svg
         ref={ref}
@@ -42,6 +48,7 @@ const CrossSvg = React.forwardRef<SVGSVGElement, CrossIconProps>(
           crossVariants({
             variant,
             size,
+            color,
             position,
             className,
           }),
@@ -55,14 +62,14 @@ const CrossSvg = React.forwardRef<SVGSVGElement, CrossIconProps>(
       >
         <path
           d="M21 7L7 21"
-          stroke="#222831"
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M7 7L21 21"
-          stroke="#222831"
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import ProductCardContent from "@/types/intefaces/product-card";
+import ProductCardContent from "@/types/intefaces/product-card.interface";
 
 interface ProductCardCarouselProps {
   cardsContent: ProductCardContent[];

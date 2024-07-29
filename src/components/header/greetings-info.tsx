@@ -1,4 +1,4 @@
-import CityPicker from "../city-picker";
+import CityPicker from "@/components/city-picker";
 
 const GreetingsInfo = () => {
   return (

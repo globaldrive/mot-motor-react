@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -49,10 +48,7 @@ const Navigation = () => {
     <div className="bg-transparent py-1.5 text-base text-white md:bg-mm-main">
       <div className="flex gap-2 md:gap-5 lg:gap-12 container">
         <div
-          className={classNames(
-            "min-w-[40px] min-h-[40px] md:min-w-[128px] lg:min-w-[228px] lg:min-h-[46px] bg-mm-secondary rounded-lg transition-colors duration-200 ease-in-out",
-            isCatalogOpen && "bg-mm-secondary-active",
-          )}
+          className={`min-w-[40px] min-h-[40px] md:min-w-[128px] lg:min-w-[228px] lg:min-h-[46px] rounded-lg transition-colors duration-200 ease-in-out ${isCatalogOpen ? "bg-mm-secondary-active" : "bg-mm-secondary"}`}
           onClick={handleCatalogBtnClick}
         >
           <Button variant="catalog" padding="catalog">

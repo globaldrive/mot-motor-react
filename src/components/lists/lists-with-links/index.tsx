@@ -1,6 +1,21 @@
+import { Dispatch } from "react";
+
 import ListItemLink from "./list-item-link";
-import ListWithLinksProps from "./ListWithLinks.interface";
-import IconArrow from "../../icons/icon-arrow";
+import IconArrow, { ArrowIconProps } from "@/components/icons/icon-arrow";
+import { catalogMenuItem } from "@/types/intefaces/catalog-data.interface";
+import listItemClassnameInterface from "@/types/intefaces/list-item-classname.interface";
+
+interface ListWithLinksProps extends React.HTMLAttributes<HTMLUListElement> {
+  menuData: catalogMenuItem[];
+  showArrow?: boolean;
+  showSvg?: boolean;
+  listClassname?: string;
+  itemClassnames?: listItemClassnameInterface;
+  arrowProps?: ArrowIconProps;
+  activeListItemInx?: number;
+  setIsActiveListItemInx?: Dispatch<number | undefined>;
+  onItemClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+}
 
 const ListWithLinks = ({
   menuData,

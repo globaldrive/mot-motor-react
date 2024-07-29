@@ -3,13 +3,13 @@ import Image from "next/image";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import locationSvg from "../../assets/images/general/location.svg";
+import IconArrow from "./icons/icon-arrow";
+import locationSvg from "../assets/images/general/location.svg";
 import {
   toggleCityWindow,
   toggleModalOverlay,
-} from "../../store/slices/modal-windows";
-import { RootState } from "../../store/store";
-import IconArrow from "../icons/icon-arrow";
+} from "../store/slices/modal-windows";
+import { RootState } from "../store/store";
 
 interface CityPickerProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {}

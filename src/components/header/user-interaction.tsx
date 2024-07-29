@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Basket from "@/components/basket";
 import Burger from "@/components/burger";
 import CityPicker from "@/components/city-picker";
-import CitySearch from "@/components/city-picker/city-search";
+import CityPickerModalWindow from "@/components/city-picker-modal-window";
 import Communication from "@/components/communication";
 import Logo from "@/components/logo";
 import ModalWindows from "@/components/modal-windows";
@@ -18,6 +18,7 @@ import {
   toggleModalOverlay,
 } from "@/store/slices/modal-windows";
 import { RootState } from "@/store/store";
+import CommunicationTypes from "@/types/enums/communication-types";
 import RoutesPaths from "@/types/enums/routes";
 
 const UserInteraction = () => {
@@ -61,7 +62,7 @@ const UserInteraction = () => {
             <div className="flex gap-1.5 items-center">
               <Communication
                 phoneNumber={communicationDetails.mainNumber}
-                communicationType={{ phoneCall: true }}
+                communicationType={CommunicationTypes.phoneCall}
                 showPhoneNumber
                 variant="default"
               />
@@ -79,13 +80,13 @@ const UserInteraction = () => {
             <div className="md:hidden">
               <Communication
                 phoneNumber={communicationDetails.mainNumber}
-                communicationType={{ phoneCall: true }}
+                communicationType={CommunicationTypes.phoneCall}
                 showIcon
               />
             </div>
             <Communication
               phoneNumber={communicationDetails.whatsApp.number}
-              communicationType={{ whatsApp: true }}
+              communicationType={CommunicationTypes.whatsApp}
               showIcon
               whatsAppPreviewText={communicationDetails.whatsApp.text}
               openInNewTab
@@ -98,7 +99,7 @@ const UserInteraction = () => {
           </Button>
         </div>
         {showCallback && <ModalWindows callback />}
-        {showCityModal && <CitySearch />}
+        {showCityModal && <CityPickerModalWindow />}
         <Basket />
         <Burger isOpen={isBurgerOpen} onClick={handleBurgerClick} />
       </div>

@@ -5,6 +5,8 @@ import * as React from "react";
 import phoneCallIcon from "@/assets/images/general/phone.svg";
 import WhatsAppIcon from "@/assets/images/general/whatsApp.svg";
 import { buttonVariants } from "@/components/ui/button";
+import CommunicationTypes from "@/types/enums/communication-types";
+import communicationTypes from "@/types/enums/communication-types";
 import { cn } from "@/utils/_utils";
 import formatPhoneNumber from "@/utils/format-phone-number";
 
@@ -15,10 +17,11 @@ interface communicationProps
   showPhoneNumber?: boolean;
   showIcon?: boolean;
   phoneClassname?: string;
-  communicationType?: {
-    phoneCall?: boolean;
-    whatsApp?: boolean;
-  };
+  communicationType?: CommunicationTypes;
+  // {
+  //   phoneCall?: boolean;
+  //   whatsApp?: boolean;
+  // };
   whatsAppPreviewText?: string;
   openInNewTab?: boolean;
   variant?: "default";
@@ -44,7 +47,7 @@ const Communication = ({
     },
   });
   let href = "tel:";
-  if (communicationType?.whatsApp) {
+  if (communicationType === CommunicationTypes.whatsApp) {
     href = `https://wa.clck.bar/${phoneNumber}?text=${whatsAppPreviewText}`;
   }
 
@@ -56,7 +59,7 @@ const Communication = ({
         target={(openInNewTab && "_blank") || ""}
       >
         {showPhoneNumber && formatPhoneNumber(phoneNumber)}
-        {showIcon && communicationType?.whatsApp && (
+        {showIcon && communicationType === CommunicationTypes.whatsApp && (
           <Image
             className="select-none w-auto h-auto"
             src={WhatsAppIcon}
@@ -65,7 +68,7 @@ const Communication = ({
             height={36}
           />
         )}
-        {showIcon && communicationType?.phoneCall && (
+        {showIcon && communicationType === communicationTypes.phoneCall && (
           <Image
             className="w-auto h-auto"
             src={phoneCallIcon}
