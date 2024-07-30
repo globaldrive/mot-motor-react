@@ -2,23 +2,24 @@
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 
-import Basket from "../basket";
-import Burger from "../burger";
-import CityPicker from "../city-picker";
-import CitySearch from "../city-picker/city-search";
-import Communication from "../communication";
-import Logo from "../logo";
-import ModalWindows from "../modal-windows";
-import Search from "../search";
-import { Button } from "../ui/button";
-import communicationDetails from "@/_data/communication/communication.json";
-import { toggleBurgerMenu } from "@/_store/slices/burger-menu";
+import Basket from "@/components/basket";
+import Burger from "@/components/burger";
+import CityPicker from "@/components/city-picker";
+import CityPickerModalWindow from "@/components/city-picker-modal-window";
+import Communication from "@/components/communication";
+import Logo from "@/components/logo";
+import ModalWindows from "@/components/modal-windows";
+import Search from "@/components/search";
+import { Button } from "@/components/ui/button";
+import communicationDetails from "@/data/communication/communication.json";
+import { toggleBurgerMenu } from "@/store/slices/burger-menu";
 import {
   toggleCallbackWindow,
   toggleModalOverlay,
-} from "@/_store/slices/modal-windows";
-import { RootState } from "@/_store/store";
-import RoutesPaths from "@/_types/enums/routes";
+} from "@/store/slices/modal-windows";
+import { RootState } from "@/store/store";
+import CommunicationTypes from "@/types/enums/communication-types";
+import RoutesPaths from "@/types/enums/routes";
 
 const UserInteraction = () => {
   const dispatch = useDispatch();
@@ -61,7 +62,7 @@ const UserInteraction = () => {
             <div className="flex gap-1.5 items-center">
               <Communication
                 phoneNumber={communicationDetails.mainNumber}
-                communicationType={{ phoneCall: true }}
+                communicationType={CommunicationTypes.phoneCall}
                 showPhoneNumber
                 variant="default"
               />
@@ -79,13 +80,13 @@ const UserInteraction = () => {
             <div className="md:hidden">
               <Communication
                 phoneNumber={communicationDetails.mainNumber}
-                communicationType={{ phoneCall: true }}
+                communicationType={CommunicationTypes.phoneCall}
                 showIcon
               />
             </div>
             <Communication
               phoneNumber={communicationDetails.whatsApp.number}
-              communicationType={{ whatsApp: true }}
+              communicationType={CommunicationTypes.whatsApp}
               showIcon
               whatsAppPreviewText={communicationDetails.whatsApp.text}
               openInNewTab
@@ -98,13 +99,9 @@ const UserInteraction = () => {
           </Button>
         </div>
         {showCallback && <ModalWindows callback />}
-        {showCityModal && <CitySearch />}
+        {showCityModal && <CityPickerModalWindow />}
         <Basket />
-        <Burger
-          mobile
-          isBurgerOpen={isBurgerOpen}
-          onBurgerClick={handleBurgerClick}
-        />
+        <Burger isOpen={isBurgerOpen} onClick={handleBurgerClick} />
       </div>
     </div>
   );

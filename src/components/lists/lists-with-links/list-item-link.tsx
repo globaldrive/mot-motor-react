@@ -1,9 +1,21 @@
-import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
+import React, { Dispatch } from "react";
 
-import { ListItemLinkProps } from "./ListItemLink.interface";
-// import styles from "./listItemLink.module.scss";
+import listItemClassnameInterface from "@/types/intefaces/list-item-classname.interface";
+
+interface ListItemLinkProps extends React.LiHTMLAttributes<HTMLLIElement> {
+  isActive?: boolean;
+  activeItemInx?: number;
+  setActiveInx?: Dispatch<number | undefined>;
+  href: string;
+  itemText?: string;
+  svgSrc?: string;
+  showSvg?: boolean;
+  customClassnames?: listItemClassnameInterface;
+  itemInx?: number;
+  onItemClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+}
 
 const ListItemLink = ({
   href,
@@ -24,11 +36,6 @@ const ListItemLink = ({
   };
   const isActive = itemInx === activeItemInx;
 
-  const rootClassname = classNames(
-    customClassnames?.root,
-    isActive && customClassnames?.activeItem,
-  );
-
   const handleItemClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => {
@@ -38,7 +45,10 @@ const ListItemLink = ({
   };
 
   return (
-    <li className={rootClassname} onMouseEnter={handleItemMouseEnter}>
+    <li
+      className={`${customClassnames?.root} ${isActive && customClassnames?.activeItem}`}
+      onMouseEnter={handleItemMouseEnter}
+    >
       <Link
         className={customClassnames?.link}
         href={href}

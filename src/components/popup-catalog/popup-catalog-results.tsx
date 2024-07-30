@@ -1,12 +1,10 @@
-import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import React, { Dispatch, SetStateAction } from "react";
 import SimpleBar from "simplebar-react";
 
-import styles from "./popupCatalogResults.module.scss";
-import ArrowIcon from "../icons/arrow-icon";
-import { catalogMenuItem } from "@/_types/intefaces/catalog-data";
+import IconArrow from "../icons/icon-arrow";
+import { catalogMenuItem } from "@/types/intefaces/catalog-data.interface";
 
 interface PopupCatalogResultsProps {
   resultsData: catalogMenuItem[];
@@ -33,10 +31,7 @@ const PopupCatalogResults = ({
       {resultsData &&
         resultsData.map((item, index) => {
           const isActive = index === activeResultInx;
-          const listItemClass = classNames(
-            "hidden font-medium leading-5",
-            isActive ? styles.activeList : "",
-          );
+
           const handleClickResultTitle = () => {
             if (setActiveResultInx) {
               setActiveResultInx(undefined);
@@ -51,7 +46,7 @@ const PopupCatalogResults = ({
                       className="flex md:hidden items-center mb-7"
                       onClick={handleClickResultTitle}
                     >
-                      <ArrowIcon direction="left" className="mr-4" />
+                      <IconArrow direction="left" className="mr-4" />
                       <h3 className="m-0 mr-auto text-xl font-bold">
                         {item.title}
                       </h3>
@@ -65,13 +60,20 @@ const PopupCatalogResults = ({
                   )}
 
                   <SimpleBar style={{ maxHeight: "55vh" }}>
-                    <ul className={listItemClass}>
+                    <ul
+                      className={`flex-col font-medium leading-5 ${
+                        isActive ? "flex md:grid md:grid-cols-2" : "hidden "
+                      }`}
+                    >
                       {item.content &&
                         item.content.map(content => {
                           const { id, title, route } = content;
                           return (
-                            <li key={id} className={styles.listItem}>
-                              <Link className="w-full" href={route}>
+                            <li key={id} className="mb-5 odd:mr-5 odd:lg:mr-12">
+                              <Link
+                                className="w-full hover:text-mm-main-hover"
+                                href={route}
+                              >
                                 {title}
                               </Link>
                             </li>

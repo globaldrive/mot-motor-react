@@ -1,21 +1,20 @@
-import classNames from "classnames";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Burger from "../burger";
-import ArrowIcon from "../icons/arrow-icon";
-import Search from "../search";
-import { Button } from "../ui/button";
+import Burger from "@/components/burger";
+import IconArrow from "@/components/icons/icon-arrow";
+import Search from "@/components/search";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
-import navigationData from "@/_data/navigation/navigation.json";
-import { toggleCatalogPopup } from "@/_store/slices/catalogs";
-import { RootState } from "@/_store/store";
+} from "@/components/ui/dropdown-menu";
+import navigationData from "@/data/navigation/navigation.json";
+import { toggleCatalogPopup } from "@/store/slices/catalogs";
+import { RootState } from "@/store/store";
 
 const Navigation = () => {
   const isCatalogOpen = useSelector(
@@ -49,18 +48,19 @@ const Navigation = () => {
     <div className="bg-transparent py-1.5 text-base text-white md:bg-mm-main">
       <div className="flex gap-2 md:gap-5 lg:gap-12 container">
         <div
-          className={classNames(
-            "min-w-[40px] min-h-[40px] md:min-w-[128px] lg:min-w-[228px] lg:min-h-[46px] bg-mm-secondary rounded-lg transition-colors duration-200 ease-in-out",
-            isCatalogOpen && "bg-mm-secondary-active",
-          )}
+          className={`min-w-[40px] min-h-[40px] md:min-w-[128px] lg:min-w-[228px] lg:min-h-[46px] rounded-lg transition-colors duration-200 ease-in-out ${isCatalogOpen ? "bg-mm-secondary-active" : "bg-mm-secondary"}`}
           onClick={handleCatalogBtnClick}
         >
           <Button variant="catalog" padding="catalog">
             <div className="m-0 md:mr-4 flex items-center justify-center w-6 h-6 bg-white rounded-full">
-              <Burger catalog isBurgerOpen={isCatalogOpen} />
+              <Burger
+                isOpen={isCatalogOpen}
+                variant="secondary"
+                size="secondary"
+              />
             </div>
             <span className="hidden md:inline-block mr-auto">Каталог</span>
-            <ArrowIcon
+            <IconArrow
               variant="secondary"
               className="hidden md:block"
               flip={isCatalogOpen}
@@ -89,7 +89,7 @@ const Navigation = () => {
                       >
                         {item.title}
                         {item.content && item.content?.length > 0 && (
-                          <ArrowIcon variant="secondary" />
+                          <IconArrow variant="secondary" />
                         )}
                         {item.content && item.content.length > 0 && (
                           <DropdownMenuContent align="start">

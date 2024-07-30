@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import * as React from "react";
 
 import { ButtonProps, buttonVariants } from "./button";
-import { cn } from "@/_utils/_utils";
+import { cn } from "@/utils/_utils";
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav

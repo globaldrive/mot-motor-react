@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import * as React from "react";
 
-import { cn } from "@/_utils/_utils";
+import { cn } from "@/utils/_utils";
 
 const Card = React.forwardRef<
   HTMLDivElement,

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { toggleCatalogPopup } from "@/_store/slices/catalogs";
-import { RootState } from "@/_store/store";
+import { toggleCatalogPopup } from "../../store/slices/catalogs";
+import { RootState } from "../../store/store";
 
 const Overlay = () => {
   const dispatch = useDispatch();
