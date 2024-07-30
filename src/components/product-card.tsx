@@ -13,6 +13,7 @@ import {
 import hangkaiPng from "../assets/images/pngs/hangkai.png";
 import RoutesPaths from "../types/enums/routes";
 import formatNumberWithSpaces from "../utils/format-numbers-with-spaces";
+import prefix from "@/utils/prefix";
 
 interface ProductCardProps {
   cardData: {
@@ -118,7 +119,7 @@ const ProductCard = ({ cardData }: ProductCardProps) => {
           </div>
           <div className="flex gap-1.5 text-sm font-medium">
             <Image
-              src="./discount.svg"
+              src={`${prefix}/discount.svg`}
               alt="Иконка процента"
               width={16}
               height={16}

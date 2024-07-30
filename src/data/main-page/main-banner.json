@@ -25,22 +25,22 @@
     "title": "Контент 4 банера рядом с главным",
     "content": [
       {
-        "id": 20,
+        "id": 1,
         "src": "./mainPromoBanners/1.jpg",
         "route": "#"
       },
       {
-        "id": 21,
+        "id": 2,
         "src": "./mainPromoBanners/2.jpg",
         "route": "#"
       },
       {
-        "id": 22,
+        "id": 3,
         "src": "./mainPromoBanners/3.jpg",
         "route": "#"
       },
       {
-        "id": 23,
+        "id": 4,
         "src": "./mainPromoBanners/4.jpg",
         "route": "#"
       }

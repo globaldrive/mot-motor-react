@@ -10,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
+import prefix from "@/utils/prefix";
 
 const Brands = () => {
   return (
@@ -39,7 +40,7 @@ const Brands = () => {
                     <div className="w-fit">
                       <Image
                         className="w-auto h-auto md:w-[170px] md:h-[88px] select-none"
-                        src={`/brands/${brand.id}.png`}
+                        src={`${prefix}/brands/${brand.id}.png`}
                         alt="brand logo"
                         width={120}
                         height={64}

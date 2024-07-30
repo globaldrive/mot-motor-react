@@ -12,6 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import mainBannerData from "@/data/main-page/main-banner.json";
+import prefix from "@/utils/prefix";
 
 const MainBanner = () => {
   const mainSliderAutoplayDelay = 3000;
@@ -93,7 +94,7 @@ const MainBanner = () => {
                   <Link href={banner.route} className="rounded-lg ">
                     <Image
                       className="grow min-w-[100px] w-[170px] h-[145px] rounded-lg lg:rounded-2xl md:w-[215px] md:h-[180px] lg:w-auto lg:h-auto"
-                      src={`/mainPromoBanners/${index + 1}.jpg`}
+                      src={`${prefix}/mainPromoBanners/${banner.id}.jpg`}
                       alt="Промо банер"
                       width={238}
                       height={200}

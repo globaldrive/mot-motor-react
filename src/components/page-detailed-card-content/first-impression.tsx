@@ -1,10 +1,11 @@
 import Image from "next/image";
 
-import mockProductCardBreadCrumbData from "../../data/mock-product-cards-data/product-card-bread-crumb.json";
-import BreadCrumbCustom from "../bread-crumb-custom";
+import BreadCrumbCustom from "@/components/bread-crumb-custom";
 import BuyProduct from "@/components/buy-product";
 import MainCharacteristicsList from "@/components/main-characteristics-list";
 import ProductPresentationImgs from "@/components/products-presentation-imgs";
+import mockProductCardBreadCrumbData from "@/data/mock-product-cards-data/product-card-bread-crumb.json";
+import prefix from "@/utils/prefix";
 
 const mockMainCharacteristics = {
   Бренд: "Hangkai",
@@ -31,7 +32,7 @@ const FirstImpression = () => {
             />
             <Image
               className="absolute top-1 right-1 md:right-5 w-auto h-auto md:w-auto md:h-auto"
-              src="/brands/11.png"
+              src={`${prefix}/brands/11.png`}
               alt="Бренд"
               width={75}
               height={29}

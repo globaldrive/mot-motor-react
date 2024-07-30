@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 import MainCharacteristicsList from "./main-characteristics-list";
 import { Button } from "./ui/button";
@@ -10,6 +11,7 @@ import VideoCallSvg from "../assets/images/general/videoCall.svg";
 import communicationDetails from "../data/communication/communication.json";
 import formatNumberWithSpaces from "../utils/format-numbers-with-spaces";
 import FormatPhoneNumber from "../utils/format-phone-number";
+import prefix from "@/utils/prefix";
 
 interface BuyProductProps {
   characteristics: string[][];
@@ -38,8 +40,8 @@ const BuyProduct = ({ characteristics }: BuyProductProps) => {
           </span>
           <div className="flex gap-1.5">
             <Image
-              src="/discount.svg"
-              alt="Иконка скидки"
+              src={`${prefix}/discount.svg`}
+              alt="Иконка процента"
               width={16}
               height={16}
             />

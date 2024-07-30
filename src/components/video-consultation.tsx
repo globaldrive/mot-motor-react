@@ -3,12 +3,13 @@ import Image from "next/image";
 import { useDispatch } from "react-redux";
 
 import { Button } from "./ui/button";
-import phoneSvg from "../assets/images/general/phone.svg";
+import phoneSvg from "@/assets/images/general/phone.svg";
+import consultantPng from "@/assets/images/pngs/consultant-big.png";
 import {
   toggleCallbackWindow,
   toggleModalOverlay,
-} from "../store/slices/modal-windows";
-import FormatPhoneNumber from "../utils/format-phone-number";
+} from "@/store/slices/modal-windows";
+import FormatPhoneNumber from "@/utils/format-phone-number";
 
 const VideoConsultation = () => {
   const dispatch = useDispatch();
@@ -57,7 +58,7 @@ const VideoConsultation = () => {
           </div>
           <Image
             className="absolute right-1 lg:right-28 bottom-0 hidden sm:block w-auto h-auto"
-            src="/consultant.png"
+            src={consultantPng}
             alt="Консультант"
             width={265}
             height={370}
